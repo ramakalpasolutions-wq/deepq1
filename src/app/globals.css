@@ -1,0 +1,799 @@
+/* -------------------------------------------------------
+   TAILWIND RESET
+------------------------------------------------------- */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -------------------------------------------------------
+   THEME VARIABLES
+------------------------------------------------------- */
+:root{
+  --background:#05060a;
+  --foreground:grey;
+  --neon-blue:#4da3ff;
+  --neon-glow:#008cff;
+  --card-bg: rgba(255,255,255,0.02);
+
+  --fs-lg: clamp(26px, 3vw, 48px);
+  --fs-md: clamp(18px, 2vw, 28px);
+  --fs-sm: clamp(14px, 1.4vw, 20px);
+}
+
+/* -------------------------------------------------------
+   GLOBAL RESET
+------------------------------------------------------- */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{
+  font-family:"Poppins",system-ui,sans-serif;
+  background:var(--background);
+  color:var(--foreground);
+  overflow-x:hidden;
+}
+
+/* BACKGROUND LAYER (fixed decorative) */
+/* -------------------------------------------------------
+   FIXED BACKGROUND (Optimized)
+------------------------------------------------------- */
+.bg-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  z-index: -10 !important;   /* always behind everything */
+  pointer-events: none;
+
+  /* GPU acceleration for smoother animation */
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.p{
+  color: grey;
+}
+.site-footer {
+  position: relative;
+  z-index: 5 !important;
+}
+main, section, .page {
+  position: relative;
+  z-index: 3 !important;
+}
+/* -------------------------------------------------------
+   ANIMATIONS
+------------------------------------------------------- */
+.fade-in{animation:fadeIn .9s ease-out forwards; opacity:0}
+.fade-in-delayed{animation:fadeIn 1.2s ease-out forwards; opacity:0}
+.fade-in-delayed-2{animation:fadeIn 1.4s ease-out forwards; opacity:0}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slowSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+
+/* -------------------------------------------------------
+   BUTTONS
+------------------------------------------------------- */
+.btn{display:inline-block;text-decoration:none;border-radius:10px;padding:12px 22px;font-weight:600;transition:.25s;font-size:var(--fs-sm)}
+.btn.primary{background:rgba(0,122,255,0.38);color:white}
+.btn.ghost{border:2px solid var(--neon-blue);color:var(--neon-blue)}
+.hover-glow:hover{box-shadow:0 0 18px rgba(0,140,255,0.55);transform:translateY(-2px)}
+
+/* -------------------------------------------------------
+   NAVIGATION (DESKTOP)
+------------------------------------------------------- */
+.site-nav{
+  position:sticky;top:0;background:rgba(5,6,10,0.55);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(77,163,255,0.05);z-index:50;
+}
+.nav-inner{
+  max-width:1500px;padding:10px clamp(14px,4vw,40px);margin:auto;display:flex;justify-content:space-between;align-items:center;
+}
+.nav-links a{margin-left:clamp(8px,1.4vw,22px);font-size:clamp(13px,1.3vw,18px);color:#a8c9ff;text-decoration:none;font-weight:600}
+.nav-links a:hover{color:var(--neon-blue)}
+
+/* -------------------------------------------------------
+   MOBILE NAV
+------------------------------------------------------- */
+.mobile-menu-btn{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer}
+.mobile-menu-btn .bar{width:28px;height:3px;background:var(--neon-blue);border-radius:3px;transition:.3s}
+    @media (max-width:1024px){
+      .mobile-menu-btn{display:flex} 
+    .nav-links{display:none} 
+
+    }
+
+/* Slide panel */
+.mobile-nav{
+  position:fixed;top:0;right:0;width:72%;max-width:360px;height:100vh;background:rgba(10,12,18,0.95);
+  backdrop-filter:blur(10px);padding:100px 30px;display:flex;flex-direction:column;gap:22px;animation:fadeIn .35s ease forwards;z-index:999;
+}
+.mobile-nav a{font-size:22px;color:white;text-decoration:none;font-weight:600}
+.mobile-nav a:hover{color:var(--neon-blue)}
+
+/* -------------------------------------------------------
+   HERO + GRID (desktop unchanged)
+------------------------------------------------------- */
+.hero{min-height:100vh;padding-top:60px;display:flex;align-items:center}
+.home-grid{width:92%;max-width:1500px;margin:auto;display:grid;grid-template-columns:1.6fr 1fr;gap:60px}
+
+/* Tablet keeps two columns but slightly narrower left */
+@media (max-width:1024px){ .home-grid{grid-template-columns:1.2fr 1fr} }
+
+/* Mobile stacks */
+@media (max-width:768px){ .home-grid{grid-template-columns:1fr} .hero-right{margin-top:40px;display:block} }
+
+/* -------------------------------------------------------
+   CAPABILITIES GRID
+------------------------------------------------------- */
+.capabilities-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:22px}
+.capability-card{padding:14px;border-radius:16px;background:rgba(255,255,255,0.03);border:1px solid rgba(77,163,255,0.08);text-align:center}
+.cap-icon{width:clamp(60px,9vw,120px);height:auto;margin:auto}
+
+/* -------------------------------------------------------
+   INDUSTRY SOLUTIONS
+------------------------------------------------------- */
+.solutions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:25px}
+.glass-card-ind{position:relative;padding:26px;background:rgba(255,255,255,0.04);border-radius:20px;border:1px solid rgba(255,255,255,0.08);overflow:hidden}
+.sol-img{position:absolute;width:110px;right:25px;top:50%;transform:translateY(-50%);filter:drop-shadow(0 0 20px rgba(77,163,255,0.45));}
+@media (max-width:1024px){ .solutions-grid{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:768px){ .solutions-grid{grid-template-columns:1fr} .sol-img{width:80px;right:14px} }
+
+/* -------------------------------------------------------
+   DEEPQ CARD + TORUS (always inside card)
+------------------------------------------------------- */
+.deepq-home-card{position:relative;overflow:hidden;border-radius:20px;padding:26px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06)}
+.deepq-card-img{position:absolute;right:-10px;bottom:-10px;width:260px;opacity:0.95;animation:slowSpin 80s linear infinite;pointer-events:none}
+@media (max-width:1024px){ .deepq-home-card{width:480px !important;height:380px !important} .deepq-card-img{width:210px;right:-8px;bottom:-8px} }
+@media (max-width:768px){ .deepq-home-card{width:100% !important;height:360px !important;margin:0 auto} .deepq-card-img{width:160px;right:0;bottom:0} }
+
+/* -------------------------------------------------------
+   FOOTER
+------------------------------------------------------- */
+.site-footer{padding:40px 0;background:rgba(5,6,10,0.35);border-top:1px solid rgba(77,163,255,0.05)}
+.footer-container{max-width:1500px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:30px;padding:20px clamp(20px,4vw,60px)}
+.footer-title{font-size:20px;color:white;margin-bottom:10px}
+.footer-links{display:flex;flex-direction:column;gap:8px}
+.footer-links a{color:#9fc9ff;text-decoration:none}
+.footer-links a:hover{color:var(--neon-blue)}
+.social-row{display:flex;gap:16px}
+.footer-copy{opacity:.7;margin-top:16px}
+@media (max-width:768px){ .footer-container{align-items:center;gap:22px} .social-row{gap:18px} }
+
+/* UNIVERSAL */
+img{max-width:100%;height:auto}
+section{overflow:hidden}
+p{word-wrap:break-word}
+/* -------------------------------------------------------
+   HOME PAGE RESPONSIVE FIXES
+------------------------------------------------------- */
+
+/* LEFT COLUMN SPACING */
+.home-left-responsive {
+  margin-left: 80px;
+  margin-top: 80px;
+}
+
+@media (max-width: 1024px) {
+  .home-left-responsive {
+    margin-left: 40px !important;
+    margin-top: 40px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-left-responsive {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+    margin-top: 20px !important;
+    text-align: left;
+  }
+}
+
+/* HERO TITLE */
+.hero-title-responsive {
+  width: 800px;
+}
+
+@media (max-width: 1024px) {
+  .hero-title-responsive { width: 600px; font-size: 40px !important; }
+}
+
+@media (max-width: 768px) {
+  .hero-title-responsive { width: 100%; font-size: 32px !important; }
+}
+
+/* DESCRIPTION TEXT */
+.hero-desc-responsive {
+  font-size: 24px;
+}
+
+@media (max-width: 1024px) {
+  .hero-desc-responsive { font-size: 20px !important; }
+}
+
+@media (max-width: 768px) {
+  .hero-desc-responsive { font-size: 18px !important; }
+}
+
+/* CTA BUTTON */
+.hero-cta-responsive .cta-btn {
+  width: 150px;
+}
+
+@media (max-width: 768px) {
+  .hero-cta-responsive .cta-btn {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+}
+
+/* WHO WE ARE SPACING */
+.who-section-responsive { margin-top: 60px; }
+@media (max-width: 768px) {
+  .who-section-responsive { margin-top: 40px; }
+}
+
+/* CAPABILITIES GRID FIX */
+.cap-grid-responsive {
+  gap: 20px !important;
+}
+
+@media (max-width: 768px) {
+  .cap-grid-responsive {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+}
+
+/* INDUSTRY SOLUTIONS */
+.industry-responsive {
+  margin-top: 60px;
+}
+
+@media (max-width: 768px) {
+  .industry-responsive { margin-top: 40px; }
+}
+
+.solutions-grid-responsive {
+  gap: 22px;
+}
+
+@media (max-width: 768px) {
+  .solutions-grid-responsive {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* RIGHT — DEEPQ CARD */
+.hero-right-responsive {
+  display: flex;
+  justify-content: bottom;
+  margin-top: 0px;
+  padding: 10px;
+}
+
+.deepq-card-responsive {
+  width: 600px;
+  height: 450px;
+  margin-left: -50px;
+  margin-top: 450px;
+}
+
+/* TABLET FIX */
+@media (max-width: 1024px) {
+  .deepq-card-responsive {
+    width: 450px !important;
+    height: 360px !important;
+    margin-left: 0 !important;
+    margin-top: 40px !important;
+  }
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .deepq-card-responsive {
+    width: 100% !important;
+    height: 330px !important;
+    margin: 0 auto !important;
+    margin-top: 30px !important;
+  }
+}
+
+/* TORUS SCALING */
+.deepq-torus-responsive {
+  width: 400px;
+  margin-bottom: 100px;
+}
+
+@media (max-width: 1024px) {
+  .deepq-torus-responsive { width: 200px !important; }
+}
+
+@media (max-width: 768px) {
+  .deepq-torus-responsive { width: 280px !important; 
+  margin: 100px;}
+}
+
+@media (max-width: 425px) {
+  .deepq-torus-responsive { width: 140px !important; }
+}
+
+
+/* INTRO TEXT INSIDE CARD */
+.intro-title-responsive { font-size: 38px; }
+@media (max-width: 768px) { .intro-title-responsive { font-size: 26px !important; } }
+
+.intro-desc-responsive { font-size: 24px; }
+@media (max-width: 768px) { .intro-desc-responsive { font-size: 18px !important; } }
+
+.intro-btn-responsive {
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .intro-btn-responsive {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+}
+/* ============================================================
+   DEEPQ PAGE — RESPONSIVE LAYOUT (NO DESKTOP CHANGES)
+   Desktop = unchanged.
+   Tablet = two-column but compressed.
+   Mobile = full stacked layout.
+============================================================ */
+
+/* OUTER WRAPPER */
+@media (max-width: 1024px) {
+  .deepq-wrapper {
+    padding: 40px 40px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .deepq-wrapper {
+    padding: 26px !important;
+    width: 94% !important;
+    margin: 10px auto !important;
+  }
+}
+
+/* TORUS IMAGE TOP RIGHT */
+@media (max-width: 1024px) {
+  .deepq-torus {
+    width: 360px !important;
+    right: 20px !important;
+    top: 30px !important;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .deepq-torus {
+    width: 220px !important;
+    right: 5px !important;
+    top: 10px !important;
+    opacity: 0.8;
+  }
+  .glass-card-deepq{
+    width: fit-content;
+        background:rgba(255,255,255,0.04);border-radius:8px;border:1px solid rgba(255,255,255,0.08);overflow:hidden;
+        padding: 2px;
+        text-align: center;
+        width: fit-content;
+        text-align: center;
+  }
+}
+@media (max-width: 400px){ .glass-card-deepq{
+    width: fit-content;
+        background:rgba(255,255,255,0.04);border-radius:8px;border:1px solid rgba(255,255,255,0.08);overflow:hidden;
+        padding: 2px;
+  }
+}
+
+/* HERO INNER FLEX */
+@media (max-width: 1024px) {
+  .deepq-hero-inner {
+    flex-direction: row !important;
+    gap: 20px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .deepq-hero-inner {
+    flex-direction: column !important;
+  }
+}
+
+/* HERO LEFT TEXT BLOCK */
+@media (max-width: 1024px) {
+  .deepq-hero-left {
+    max-width: 600px !important;
+    padding-top: 20px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .deepq-hero-left {
+    max-width: 100% !important;
+    padding-top: 10px !important;
+  }
+}
+
+/* MAIN TITLE */
+@media (max-width: 1024px) {
+  .deepq-hero-left h1 {
+    font-size: 38px !important;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 768px) {
+  .deepq-hero-left h1 {
+    font-size: 28px !important;
+    width: 100% !important;
+  }
+}
+
+/* SUBTEXT PARAGRAPH */
+@media (max-width: 1024px) {
+  .deepq-hero-left p {
+    font-size: 22px !important;
+    max-width: 420px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .deepq-hero-left p {
+    font-size: 18px !important;
+    max-width: 100% !important;
+  }
+}
+
+/* CTA BUTTON */
+@media (max-width: 768px) {
+  .deepq-hero-left .btn {
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
+
+/* ==========================================
+   "WHAT IS DEEPQ" + OTHER SECTION HEADERS
+========================================== */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 24px !important;
+  }
+}
+
+/* PARAGRAPH CONTENTS */
+@media (max-width: 768px) {
+  .muted,
+  .glass-card,
+  .deepq-wrapper p {
+    font-size: 18px !important;
+    
+  }
+  .glass-card{
+    background:rgba(255,255,255,0.04);border-radius:20px;border:px solid rgba(255,255,255,0.08);overflow:hidden;
+    text-align: center;
+  }
+}
+
+/* ==========================================
+   FEATURES GRID (4 → 2 → 1)
+========================================== */
+
+@media (max-width: 1024px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+}
+
+/* FEATURE BOX FIXES */
+@media (max-width: 1024px) {
+  .feature-box h4 {
+    font-size: 32px !important;
+  }
+}
+@media (max-width: 768px) {
+  .feature-box h4 {
+    font-size: 22px !important;
+  }
+  .feature-box p {
+    font-size: 18px !important;
+    margin-top: 20px !important;
+  }
+}
+
+/* ==========================================
+   “WHO DEEPQ IS FOR” LIST
+========================================== */
+@media (max-width: 768px) {
+  .deepq-wrapper ul {
+    font-size: 18px !important;
+    padding: 16px 18px !important;
+  }
+}
+
+/* ==========================================
+   FUTURE OF SERVICE FLOW SECTION
+========================================== */
+@media (max-width: 768px) {
+  .deepq-wrapper .btn {
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
+
+/* FINAL SPACING */
+@media (max-width: 768px) {
+  section {
+    margin-top: 50px !important;
+  }
+}
+/* ============================================================
+   ABOUT PAGE — MOBILE ONLY (NO DESKTOP / NO TABLET CHANGE)
+   Only screens ≤ 768px get modified
+============================================================ */
+/* ============================================================
+   ABOUT PAGE — DESKTOP + TABLET MARGINS
+   Applies to screens ≥ 768px (tablet + desktop)
+============================================================ */
+
+@media (min-width: 768px) {
+  .about-container {
+    margin-left: 80px !important;
+    margin-right: 80px !important;
+  }
+
+  .about-section {
+    margin-left: 0px !important;
+    margin-right: 80px !important;
+  }
+}
+
+/* ============================================================
+   ABOUT PAGE — MOBILE FIXES (≤ 768px)
+============================================================ */
+
+@media (max-width: 768px) {
+
+  /* Remove margins on mobile */
+  .about-container,
+  .about-section {
+    margin-left: 10 !important;
+    margin-right: 0 !important;
+    width: 92% !important;
+    padding: 0 !important;
+  }
+
+  /* Fix card width */
+  .vision-mission-card,
+  .approach-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 20px !important;
+  }
+
+  /* Prevent weird line breaks */
+  .vision-mission-card *,
+  .approach-card * {
+    white-space: normal !important;
+    word-break: normal !important;
+  }
+
+  /* Mobile Heading */
+  .about-container h1 {
+    font-size: 28px !important;
+    line-height: 1.25 !important;
+  }
+
+  /* Mobile paragraph */
+  .about-container .lead {
+    font-size: 18px !important;
+    max-width: 100% !important;
+  }
+
+  /* Section titles */
+  .section-title {
+    font-size: 22px !important;
+    margin-top: 18px !important;
+  }
+
+  /* Grid → 1 column */
+  .vision-mission-grid,
+  .approach-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .approach-card h4 {
+    font-size: 20px !important;
+  }
+  .approach-card p {
+    font-size: 16px !important;
+  }
+
+  /* Reduce spacing */
+  section.about-section {
+    margin-top: 30px !important;
+  }
+
+  /* Disable parallax */
+  .about-left {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+/* ============================================================================
+   HOME PAGE — DESKTOP FINAL LAYOUT (≥1025px ONLY)
+   Matches your reference: 
+   1) Hero left only (right empty)
+   2) Who We Are (left) + Introducing DeepQ (right)
+   3) Industry Solutions full width below both
+============================================================================ */
+@media (min-width: 1025px){
+   /* Your CSS styles for viewports between 1025px and 1440px (inclusive of 1025px, inclusive of 1440px) */
+  /* -------------------------------------------------
+     HERO SECTION — Left content only (right hidden)
+  ------------------------------------------------- */
+  .home-grid {
+    max-width: 1500px !important;
+    margin: 0 0 !important;
+    padding: 0px 60px !important;
+    display: grid !important;
+    grid-template-columns: 1.4fr 1fr !important;
+    column-gap: 90px !important;
+  }
+
+  .hero-right-responsive {
+    display: none !important;      /* Completely hide right side */
+  }
+
+  .hero-left-responsive {
+    margin-left: 0 !important;
+    margin-top: 40px !important;
+    max-width: 650px !important;
+  }
+
+  .hero-title-responsive {
+    font-size: 46px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 24px !important;
+  }
+
+  .hero-desc-responsive {
+    font-size: 20px !important;
+    line-height: 1.55 !important;
+    max-width: 620px !important;
+    margin-bottom: 32px !important;
+  }
+
+  /* -------------------------------------------------
+      WHO WE ARE + INTRODUCING DEEPQ SIDE-BY-SIDE
+  ------------------------------------------------- */
+  .who-grid-desktop {
+    max-width: 1500px !important;
+    margin: 0px auto 0 auto !important;
+    padding: 40px !important;
+
+    display: grid !important;
+    grid-template-columns: 1.6fr 1fr !important;
+    column-gap: 90px !important;
+    align-items: start !important;
+  }
+
+  /* LEFT — Who We Are */
+  .who-left-block {
+    max-width: 650px !important;
+  }
+
+  .who-desc-responsive {
+    font-size: 18px !important;
+    line-height: 1.55 !important;
+    margin-top: 20px !important;
+    max-width: 620px !important;
+  }
+
+  .capabilities-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 26px !important;
+    margin-top: 40px !important;
+  }
+
+  /* RIGHT — Introducing DeepQ */
+  .deepq-side {
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 0 !important;
+  }
+
+  .deepq-home-card {
+    width: 520px !important;
+    height: 430px !important;
+    padding: 32px !important;
+    background: rgba(255,255,255,0.03) !important;
+    border: 1px solid rgba(255,255,255,0.06) !important;
+    border-radius: 22px !important;
+    position: relative !important;
+  }
+
+  .deepq-torus-responsive {
+    width: 240px !important;
+    right: -10px !important;
+    bottom: -18px !important;
+  }
+
+  .intro-title-responsive {
+    font-size: 30px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .intro-desc-responsive {
+    font-size: 18px !important;
+    line-height: 1.45 !important;
+    max-width: 380px !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* -------------------------------------------------
+       INDUSTRY SOLUTIONS — Below both columns
+  ------------------------------------------------- */
+  .industry-responsive {
+    max-width: 1500px !important;
+    margin: 100px auto 0 auto !important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+
+  .solutions-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 34px !important;
+    margin-top: 40px !important;
+  }
+
+  .glass-card {
+    height: 260px !important;
+    padding: 30px !important;
+    border-radius: 20px !important;
+    background: rgba(255,255,255,0.04) !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    position: relative !important;
+  }
+
+  .glass-card h4 {
+    font-size: 22px !important;
+    max-width: 65% !important;
+    line-height: 1.35 !important;
+  }
+
+  .glass-card p {
+    font-size: 17px !important;
+    max-width: 65% !important;
+    margin-top: 8px !important;
+    line-height: 1.45 !important;
+  }
+
+  .glass-card .sol-img {
+    width: 140px !important;
+    right: 24px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+  }
+}
