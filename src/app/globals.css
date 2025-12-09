@@ -130,6 +130,16 @@ main, section, .page {
 ------------------------------------------------------- */
 .capabilities-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:22px}
 .capability-card{padding:14px;border-radius:16px;background:rgba(255,255,255,0.03);border:1px solid rgba(77,163,255,0.08);text-align:center}
+/* ===========================================================
+   FIX CAPABILITY CARDS FOR MOBILE + TABLET
+=========================================================== */
+@media (max-width: 1024px) {
+  .capability-card {
+    margin-top: 0 !important;    /* remove huge desktop spacing */
+    width: 100% !important;      /* auto fit full width */
+  }
+}
+
 .cap-icon{width:clamp(60px,9vw,120px);height:auto;margin:auto}
 
 /* -------------------------------------------------------
@@ -614,6 +624,7 @@ p{word-wrap:break-word}
   .section-title {
     font-size: 22px !important;
     margin-top: 18px !important;
+
   }
 
   /* Grid → 1 column */
@@ -659,7 +670,8 @@ p{word-wrap:break-word}
     padding: 0px 60px !important;
     display: grid !important;
     grid-template-columns: 1.4fr 1fr !important;
-    column-gap: 90px !important;
+    column-gap: 0px !important;
+    
   }
 
   .hero-right-responsive {
@@ -670,58 +682,71 @@ p{word-wrap:break-word}
     margin-left: 0 !important;
     margin-top: 40px !important;
     max-width: 650px !important;
+    
   }
 
   .hero-title-responsive {
     font-size: 46px !important;
     line-height: 1.25 !important;
-    margin-bottom: 24px !important;
+    margin-bottom: 4px !important;
   }
 
   .hero-desc-responsive {
     font-size: 20px !important;
     line-height: 1.55 !important;
     max-width: 620px !important;
-    margin-bottom: 32px !important;
+    margin-bottom: 0px !important;
+
+    
+  }
+  .hero-cta-responsive{
   }
 
   /* -------------------------------------------------
       WHO WE ARE + INTRODUCING DEEPQ SIDE-BY-SIDE
   ------------------------------------------------- */
   .who-grid-desktop {
-    max-width: 1500px !important;
-    margin: 0px auto 0 auto !important;
-    padding: 40px !important;
-
+    max-width: 1700px !important;
     display: grid !important;
-    grid-template-columns: 1.6fr 1fr !important;
-    column-gap: 90px !important;
-    align-items: start !important;
+    grid-template-columns: 2fr 1fr !important;
+     align-items: start !important;
+    column-gap: 0px !important;        /* tighten spacing */
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+    
+    
   }
 
   /* LEFT — Who We Are */
   .who-left-block {
     max-width: 650px !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  .who-title{
+    transform: translateY(60px);
   }
 
   .who-desc-responsive {
     font-size: 18px !important;
     line-height: 1.55 !important;
     margin-top: 20px !important;
-    max-width: 620px !important;
+    max-width: 920px !important;
+    transform: translateY(70px);
+
   }
 
   .capabilities-grid {
     grid-template-columns: repeat(4, 1fr) !important;
-    gap: 26px !important;
-    margin-top: 40px !important;
+    gap: 10px !important;
+    margin-top: 0px !important;
   }
 
   /* RIGHT — Introducing DeepQ */
   .deepq-side {
     display: flex !important;
-    justify-content: center !important;
-    margin-top: 0 !important;
+      margin-top: 0 !important;
+      align-items: center !important;
   }
 
   .deepq-home-card {
@@ -732,6 +757,8 @@ p{word-wrap:break-word}
     border: 1px solid rgba(255,255,255,0.06) !important;
     border-radius: 22px !important;
     position: relative !important;
+    margin-top: 0 !important;
+    transform: translateY(20px);
   }
 
   .deepq-torus-responsive {
@@ -757,9 +784,10 @@ p{word-wrap:break-word}
   ------------------------------------------------- */
   .industry-responsive {
     max-width: 1500px !important;
-    margin: 100px auto 0 auto !important;
+    margin: 0px auto 0 auto !important;
     padding-left: 40px !important;
     padding-right: 40px !important;
+    
   }
 
   .solutions-grid {
@@ -797,3 +825,227 @@ p{word-wrap:break-word}
     transform: translateY(-50%) !important;
   }
 }
+/* ===========================================================
+   FIX INDUSTRY CARDS FOR MOBILE + TABLET (NO DESKTOP CHANGE)
+=========================================================== */
+@media (max-width: 1024px) {
+
+  /* Make card a normal flex box */
+  .glass-card,
+  .glass-card-ind,
+  .industry-cards {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 20px !important;
+    height: auto !important;
+    text-align: center !important;
+  }
+
+  /* FIX the icons — remove absolute, put inside flow */
+  .sol-img {
+    position: static !important;
+    transform: none !important;
+    width: 110px !important;
+    margin: 10px auto !important;
+    display: block !important;
+  }
+
+  /* FIX text alignment */
+  .industry-cards h4,
+  .industry-cards p {
+    max-width: 100% !important;
+    text-align: center !important;
+  }
+}
+
+/* EXTRA FIX FOR MOBILE (≤768px) */
+@media (max-width: 768px) {
+  .sol-img {
+    width: 90px !important;
+  }
+}
+/* Fix DeepQ hero button scrolling issue (desktop only) */
+@media (min-width: 1025px) {
+  .deepq-hero-inner {
+    min-height: 480px !important;  /* fixes the overflow */
+    padding-bottom: 80px !important;  /* prevents overlap */
+    position: relative;
+  }
+
+  .deepq-hero-left {
+    position: relative;
+    z-index: 5; /* ensures content stays above background */
+  }
+}
+/* Fix DeepQ hero button scrolling issue (desktop only) */
+
+
+/* Fix DeepQ hero button scrolling issue (desktop only) */
+@media (min-width: 320px) and (max-width: 768px) {
+  /* This block of styles will ONLY apply when the screen width 
+    is between 320px and 500px, inclusive.
+  */
+
+  .deepq-hero-inner {
+    /* Styles specifically for the common mobile phone range */
+    min-height: 350px; /* Maybe a smaller height is needed here */
+    padding-bottom: 50px; 
+  }
+
+  .deepq-hero-left {
+    /* Mobile-specific adjustments */
+    font-size: 16px; 
+    line-height: 1.4;
+  }
+}
+
+
+/* ===============================
+   FIX TABLET VERSION (768–1024px)
+   DeepQ Features Grid & Card Layout
+================================ */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .card-heading{
+     background: linear-gradient(90deg, #4da3ff, #9bc9ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Also support Firefox */
+  background-clip: text;
+  color: transparent;
+  }
+  .section-title{
+ background: linear-gradient(90deg, #4da3ff, #9bc9ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Also support Firefox */
+  background-clip: text;
+  color: transparent;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 30px !important;
+  }
+
+  .feature-box {
+    padding: 20px !important;
+    text-align: center !important;
+    height: auto !important;
+    min-height: 260px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+  }
+
+  .feature-box h4 {
+    font-size: 24px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 10px !important;
+    text-align: center !important;
+  }
+
+  .feature-box p {
+    font-size: 18px !important;
+    margin-top: 14px !important;
+    line-height: 1.45 !important;
+    max-width: 90% !important;
+    text-align: center !important;
+  }
+}
+/* ================================
+   FIX HERO GAP ON DESKTOP ONLY
+================================ */
+@media screen {
+  .hero {
+    min-height: auto !important;   /* remove forced height */
+    padding-bottom: 20px !important; /* small natural spacing */
+  }
+}
+/* ================================
+   CONTACT FORM — DESKTOP FIX
+================================ */
+/* ================================
+   CONTACT FORM — DESKTOP FIX (FINAL)
+================================ */
+@media (min-width: 1025px) {
+
+  /* Form wrapper aligned properly */
+  .glass-card-contact,
+  .contact-form {
+    width: 100% !important;
+    max-width: 900px !important;    /* same width as your layout */
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Inputs visible, full width */
+  .contact-form input,
+  .contact-form textarea {
+    width: 100% !important;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.03);
+    border-radius: 10px;
+    padding: 14px;
+    color: white;
+    font-size: 16px;
+  }
+
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-color: #4da3ff;
+    box-shadow: 0 0 10px rgba(77,163,255,0.6);
+    outline: none;
+  }
+}
+
+/* ============================================
+   FINAL FIX — CONTACT PAGE DESKTOP ALIGNMENT
+=============================================*/
+@media (min-width: 1025px) {
+
+  /* The full wrapper should not shrink or shift */
+  .hero-left {
+    max-width: 900px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  /* Fix glass card placement */
+  .glass-card-contact {
+    width: 100% !important;
+    max-width: 900px !important;
+    margin: 20px auto !important;
+  }
+
+  /* Fix form card width + alignment */
+  .contact-form {
+    width: 100% !important;
+    max-width: 900px !important;
+    margin: 20px auto !important;
+  }
+
+  /* Inputs must be visible, full width */
+  .contact-form input,
+  .contact-form textarea {
+    width: 100% !important;
+    background: transparent !important;
+    border: 1px solid rgba(255,255,255,0.25) !important;
+    padding: 14px !important;
+    color: white !important;
+    border-radius: 8px !important;
+  }
+
+  /* Fix spacing so footer does NOT overlap */
+  .page {
+    padding-bottom: 120px !important;
+  }
+}
+

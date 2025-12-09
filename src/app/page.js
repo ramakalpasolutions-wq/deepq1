@@ -22,7 +22,6 @@ export default function Home() {
 
     window.addEventListener("scroll", handleScroll);
 
-    // Desktop detection
     const handleResize = () => setIsDesktop(window.innerWidth >= 1025);
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -35,14 +34,14 @@ export default function Home() {
 
   return (
     <div className="relative z-10 w-full">
+
       {/* BACKGROUND */}
       <div className="bg-layer">
         <Background />
       </div>
 
       {/* ========================= HERO ========================= */}
-      <section className="hero hero-wide fade-in w-full" style={{}}>
-        
+      <section className="hero hero-wide fade-in w-full">
         <div
           className="home-grid home-grid-responsive"
           style={isDesktop ? {
@@ -56,7 +55,7 @@ export default function Home() {
           {/* LEFT HERO CONTENT */}
           <div
             className="hero-left home-left-responsive"
-            style={isDesktop ? { marginLeft: "0px", marginTop: "0px",marginBottom:"0px" } : {}}
+            style={isDesktop ? { marginLeft: "0px", marginTop: "0px", marginBottom: "0px" } : {}}
           >
             <h1
               className="hero-title fancy-title hero-title-responsive"
@@ -64,8 +63,7 @@ export default function Home() {
                 background: "linear-gradient(90deg,#4da3ff,#9bc9ff)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
-                marginBottom:"20px",
-                ...(isDesktop ? { fontSize: "48px", lineHeight: "1.25" } : {})
+                ...(isDesktop ? { fontSize: "43px", lineHeight: "1.25" } : {})
               }}
             >
               BUILDING THE FUTURE<br />
@@ -75,14 +73,14 @@ export default function Home() {
 
             <p
               className="lead soft-fade hero-desc-responsive"
-              style={isDesktop ? { fontSize: "30px", maxWidth: "600px" ,marginBottom:"20px"} : {}}
+              style={isDesktop ? { fontSize: "30px", maxWidth: "60px", marginBottom: "20px" } : {}}
             >
               DeepCode Labs develops next-generation, cloud-native<br />
               platforms that power the future of customer experiences,<br />
               operational automation, and intelligent decision systems.
             </p>
 
-            <div className="hero-cta fade-up hero-cta-responsive" style={{marginTop:"20px"}}>
+            <div className="hero-cta fade-up hero-cta-responsive" style={{ marginTop: "20px" }}>
               <a className="btn primary hover-glow cta-btn" href="/deepq">
                 Learn More
               </a>
@@ -99,30 +97,31 @@ export default function Home() {
       </section>
 
       {/* ========================= WHO WE ARE + DEEPQ ========================= */}
-      <section className="fade-in-delayed who-section-responsive" style={{marginLeft:"10px"}}>
-        
+      <section
+        className="fade-in-delayed who-section-responsive"
+        style={isDesktop ? { marginTop: "0px", paddingTop: "0px" } : {}}   // FIX 1 (remove gap above WHO WE ARE)
+      >
         <div
           className="who-grid-desktop"
           style={isDesktop ? {
             maxWidth: "1500px",
-          
             padding: "40px",
             display: "grid",
             gridTemplateColumns: "1.6fr 1fr",
-            columnGap: "10px",
-            alignItems: "flex-start",
+            columnGap: "0px",
+            alignItems: "start",   // FIX 2 (align WHO + DEEPQ vertically)
           } : {}}
         >
 
           {/* LEFT — WHO WE ARE */}
           <div className="who-left-block">
             <h3
-              className="section-title"
+              className="section-title who-title"
               style={{
                 background: "linear-gradient(90deg,#4da3ff,#9bc9ff)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
-                ...(isDesktop ? { fontSize: "32px" } : {})
+                ...(isDesktop ? { fontSize: "27px", marginLeft: "10px" } : {})
               }}
             >
               Who We Are
@@ -130,7 +129,7 @@ export default function Home() {
 
             <p
               className="muted-p who-desc-responsive"
-              style={isDesktop ? { fontSize: "24px", maxWidth: "620px" } : {}}
+              style={isDesktop ? { fontSize: "20px", maxWidth: "620px" } : {}}
             >
               DeepCode Labs is a technology innovation studio focused on designing and
               building future-ready, high-performance digital systems for India’s fast-growing
@@ -140,49 +139,49 @@ export default function Home() {
               AI-driven prediction models, and cloud-scale engineering.
             </p>
 
-            {/* CAPABILITIES GRID */}
+            {/* CAPABILITIES */}
             <div
               className="capabilities-grid cap-grid-responsive"
               style={isDesktop ? {
                 gridTemplateColumns: "repeat(4,1fr)",
                 gap: "26px",
                 marginTop: "40px",
-                width:"50vw",
-                height:"50vh"
+                width: "50vw",
+                height: "70vh"
               } : {}}
             >
-              {/* SAME CARDS — unchanged */}
-              
-              <div className="capability-card hover-card">
+
+              {/* CAPABILITY CARDS — unchanged */}
+              <div className="capability-card hover-card" style={{ marginTop: "250px", width: "250px" }}>
                 <img src="/assets/Real-Time Distributed Systems-Photoroom - Copy.png" className="cap-icon" />
-                <h4 className="card-heading" style={{ color: "white" ,fontSize:"24px"}}>
+                <h4 className="card-heading" style={{background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",  fontSize: "24px" }}>
                   Real-Time<br />Distributed Systems
                 </h4>
-                <p className="muted small" style={{fontSize:"20px"}}>Low-latency, event-driven platforms for thousands of users.</p>
+                <p className="muted small" style={{ fontSize: "20px" }}>Low-latency, event-driven platforms for thousands of users.</p>
               </div>
 
-              <div className="capability-card hover-card">
+              <div className="capability-card hover-card" style={{ marginTop: "250px", width: "250px" }}>
                 <img src="/assets/Cloud-Native Engineering-Photoroom.png" className="cap-icon" />
-                <h4 className="card-heading" style={{ color: "white",fontSize:"24px" }}>
+                <h4 className="card-heading" style={{ background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontSize: "24px" }}>
                   Cloud-Native<br />Engineering
                 </h4>
-                <p className="muted small" style={{fontSize:"20px"}}>Scalable, secure architecture on modern cloud infrastructure.</p>
+                <p className="muted small" style={{ background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",fontSize: "20px" }}>Scalable, secure architecture on modern cloud infrastructure.</p>
               </div>
 
-              <div className="capability-card hover-card">
+              <div className="capability-card hover-card" style={{ marginTop: "250px", width: "250px" }}>
                 <img src="/assets/AI & Predictive Intelligence2-Photoroom.png" className="cap-icon" />
-                <h4 className="card-heading" style={{ color: "white" ,fontSize:"24px"}}>
+                <h4 className="card-heading" style={{ background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontSize: "24px" }}>
                   AI & Predictive<br />Intelligence
                 </h4>
-                <p className="muted small" style={{fontSize:"20px"}}>Forecasting, predicting wait-times, optimizing resources.</p>
+                <p className="muted small" style={{ fontSize: "20px" }}>Forecasting, predicting wait-times, optimizing resources.</p>
               </div>
 
-              <div className="capability-card hover-card">
+              <div className="capability-card hover-card" style={{ marginTop: "250px", width: "250px" }}>
                 <img src="/assets/Geospatial & Hyperlocal Computing.png" className="cap-icon" />
-                <h4 className="card-heading" style={{ color: "white" ,fontSize:"24px"}}>
+                <h4 className="card-heading" style={{  background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontSize: "24px" }}>
                   Geospatial &<br />Hyperlocal Computing
                 </h4>
-                <p className="muted small" style={{fontSize:"20px"}}>Real-time spatial intelligence blending GPS & analytics.</p>
+                <p className="muted small" style={{ fontSize: "20px" }}>Real-time spatial intelligence blending GPS & analytics.</p>
               </div>
             </div>
           </div>
@@ -220,11 +219,10 @@ export default function Home() {
                   style={isDesktop ? { fontSize: "18px", maxWidth: "380px" } : {}}
                 >
                   DeepQ is a next-generation<br />
-                  queue management
-                  ecosystem<br /> designed for
-                  the hybrid<br /> Indian service
-                  sector — built for<br /> transparency,
-                  efficiency & real-time<br />
+                  queue management ecosystem<br />
+                  designed for the hybrid<br />
+                  Indian service sector — built for<br />
+                  transparency, efficiency & real-time<br />
                   decision-making.
                 </p>
 
@@ -247,43 +245,80 @@ export default function Home() {
 
       {/* ========================= INDUSTRY SOLUTIONS ========================= */}
       <section
-        className="industry fade-in-delayed-2 industry-responsive"
-        style={isDesktop ? { maxWidth: "1500px", padding: "40px" } : {}}
-      >
-        <h3 className="section-title" style={{ color: "#00C8FF",fontSize:"30px" }}>
-          Industry Solutions
-        </h3>
+    className="industry fade-in-delayed-2 industry-responsive"
+    style={isDesktop ? { maxWidth: "1500px", padding: "40px" } : {}}
+>
+    <h3 className="section-title" style={{ 
+        fontSize: "30px", 
+        background: "linear-gradient(90deg,#4da3ff,#9bc9ff)",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent" 
+    }}>
+        Industry Solutions
+    </h3>
 
-        <div
-          className="solutions-grid solutions-grid-responsive"
-          style={isDesktop ? { gridTemplateColumns: "repeat(3,1fr)", gap: "34px", marginTop: "40px" } : {}}
-        >
-          {/* SAME CARDS — unchanged */}
-          <div className="glass-card industry-cards">
-            <img src="/assets/Service Economy Digitization-Photoroom.png" className="sol-img" alt="" />
-            <h4 className="card-heading" style={{ color: "#00C8FF" }}>
-              Service Economy<br />Digitization
+    <div
+        className="solutions-grid solutions-grid-responsive"
+        style={isDesktop ? { gridTemplateColumns: "repeat(3,1fr)", gap: "34px" } : {}}
+    >
+        {/* Card 1 */}
+        <div className="glass-card industry-cards">
+            {/* 💡 APPLY DESKTOP-SPECIFIC STYLE HERE */}
+            <img 
+                src="/assets/Service Economy Digitization-Photoroom.png" 
+                className="sol-img" 
+                alt="Service Economy Digitization"
+                style={isDesktop ? { width: '70px', height: '70px' } : {}} 
+            />
+            <h4 className="card-heading" style={{ 
+                background: "linear-gradient(90deg,#4da3ff,#9bc9ff)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent" 
+            }}>
+                Service Economy<br />Digitization
             </h4>
             <p className="muted">Empowering salons, clinics, micro-businesses.</p>
-          </div>
+        </div>
 
-          <div className="glass-card industry-cards">
-            <img src="/assets/Retail & Customer Flow Optimization-Photoroom.png" className="sol-img" alt="" />
-            <h4 className="card-heading" style={{ color: "#00C8FF" }}>
-              Retail & Customer<br />Flow Optimization
+        {/* Card 2 */}
+        <div className="glass-card industry-cards">
+            {/* 💡 APPLY DESKTOP-SPECIFIC STYLE HERE */}
+            <img 
+                src="/assets/Retail & Customer Flow Optimization-Photoroom.png" 
+                className="sol-img" 
+                alt="Retail & Customer Flow Optimization" 
+                style={isDesktop ? { width: '70px', height: '70px' } : {}}
+            />
+            <h4 className="card-heading" style={{ 
+                background: "linear-gradient(90deg,#4da3ff,#9bc9ff)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent" 
+            }}>
+                Retail & Customer<br />Flow Optimization
             </h4>
             <p className="muted">Improving customer throughput & operations.</p>
-          </div>
+        </div>
 
-          <div className="glass-card industry-cards">
-            <img src="/assets/Healthcare Wait-Time & Appointment Systems-Photoroom.png" className="sol-img" alt="" />
-            <h4 className="card-heading" style={{ color: "#00C8FF" }}>
-              Healthcare Wait-Time &<br />Appointment Systems
+        {/* Card 3 */}
+        <div className="glass-card industry-cards">
+            {/* 💡 APPLY DESKTOP-SPECIFIC STYLE HERE */}
+            <img 
+                src="/assets/Healthcare Wait-Time & Appointment Systems-Photoroom.png" 
+                className="sol-img" 
+                alt="Healthcare Wait-Time & Appointment Systems" 
+                style={isDesktop ? { width: '70px', height: '70px' } : {}}
+            />
+            <h4 className="card-heading" style={{ 
+                background: "linear-gradient(90deg,#4da3ff,#9bc9ff)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent" 
+            }}>
+                Healthcare Wait-Time &<br />Appointment Systems
             </h4>
             <p className="muted">Reducing congestion in high-footfall environments.</p>
-          </div>
         </div>
-      </section>
+    </div>
+</section>
 
     </div>
   );

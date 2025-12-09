@@ -56,7 +56,7 @@ export default function DeepQPage() {
         {/* HERO SECTION */}
         <section className="deepq-hero-inner" style={{ display: "flex", gap: "40px" }}>
           <div className="deepq-hero-left" style={{ maxWidth: "720px", paddingTop: "40px" }}>
-            <h1 className="hero-title fancy-title" style={{ fontSize: "48px", color:"#00C8FF" }}>
+            <h1 className="hero-title fancy-title" style={{ fontSize: "43px",background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
               DeepQ - <br></br >The Next Generation of<br />Queue Management Systems
             </h1>
 
@@ -73,9 +73,9 @@ export default function DeepQPage() {
 
         {/* WHAT IS DEEPQ */}
         <section style={{ marginTop: "80px" }}>
-          <h2 className="section-title " style={{ marginTop: "100px", fontSize: "30px" , color:"#00C8FF"}}>What is DeepQ?</h2>
+          <h2 className="section-title " style={{ marginTop: "100px", fontSize: "26px" ,background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}}>What is DeepQ?</h2>
 
-          <p className="muted glass-card-deepq" style={{ marginTop: "12px", maxWidth: "750px", fontSize: "24px" }}>
+          <p className="muted glass-card-deepq" style={{ marginTop: "12px", maxWidth: "750px", fontSize: "20px" }}>
             DeepQ is a futuristic queue management system engineered for the unique needs of
             walk-in–heavy businesses such as beauty salons, wellness centers, clinics, and
             service outlets.
@@ -84,7 +84,7 @@ export default function DeepQPage() {
 
         {/* WHY DEEPQ IS DIFFERENT */}
         <section style={{ marginTop: "80px" }}>
-          <h2 className="section-title" style={{ fontSize: "30px" , color:"#00C8FF"}}>Why DeepQ Is Different?</h2>
+          <h2 className="section-title" style={{ fontSize: "26px" , background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}}>Why DeepQ Is Different?</h2>
 
           <div
             className="features-grid"
@@ -96,7 +96,7 @@ export default function DeepQPage() {
             }}
           >
             <div className="feature-box glass-card-deepq hover-card" >
-              <h4 style={{ fontSize: "30px" , color:"#00C8FF"}}>Hybrid-Ready <br />By Design</h4>
+              <h4 style={{ fontSize: "26px" , background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}}>Hybrid-Ready <br />By Design</h4>
               {/* <img
                 src="/assets/torus (3).png"
                 alt="DeepQ Torus"
@@ -112,13 +112,13 @@ export default function DeepQPage() {
                   pointerEvents: "none",
                 }}
               /> */}
-              <p className="muted" style={{ marginTop: "60px",fontSize: "24px" }}>
+              <p className="muted" style={{ marginTop: "60px",fontSize: "20px" }}>
                 Works effortlessly for walk-ins,<br /> scheduled visits, and <br />spontaneous customer flow.
               </p>
             </div>
 
             <div className="feature-box glass-card-deepq hover-card">
-              <h4 style={{ fontSize: "30px", color:"#00C8FF" }}>Real-Time Customer <br />Experience</h4>
+              <h4 style={{ fontSize: "26px",background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}}>Real-Time Customer <br />Experience</h4>
               {/* <img
                 src="/assets/torus (3).png"
                 alt="DeepQ Torus"
@@ -134,13 +134,13 @@ export default function DeepQPage() {
                   pointerEvents: "none",
                 }}
               /> */}
-              <p className="muted" style={{ marginTop: "20px",fontSize: "24px" }}>
+              <p className="muted" style={{ marginTop: "20px",fontSize: "20px" }}>
                 Provides a smooth, modern<br /> journey with live updates and<br /> smart notifications.
               </p>
             </div>
 
             <div className="feature-box glass-card-deepq hover-card">
-              <h4 style={{ fontSize: "30px" , color:"#00C8FF"}}>Designed for <br />Indian Market<br /> Nuances</h4>
+              <h4 style={{ fontSize: "26px" , background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}}>Designed for <br />Indian Market<br /> Nuances</h4>
               {/* <img
                 src="/assets/torus (3).png"
                 alt="DeepQ Torus"
@@ -156,13 +156,13 @@ export default function DeepQPage() {
                   pointerEvents: "none",
                 }}
               /> */}
-              <p className="muted" style={{ marginTop: "20px",fontSize: "24px" }}>
+              <p className="muted" style={{ marginTop: "20px",fontSize: "20px" }}>
                 Built for the country’s dynamic <br />service culture and operational <br />patterns.
               </p>
             </div>
 
             <div className="feature-box glass-card-deepq hover-card">
-              <h4 style={{ fontSize: "30px" , color:"#00C8FF"}}>Enterprise-Grade<br /> Reliability</h4>
+              <h4 style={{ fontSize: "26px" , background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}}>Enterprise-Grade<br /> Reliability</h4>
               {/* <img
                 src="/assets/torus (3).png"
                 alt="DeepQ Torus"
@@ -178,7 +178,7 @@ export default function DeepQPage() {
                   pointerEvents: "none",
                 }}
               /> */}
-              <p className="muted" style={{ marginTop: "60px",fontSize: "24px" }}>
+              <p className="muted" style={{ marginTop: "60px",fontSize: "20px" }}>
                 Runs on cloud-native<br /> foundations ensuring speed,<br /> security, and scale.
               </p>
             </div>
@@ -187,7 +187,7 @@ export default function DeepQPage() {
 
         {/* WHO DEEPQ IS FOR */}
         <section style={{ marginTop: "80px" }}>
-          <h2 className="section-title" style={{ marginTop: "50px",fontSize: "30px" , color:"#00C8FF"}}>Who DeepQ Is For</h2>
+          <h2 className="section-title" style={{ marginTop: "50px",fontSize: "26px" , background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}}>Who DeepQ Is For</h2>
 
           <ul
             className="muted glass-card-deepq"
@@ -196,7 +196,7 @@ export default function DeepQPage() {
               lineHeight: "1.9",
               maxWidth: "600px",
               padding: "20px 26px",
-              fontSize:"24px"
+              fontSize:"20px"
             }}
           >
             <li>Beauty & grooming salons</li>
@@ -208,14 +208,14 @@ export default function DeepQPage() {
 
         {/* FUTURE OF SERVICE FLOW */}
         <section style={{ marginTop: "90px" }}>
-          <h2 className="section-title" style={{ marginTop: "50px",fontSize: "30px", color:"#00C8FF" }}>Future of Service Flow</h2>
+          <h2 className="section-title" style={{ marginTop: "50px",fontSize: "26px",background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Future of Service Flow</h2>
 
-          <p className="muted glass-card-deepq" style={{ marginTop: "14px", maxWidth: "700px" ,fontSize:"24px" }}>
+          <p className="muted glass-card-deepq" style={{ marginTop: "14px", maxWidth: "700px" ,fontSize:"20px" }}>
             DeepQ represents a shift from traditional manual queues to intelligent,
             digital-first flow systems that boost customer satisfaction and business productivity.
           </p>
 
-          <a href="/contact" className="btn ghost hover-outline" style={{ marginTop: "24px",fontSize:"24px" }}>
+          <a href="/contact" className="btn ghost hover-outline" style={{color:"white", marginTop: "24px",fontSize:"24px" }}>
             Contact DeepCode Labs
           </a>
         </section>

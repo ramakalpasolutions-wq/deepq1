@@ -22,9 +22,9 @@ export default function ContactPage() {
           </p>
 
           <div className="glass-card-contact mt-6 fade-in-delayed" style={{ width: "100%", maxWidth: 900, padding: 26, marginTop: 15}}>
-            <p className="muted"><strong style={{color:"#00C8FF"}}>📧 Email:</strong> info@deepcodelabs.io</p>
-            <p className="muted"><strong style={{color:"#00C8FF"}}>🌐 Website:</strong> deepcodelabs.io</p>
-            <p className="muted"><strong style={{color:"#00C8FF"}}>📍 Locations:</strong> Hyderabad • Chennai • Bangalore</p>
+            <p className="muted"><strong style={{background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}}>📧 Email:</strong> info@deepcodelabs.io</p>
+            <p className="muted"><strong style={{background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}}>🌐 Website:</strong> deepcodelabs.io</p>
+            <p className="muted"><strong style={{background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}}>📍 Locations:</strong> Hyderabad • Chennai • Bangalore</p>
           </div>
 
           <form onSubmit={handleSubmit} className="contact-form glass-card fade-in-delayed-2" style={{ marginTop: 28, width: "100%", maxWidth: 900, padding: 28 }}>
