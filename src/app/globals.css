@@ -317,6 +317,7 @@ body:has(.mobile-nav) {
 
 .hero-content {
   max-width: 800px;
+  margin-top: -150px;
 }
 
 .hero-title {

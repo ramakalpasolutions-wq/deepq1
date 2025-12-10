@@ -12,7 +12,7 @@ export default function Home() {
       {/* HERO */}
       <section className="hero fade-in">
         <div className="hero-content">
-          <h1 className="hero-title gradient-text">
+          <h1 className="hero-title gradient-text" style={{margintop:"-30px"}}>
             BUILDING THE FUTURE<br />
             OF REAL-TIME<br />
             INTELLIGENT SYSTEMS
