@@ -901,7 +901,7 @@ section {
   }
 
   .capabilities-grid, .capabilities-grid-2x2 {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 2fr);
     max-width: 100%;
   }
   
@@ -951,7 +951,7 @@ section {
   .capabilities-grid,
   .capabilities-grid-2x2,
   .industry-grid {
-    grid-template-columns: 2fr;
+    grid-template-columns: 1fr;
     gap: 16px;
     margin-left: 0;
     text-align: center;
