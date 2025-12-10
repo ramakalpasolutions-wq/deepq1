@@ -30,11 +30,11 @@ export default function Home() {
 
       {/* WHO WE ARE + DEEPQ */}
       <section>
-        <div className="section-content" style={{ marginTop: "-100px" }}>
+        <div className="section-content" style={{ marginTop: "-180px" }}>
           <div className="two-col">
             {/* LEFT - WHO WE ARE */}
             <div>
-              <h2 className="section-title gradient-text">Who We Are</h2>
+              <h2 className="section-title gradient-text" style={{fontWeight:"bold"}}>Who We Are</h2>
               <p style={{ fontSize: "18px", lineHeight: "1.7", marginBottom: "24px" }}>
                 DeepCode Labs is a technology innovation studio focused on designing
                 and building future-ready, high-performance digital systems for India's
@@ -51,7 +51,7 @@ export default function Home() {
             {/* RIGHT - INTRODUCING DEEPQ */}
             <div>
               <div className="deepq-card" style={{ marginright: "300px" }}>
-                <h2 className="section-title gradient-text">
+                <h2 className="section-title gradient-text"style={{fontWeight:"bold"}}>
                   Introducing<br />DeepQ
                 </h2>
                 <img
