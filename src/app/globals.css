@@ -524,7 +524,7 @@ section {
 }
 
 .footer-links a {
-  color: grey;
+  color: #9bc9ff;
   text-decoration: none;
   transition: color 0.3s;
 }
