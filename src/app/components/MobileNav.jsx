@@ -14,11 +14,27 @@ export default function MobileNav() {
     setOpen(false);
   }, [pathname]);
 
+  // optional: close on Escape
+  useEffect(() => {
+    if (!open) return;
+
+    function handleKeyDown(event) {
+      if (event.key === "Escape") {
+        setOpen(false);
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [open]);
+
   return (
     <>
       <button
         className="mobile-menu-btn"
-        aria-label="Toggle menu"
+        aria-label="Toggle navigation menu"
+        aria-expanded={open}
+        aria-controls="mobile-nav"
         onClick={() => setOpen((s) => !s)}
       >
         <span className={`bar ${open ? "open" : ""}`} />
@@ -27,12 +43,22 @@ export default function MobileNav() {
       </button>
 
       {open && (
-        <nav className="mobile-nav" role="dialog" aria-modal="true">
+        <nav
+          id="mobile-nav"
+          className="mobile-nav"
+          aria-label="Mobile navigation"
+        >
           <Link href="/">Home</Link>
           <Link href="/deepq">DeepQ</Link>
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
-          <button className="btn primary" onClick={() => setOpen(false)} style={{ marginTop: 10 }}>Close</button>
+          <button
+            className="btn primary"
+            onClick={() => setOpen(false)}
+            style={{ marginTop: 10 }}
+          >
+            Close
+          </button>
         </nav>
       )}
     </>

@@ -1,43 +1,38 @@
-/* -------------------------------------------------------
-   TAILWIND RESET
-------------------------------------------------------- */
+/* ===== TAILWIND ===== */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* -------------------------------------------------------
-   THEME VARIABLES
-------------------------------------------------------- */
-:root{
-  --background:#05060a;
-  --foreground:grey;
-  --neon-blue:#4da3ff;
-  --neon-glow:#008cff;
-  --card-bg: rgba(255,255,255,0.02);
-
-  --fs-lg: clamp(26px, 3vw, 48px);
-  --fs-md: clamp(18px, 2vw, 28px);
-  --fs-sm: clamp(14px, 1.4vw, 20px);
+/* ===== THEME ===== */
+:root {
+  --bg: #05060a;
+  --text: #9fc9ff;
+  --accent: #4da3ff;
+  --gradient: linear-gradient(90deg, #4da3ff, #9bc9ff);
 }
 
-/* -------------------------------------------------------
-   GLOBAL RESET
-------------------------------------------------------- */
-*{margin:0;padding:0;box-sizing:border-box}
-html,body{height:100%}
-body{
-  font-family:"Poppins",system-ui,sans-serif;
-  background:var(--background);
-  color:var(--foreground);
-  overflow-x:hidden;
+/* ===== RESET ===== */
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
 }
 
-/* BACKGROUND LAYER (fixed decorative) */
-/* -------------------------------------------------------
-   FIXED BACKGROUND (Optimized)
-------------------------------------------------------- */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  position: relative;
+}
+
+/* ===== BACKGROUND ===== */
 .bg-layer {
-  position: fixed;
+    position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -63,989 +58,1119 @@ main, section, .page {
   position: relative;
   z-index: 3 !important;
 }
-/* -------------------------------------------------------
-   ANIMATIONS
-------------------------------------------------------- */
-.fade-in{animation:fadeIn .9s ease-out forwards; opacity:0}
-.fade-in-delayed{animation:fadeIn 1.2s ease-out forwards; opacity:0}
-.fade-in-delayed-2{animation:fadeIn 1.4s ease-out forwards; opacity:0}
 
-@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-@keyframes slowSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-
-/* -------------------------------------------------------
-   BUTTONS
-------------------------------------------------------- */
-.btn{display:inline-block;text-decoration:none;border-radius:10px;padding:12px 22px;font-weight:600;transition:.25s;font-size:var(--fs-sm)}
-.btn.primary{background:rgba(0,122,255,0.38);color:white}
-.btn.ghost{border:2px solid var(--neon-blue);color:var(--neon-blue)}
-.hover-glow:hover{box-shadow:0 0 18px rgba(0,140,255,0.55);transform:translateY(-2px)}
-
-/* -------------------------------------------------------
-   NAVIGATION (DESKTOP)
-------------------------------------------------------- */
-.site-nav{
-  position:sticky;top:0;background:rgba(5,6,10,0.55);backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(77,163,255,0.05);z-index:50;
+/* ===== ANIMATIONS ===== */
+.fade-in { 
+  animation: fadeIn 0.9s ease-out forwards; 
+  opacity: 0; 
 }
-.nav-inner{
-  max-width:1500px;padding:10px clamp(14px,4vw,40px);margin:auto;display:flex;justify-content:space-between;align-items:center;
-}
-.nav-links a{margin-left:clamp(8px,1.4vw,22px);font-size:clamp(13px,1.3vw,18px);color:#a8c9ff;text-decoration:none;font-weight:600}
-.nav-links a:hover{color:var(--neon-blue)}
 
-/* -------------------------------------------------------
-   MOBILE NAV
-------------------------------------------------------- */
-.mobile-menu-btn{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer}
-.mobile-menu-btn .bar{width:28px;height:3px;background:var(--neon-blue);border-radius:3px;transition:.3s}
-    @media (max-width:1024px){
-      .mobile-menu-btn{display:flex} 
-    .nav-links{display:none} 
-
-    }
-
-/* Slide panel */
-.mobile-nav{
-  position:fixed;top:0;right:0;width:72%;max-width:360px;height:100vh;background:rgba(10,12,18,0.95);
-  backdrop-filter:blur(10px);padding:100px 30px;display:flex;flex-direction:column;gap:22px;animation:fadeIn .35s ease forwards;z-index:999;
-}
-.mobile-nav a{font-size:22px;color:white;text-decoration:none;font-weight:600}
-.mobile-nav a:hover{color:var(--neon-blue)}
-
-/* -------------------------------------------------------
-   HERO + GRID (desktop unchanged)
-------------------------------------------------------- */
-.hero{min-height:100vh;padding-top:60px;display:flex;align-items:center}
-.home-grid{width:92%;max-width:1500px;margin:auto;display:grid;grid-template-columns:1.6fr 1fr;gap:60px}
-
-/* Tablet keeps two columns but slightly narrower left */
-@media (max-width:1024px){ .home-grid{grid-template-columns:1.2fr 1fr} }
-
-/* Mobile stacks */
-@media (max-width:768px){ .home-grid{grid-template-columns:1fr} .hero-right{margin-top:40px;display:block} }
-
-/* -------------------------------------------------------
-   CAPABILITIES GRID
-------------------------------------------------------- */
-.capabilities-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:22px}
-.capability-card{padding:14px;border-radius:16px;background:rgba(255,255,255,0.03);border:1px solid rgba(77,163,255,0.08);text-align:center}
-/* ===========================================================
-   FIX CAPABILITY CARDS FOR MOBILE + TABLET
-=========================================================== */
-@media (max-width: 1024px) {
-  .capability-card {
-    margin-top: 0 !important;    /* remove huge desktop spacing */
-    width: 100% !important;      /* auto fit full width */
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
   }
 }
 
-.cap-icon{width:clamp(60px,9vw,120px);height:auto;margin:auto}
-
-/* -------------------------------------------------------
-   INDUSTRY SOLUTIONS
-------------------------------------------------------- */
-.solutions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:25px}
-.glass-card-ind{position:relative;padding:26px;background:rgba(255,255,255,0.04);border-radius:20px;border:1px solid rgba(255,255,255,0.08);overflow:hidden}
-.sol-img{position:absolute;width:110px;right:25px;top:50%;transform:translateY(-50%);filter:drop-shadow(0 0 20px rgba(77,163,255,0.45));}
-@media (max-width:1024px){ .solutions-grid{grid-template-columns:repeat(2,1fr)} }
-@media (max-width:768px){ .solutions-grid{grid-template-columns:1fr} .sol-img{width:80px;right:14px} }
-
-/* -------------------------------------------------------
-   DEEPQ CARD + TORUS (always inside card)
-------------------------------------------------------- */
-.deepq-home-card{position:relative;overflow:hidden;border-radius:20px;padding:26px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06)}
-.deepq-card-img{position:absolute;right:-10px;bottom:-10px;width:260px;opacity:0.95;animation:slowSpin 80s linear infinite;pointer-events:none}
-@media (max-width:1024px){ .deepq-home-card{width:480px !important;height:380px !important} .deepq-card-img{width:210px;right:-8px;bottom:-8px} }
-@media (max-width:768px){ .deepq-home-card{width:100% !important;height:360px !important;margin:0 auto} .deepq-card-img{width:160px;right:0;bottom:0} }
-
-/* -------------------------------------------------------
-   FOOTER
-------------------------------------------------------- */
-.site-footer{padding:40px 0;background:rgba(5,6,10,0.35);border-top:1px solid rgba(77,163,255,0.05)}
-.footer-container{max-width:1500px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:30px;padding:20px clamp(20px,4vw,60px)}
-.footer-title{font-size:20px;color:white;margin-bottom:10px}
-.footer-links{display:flex;flex-direction:column;gap:8px}
-.footer-links a{color:#9fc9ff;text-decoration:none}
-.footer-links a:hover{color:var(--neon-blue)}
-.social-row{display:flex;gap:16px}
-.footer-copy{opacity:.7;margin-top:16px}
-@media (max-width:768px){ .footer-container{align-items:center;gap:22px} .social-row{gap:18px} }
-
-/* UNIVERSAL */
-img{max-width:100%;height:auto}
-section{overflow:hidden}
-p{word-wrap:break-word}
-/* -------------------------------------------------------
-   HOME PAGE RESPONSIVE FIXES
-------------------------------------------------------- */
-
-/* LEFT COLUMN SPACING */
-.home-left-responsive {
-  margin-left: 80px;
-  margin-top: 80px;
-}
-
-@media (max-width: 1024px) {
-  .home-left-responsive {
-    margin-left: 40px !important;
-    margin-top: 40px !important;
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
   }
-}
-
-@media (max-width: 768px) {
-  .home-left-responsive {
-    margin-left: 10px !important;
-    margin-right: 10px !important;
-    margin-top: 20px !important;
-    text-align: left;
-  }
-}
-
-/* HERO TITLE */
-.hero-title-responsive {
-  width: 800px;
-}
-
-@media (max-width: 1024px) {
-  .hero-title-responsive { width: 600px; font-size: 40px !important; }
-}
-
-@media (max-width: 768px) {
-  .hero-title-responsive { width: 100%; font-size: 32px !important; }
-}
-
-/* DESCRIPTION TEXT */
-.hero-desc-responsive {
-  font-size: 24px;
-}
-
-@media (max-width: 1024px) {
-  .hero-desc-responsive { font-size: 20px !important; }
-}
-
-@media (max-width: 768px) {
-  .hero-desc-responsive { font-size: 18px !important; }
-}
-
-/* CTA BUTTON */
-.hero-cta-responsive .cta-btn {
-  width: 150px;
-}
-
-@media (max-width: 768px) {
-  .hero-cta-responsive .cta-btn {
-    width: 100%;
-    display: block;
-    text-align: center;
-  }
-}
-
-/* WHO WE ARE SPACING */
-.who-section-responsive { margin-top: 60px; }
-@media (max-width: 768px) {
-  .who-section-responsive { margin-top: 40px; }
-}
-
-/* CAPABILITIES GRID FIX */
-.cap-grid-responsive {
-  gap: 20px !important;
-}
-
-@media (max-width: 768px) {
-  .cap-grid-responsive {
-    grid-template-columns: 1fr !important;
-    gap: 14px !important;
-  }
-}
-
-/* INDUSTRY SOLUTIONS */
-.industry-responsive {
-  margin-top: 60px;
-}
-
-@media (max-width: 768px) {
-  .industry-responsive { margin-top: 40px; }
-}
-
-.solutions-grid-responsive {
-  gap: 22px;
-}
-
-@media (max-width: 768px) {
-  .solutions-grid-responsive {
-    grid-template-columns: 1fr !important;
-  }
-}
-
-/* RIGHT — DEEPQ CARD */
-.hero-right-responsive {
-  display: flex;
-  justify-content: bottom;
-  margin-top: 0px;
-  padding: 10px;
-}
-
-.deepq-card-responsive {
-  width: 600px;
-  height: 450px;
-  margin-left: -50px;
-  margin-top: 450px;
-}
-
-/* TABLET FIX */
-@media (max-width: 1024px) {
-  .deepq-card-responsive {
-    width: 450px !important;
-    height: 360px !important;
-    margin-left: 0 !important;
-    margin-top: 40px !important;
-  }
-}
-
-/* MOBILE FIX */
-@media (max-width: 768px) {
-  .deepq-card-responsive {
-    width: 100% !important;
-    height: 330px !important;
-    margin: 0 auto !important;
-    margin-top: 30px !important;
-  }
-}
-
-/* TORUS SCALING */
-.deepq-torus-responsive {
-  width: 400px;
-  margin-bottom: 100px;
-}
-
-@media (max-width: 1024px) {
-  .deepq-torus-responsive { width: 200px !important; }
-}
-
-@media (max-width: 768px) {
-  .deepq-torus-responsive { width: 280px !important; 
-  margin: 100px;}
-}
-
-@media (max-width: 425px) {
-  .deepq-torus-responsive { width: 140px !important; }
-}
-
-
-/* INTRO TEXT INSIDE CARD */
-.intro-title-responsive { font-size: 38px; }
-@media (max-width: 768px) { .intro-title-responsive { font-size: 26px !important; } }
-
-.intro-desc-responsive { font-size: 24px; }
-@media (max-width: 768px) { .intro-desc-responsive { font-size: 18px !important; } }
-
-.intro-btn-responsive {
-  margin-top: 10px;
-}
-
-@media (max-width: 768px) {
-  .intro-btn-responsive {
-    width: 100%;
-    display: block;
-    text-align: center;
-  }
-}
-/* ============================================================
-   DEEPQ PAGE — RESPONSIVE LAYOUT (NO DESKTOP CHANGES)
-   Desktop = unchanged.
-   Tablet = two-column but compressed.
-   Mobile = full stacked layout.
-============================================================ */
-
-/* OUTER WRAPPER */
-@media (max-width: 1024px) {
-  .deepq-wrapper {
-    padding: 40px 40px !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .deepq-wrapper {
-    padding: 26px !important;
-    width: 94% !important;
-    margin: 10px auto !important;
-  }
-}
-
-/* TORUS IMAGE TOP RIGHT */
-@media (max-width: 1024px) {
-  .deepq-torus {
-    width: 360px !important;
-    right: 20px !important;
-    top: 30px !important;
+  to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (max-width: 768px) {
-  .deepq-torus {
-    width: 220px !important;
-    right: 5px !important;
-    top: 10px !important;
-    opacity: 0.8;
+@keyframes slowSpin {
+  from {
+    transform: rotate(0deg);
   }
-  .glass-card-deepq{
-    width: fit-content;
-        background:rgba(255,255,255,0.04);border-radius:8px;border:1px solid rgba(255,255,255,0.08);overflow:hidden;
-        padding: 2px;
-        text-align: center;
-        width: fit-content;
-        text-align: center;
-  }
-}
-@media (max-width: 400px){ .glass-card-deepq{
-    width: fit-content;
-        background:rgba(255,255,255,0.04);border-radius:8px;border:1px solid rgba(255,255,255,0.08);overflow:hidden;
-        padding: 2px;
+  to {
+    transform: rotate(360deg);
   }
 }
 
-/* HERO INNER FLEX */
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+}
+
+.btn.primary {
+  background: rgba(0,122,255,0.4);
+  color: white;
+}
+
+.btn.ghost {
+  border: 2px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(77,163,255,0.5);
+}
+
+/* ===== NAVIGATION ===== */
+.site-nav {
+  position: sticky;
+  top: 0;
+  background: rgba(5,6,10,0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(77,163,255,0.1);
+  z-index: 50;
+}
+
+.nav-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-img {
+  width: 200px;
+  height: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover { 
+  color: var(--accent); 
+}
+
+/* ===== MOBILE MENU BUTTON ===== */
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 60;
+}
+
+.mobile-menu-btn .bar {
+  width: 28px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-btn .bar.open:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.mobile-menu-btn .bar.open:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-btn .bar.open:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* ===== MOBILE NAVIGATION OVERLAY ===== */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(5, 6, 10, 0.98);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  z-index: 45;
+  animation: slideDown 0.3s ease-out;
+}
+
+.mobile-nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 26px;
+  font-weight: 600;
+  transition: all 0.3s;
+  padding: 12px 24px;
+  border-radius: 8px;
+}
+
+.mobile-nav a:hover {
+  color: var(--accent);
+  background: rgba(77, 163, 255, 0.1);
+}
+
+.mobile-nav .btn {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+/* Prevent body scroll when mobile menu is open */
+body:has(.mobile-nav) {
+  overflow: hidden;
+}
+
+/* ===== GRADIENT TEXT ===== */
+.gradient-text {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 40px;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero-title {
+  font-size: 48px;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.hero-text {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  max-width: 700px;
+  color: var(--text);
+}
+
+/* ===== SECTIONS ===== */
+section {
+  padding: 60px 40px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 300;
+  margin-bottom: 24px;
+}
+
+.section-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ===== CUSTOM TWO COLUMN LAYOUT (HOMEPAGE) - FIXED WIDTH ===== */
+.two-col-custom {
+  display: grid;
+  grid-template-columns: 850px auto;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.who-we-are-section {
+  width: 850px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.deepq-section {
+  width: 450px;
+  margin-left: 0;
+}
+
+/* ===== CAPABILITY GRID 1x4 (FIXED) ===== */
+.capabilities-grid-2x2 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+  width: 100%;
+}
+
+/* ===== TWO COLUMN LAYOUT (FALLBACK) ===== */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+/* ===== CARDS (UPDATED WITH OVERFLOW PREVENTION) ===== */
+.card {
+  background: rgba(10, 15, 25, 0.6);
+  border: 1px solid rgba(77, 163, 255, 0.2);
+  border-radius: 16px;
+  padding: 25px;
+  transition: all 0.3s;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  min-width: 0;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(77, 163, 255, 0.5);
+  box-shadow: 0 0 30px rgba(77, 163, 255, 0.2);
+}
+
+.card-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 16px;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: white;
+}
+
+.card-text {
+  font-size: 15px;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+/* ===== CAPABILITY GRID (FALLBACK) ===== */
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+
+/* ===== INDUSTRY SOLUTIONS ===== */
+.industry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.industry-card {
+  background: rgba(10, 15, 25, 0.6);
+  border: 1px solid rgba(77, 163, 255, 0.2);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  transition: all 0.3s;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.industry-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(77, 163, 255, 0.5);
+  box-shadow: 0 0 30px rgba(77, 163, 255, 0.2);
+}
+
+.industry-icon {
+  width: 100px;
+  margin: 0 auto 20px;
+}
+
+/* ===== DEEPQ INTRO CARD ===== */
+.deepq-card {
+  background: rgba(10, 15, 25, 0.6);
+  border: 1px solid rgba(77, 163, 255, 0.2);
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== FOOTER ===== */
+.site-footer {
+  background: transparent;
+  border-top: 1px solid rgba(77,163,255,0.1);
+  padding: 40px;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-title {
+  font-size: 18px;
+  font-weight: 600;
+   background: linear-gradient(90deg, #4da3ff, #9bc9ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 16px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+}
+
+.footer-links a {
+  color:grey;
+  text-decoration:solid;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover { 
+  color: var(--accent); 
+}
+
+.footer-copy {
+  color: var(--text);
+  opacity: 0.7;
+}
+
+.social-row {
+  display: flex;
+  gap: 16px;
+}
+
+.social-frame {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(77,163,255,0.3);
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.social-frame:hover {
+  background: rgba(77,163,255,0.2);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ===== DEEPQ PAGE STYLES ===== */
+.deepq-wrapper {
+  width: 92%;
+  max-width: 1500px;
+  margin: 10px auto;
+  border-radius: 22px;
+  padding: 60px 70px;
+  background: transparent;
+  border: 2px solid rgba(77, 163, 255, 0.06);
+  backdrop-filter: blur(0px);
+  position: relative;
+}
+
+.deepq-torus {
+  position: absolute;
+  top: 20px;
+  right: 100px;
+  width: 560px;
+  opacity: 11;
+  filter: drop-shadow(0 0 22px rgba(77, 163, 255, 0.45));
+  animation: slowSpin 80s linear infinite;
+  pointer-events: none;
+}
+.deepq-torus-intro {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  width: 360px;
+  opacity: 11;
+  filter: drop-shadow(0 0 22px rgba(77, 163, 255, 0.45));
+  animation: slowSpin 80s linear infinite;
+  pointer-events: none;
+}
+
+.deepq-hero-inner {
+  display: flex;
+  gap: 40px;
+}
+
+.deepq-hero-left {
+  max-width: 720px;
+  padding-top: 40px;
+}
+
+.fancy-title {
+  font-size: 43px;
+  background: linear-gradient(90deg, #4da3ff, #9bc9ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.muted-deepq {
+  max-width: 500px;
+  margin-top: 20px;
+  font-size: 30px;
+  line-height: 1.4;
+}
+
+.glass-card-deepq {
+  background: rgba(10, 15, 25, 0.4);
+  border: 1px solid rgba(77, 163, 255, 0.15);
+  border-radius: 16px;
+  padding: 24px;
+  backdrop-filter: blur(8px);
+}
+
+.muted {
+  color: rgba(159, 201, 255, 0.8);
+  line-height: 1.7;
+}
+
+.hover-outline {
+  border: 2px solid var(--accent);
+}
+
+.hover-outline:hover {
+  background: rgba(77, 163, 255, 0.1);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.feature-box {
+  position: relative;
+}
+
+.hover-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(77, 163, 255, 0.5);
+}
+
+/* ===== CONTACT PAGE STYLES ===== */
+.hero-wide {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 40px;
+}
+
+.hero-left {
+  width: 100%;
+  max-width: 900px;
+}
+
+.lead {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+
+.soft-fade {
+  opacity: 0.9;
+}
+
+.glass-card-contact {
+  background: rgba(10, 15, 25, 0.5);
+  border: 1px solid rgba(77, 163, 255, 0.2);
+  border-radius: 16px;
+  padding: 26px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  margin-top: 24px;
+}
+
+.glass-card-contact p {
+  margin-bottom: 12px;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.glass-card-contact strong {
+  background: linear-gradient(90deg, #4da3ff, #9bc9ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.contact-form {
+  background: rgba(10, 15, 25, 0.5);
+  border: 1px solid rgba(77, 163, 255, 0.2);
+  border-radius: 16px;
+  padding: 32px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  margin-top: 32px;
+}
+
+.contact-form h3 {
+  margin-bottom: 24px;
+  font-size: 28px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 16px;
+  background: rgba(5, 10, 20, 0.6);
+  border: 1px solid rgba(77, 163, 255, 0.3);
+  border-radius: 10px;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  transition: all 0.3s;
+  outline: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(159, 201, 255, 0.5);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 15px rgba(77, 163, 255, 0.3);
+  background: rgba(5, 10, 20, 0.8);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 25px rgba(77, 163, 255, 0.6);
+}
+
+.fade-in-delayed {
+  animation: fadeIn 0.9s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.fade-in-delayed-2 {
+  animation: fadeIn 0.9s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+/* ===== ABOUT PAGE STYLES ===== */
+.about-page {
+  min-height: 100vh;
+}
+
+.about-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.about-section {
+  margin-top: 60px;
+  padding: 0 40px;
+}
+
+.vision-mission-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.vision-mission-card {
+  background: rgba(10, 15, 25, 0.5);
+  border: 1px solid rgba(77, 163, 255, 0.2);
+  border-radius: 16px;
+  padding: 32px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s;
+}
+
+.vision-mission-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(77, 163, 255, 0.5);
+  box-shadow: 0 0 30px rgba(77, 163, 255, 0.2);
+}
+
+.vision-mission-card h3 {
+  font-size: 30px;
+  margin-bottom: 16px;
+  background: linear-gradient(90deg, #4da3ff, #9bc9ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.vision-mission-card p {
+  font-size: 24px;
+  line-height: 1.6;
+  color: rgba(159, 201, 255, 0.8);
+}
+
+.approach-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.approach-card {
+  background: rgba(10, 15, 25, 0.5);
+  border: 1px solid rgba(77, 163, 255, 0.2);
+  border-radius: 16px;
+  padding: 28px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s;
+}
+
+.approach-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(77, 163, 255, 0.5);
+  box-shadow: 0 0 30px rgba(77, 163, 255, 0.2);
+}
+
+.approach-card h4 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  background: linear-gradient(90deg, #4da3ff, #9bc9ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.approach-card p {
+  font-size: 20px;
+  line-height: 1.5;
+  color: rgba(159, 201, 255, 0.8);
+}
+
+/* ===== RESPONSIVE (MOBILE FIRST) ===== */
+@media (max-width: 1200px) {
+  .two-col-custom {
+    grid-template-columns: 750px auto;
+    gap: 30px;
+  }
+
+  .who-we-are-section {
+    width: 750px;
+  }
+
+  .deepq-section {
+    width: 380px;
+  }
+
+  .approach-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .vision-mission-card p {
+    font-size: 22px;
+  }
+
+  .approach-card p {
+    font-size: 18px;
+  }
+}
+
 @media (max-width: 1024px) {
-  .deepq-hero-inner {
-    flex-direction: row !important;
-    gap: 20px !important;
+  .two-col, .two-col-custom {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .who-we-are-section {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .deepq-section {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .capabilities-grid, .capabilities-grid-2x2 {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+  }
+  
+  .industry-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .deepq-hero-inner {
-    flex-direction: column !important;
+  .nav-links { 
+    display: none; 
   }
-}
-
-/* HERO LEFT TEXT BLOCK */
-@media (max-width: 1024px) {
-  .deepq-hero-left {
-    max-width: 600px !important;
-    padding-top: 20px !important;
+  
+  .mobile-menu-btn { 
+    display: flex; 
   }
-}
-
-@media (max-width: 768px) {
-  .deepq-hero-left {
-    max-width: 100% !important;
-    padding-top: 10px !important;
+  
+  .nav-inner {
+    padding: 16px 20px;
   }
-}
-
-/* MAIN TITLE */
-@media (max-width: 1024px) {
-  .deepq-hero-left h1 {
-    font-size: 38px !important;
-    line-height: 1.2;
+  
+  .logo-img {
+    width: 150px;
   }
-}
-
-@media (max-width: 768px) {
-  .deepq-hero-left h1 {
-    font-size: 28px !important;
-    width: 100% !important;
+  
+  .hero {
+    padding: 60px 20px;
+    min-height: 80vh;
   }
-}
-
-/* SUBTEXT PARAGRAPH */
-@media (max-width: 1024px) {
-  .deepq-hero-left p {
-    font-size: 22px !important;
-    max-width: 420px !important;
+  
+  .hero-title {
+    font-size: 32px;
   }
-}
-
-@media (max-width: 768px) {
-  .deepq-hero-left p {
-    font-size: 18px !important;
-    max-width: 100% !important;
+  
+  .hero-text {
+    font-size: 18px;
   }
-}
-
-/* CTA BUTTON */
-@media (max-width: 768px) {
-  .deepq-hero-left .btn {
-    width: 100% !important;
-    text-align: center !important;
+  
+  section {
+    padding: 40px 20px;
   }
-}
-
-/* ==========================================
-   "WHAT IS DEEPQ" + OTHER SECTION HEADERS
-========================================== */
-@media (max-width: 768px) {
+  
   .section-title {
-    font-size: 24px !important;
+    font-size: 28px;
   }
-}
-
-/* PARAGRAPH CONTENTS */
-@media (max-width: 768px) {
-  .muted,
-  .glass-card,
-  .deepq-wrapper p {
-    font-size: 18px !important;
-    
-  }
-  .glass-card{
-    background:rgba(255,255,255,0.04);border-radius:20px;border:px solid rgba(255,255,255,0.08);overflow:hidden;
+  
+  .capabilities-grid,
+  .capabilities-grid-2x2,
+  .industry-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-left: 58px;
     text-align: center;
   }
-}
+  
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .card,
+  .industry-card,
+  .deepq-card {
+    padding: 24px;
+    margin-right: 58px;
+  }
 
-/* ==========================================
-   FEATURES GRID (4 → 2 → 1)
-========================================== */
+  /* DeepQ Page Responsive */
+  .deepq-wrapper {
+    width: 95%;
+    padding: 40px 30px;
+    margin: 10px auto;
+  }
 
-@media (max-width: 1024px) {
+  .deepq-torus {
+    width: 250px;
+    right: 20px;
+    top: 10px;
+    opacity: 0.4;
+  }
+  .deepq-torus-intro{
+    width: 250px;
+    right: 20px;
+    top: 10px;
+    opacity: 11;
+  }
+
+  .deepq-hero-inner {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .deepq-hero-left {
+    max-width: 100%;
+    padding-top: 20px;
+  }
+
+  .fancy-title {
+    font-size: 32px;
+  }
+
+  .muted-deepq {
+    font-size: 20px;
+    max-width: 100%;
+    margin-top: 16px;
+  }
+
   .features-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 20px !important;
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
-}
 
-@media (max-width: 768px) {
-  .features-grid {
-    grid-template-columns: 1fr !important;
-    gap: 18px !important;
+  .glass-card-deepq {
+    padding: 20px;
   }
-}
 
-/* FEATURE BOX FIXES */
-@media (max-width: 1024px) {
-  .feature-box h4 {
-    font-size: 32px !important;
-  }
-}
-@media (max-width: 768px) {
   .feature-box h4 {
     font-size: 22px !important;
   }
+
   .feature-box p {
-    font-size: 18px !important;
     margin-top: 20px !important;
-  }
-}
-
-/* ==========================================
-   “WHO DEEPQ IS FOR” LIST
-========================================== */
-@media (max-width: 768px) {
-  .deepq-wrapper ul {
-    font-size: 18px !important;
-    padding: 16px 18px !important;
-  }
-}
-
-/* ==========================================
-   FUTURE OF SERVICE FLOW SECTION
-========================================== */
-@media (max-width: 768px) {
-  .deepq-wrapper .btn {
-    width: 100% !important;
-    text-align: center !important;
-  }
-}
-
-/* FINAL SPACING */
-@media (max-width: 768px) {
-  section {
-    margin-top: 50px !important;
-  }
-}
-/* ============================================================
-   ABOUT PAGE — MOBILE ONLY (NO DESKTOP / NO TABLET CHANGE)
-   Only screens ≤ 768px get modified
-============================================================ */
-/* ============================================================
-   ABOUT PAGE — DESKTOP + TABLET MARGINS
-   Applies to screens ≥ 768px (tablet + desktop)
-============================================================ */
-
-@media (min-width: 768px) {
-  .about-container {
-    margin-left: 80px !important;
-    margin-right: 80px !important;
-  }
-
-  .about-section {
-    margin-left: 0px !important;
-    margin-right: 80px !important;
-  }
-}
-
-/* ============================================================
-   ABOUT PAGE — MOBILE FIXES (≤ 768px)
-============================================================ */
-
-@media (max-width: 768px) {
-
-  /* Remove margins on mobile */
-  .about-container,
-  .about-section {
-    margin-left: 10 !important;
-    margin-right: 0 !important;
-    width: 92% !important;
-    padding: 0 !important;
-  }
-
-  /* Fix card width */
-  .vision-mission-card,
-  .approach-card {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 auto !important;
-    padding: 20px !important;
-  }
-
-  /* Prevent weird line breaks */
-  .vision-mission-card *,
-  .approach-card * {
-    white-space: normal !important;
-    word-break: normal !important;
-  }
-
-  /* Mobile Heading */
-  .about-container h1 {
-    font-size: 28px !important;
-    line-height: 1.25 !important;
-  }
-
-  /* Mobile paragraph */
-  .about-container .lead {
-    font-size: 18px !important;
-    max-width: 100% !important;
-  }
-
-  /* Section titles */
-  .section-title {
-    font-size: 22px !important;
-    margin-top: 18px !important;
-
-  }
-
-  /* Grid → 1 column */
-  .vision-mission-grid,
-  .approach-grid {
-    grid-template-columns: 1fr !important;
-    gap: 16px !important;
-  }
-
-  .approach-card h4 {
-    font-size: 20px !important;
-  }
-  .approach-card p {
     font-size: 16px !important;
   }
 
-  /* Reduce spacing */
-  section.about-section {
-    margin-top: 30px !important;
+  /* Contact Page Responsive */
+  .hero-wide {
+    padding: 40px 20px;
+    min-height: 70vh;
   }
 
-  /* Disable parallax */
-  .about-left {
-    transform: none !important;
-    opacity: 1 !important;
-  }
-}
-/* ============================================================================
-   HOME PAGE — DESKTOP FINAL LAYOUT (≥1025px ONLY)
-   Matches your reference: 
-   1) Hero left only (right empty)
-   2) Who We Are (left) + Introducing DeepQ (right)
-   3) Industry Solutions full width below both
-============================================================================ */
-@media (min-width: 1025px){
-   /* Your CSS styles for viewports between 1025px and 1440px (inclusive of 1025px, inclusive of 1440px) */
-  /* -------------------------------------------------
-     HERO SECTION — Left content only (right hidden)
-  ------------------------------------------------- */
-  .home-grid {
-    max-width: 1500px !important;
-    margin: 0 0 !important;
-    padding: 0px 60px !important;
-    display: grid !important;
-    grid-template-columns: 1.4fr 1fr !important;
-    column-gap: 0px !important;
-    
+  .hero-left {
+    padding: 0 !important;
   }
 
-  .hero-right-responsive {
-    display: none !important;      /* Completely hide right side */
+  .lead {
+    font-size: 18px;
   }
 
-  .hero-left-responsive {
-    margin-left: 0 !important;
-    margin-top: 40px !important;
-    max-width: 650px !important;
-    
+  .glass-card-contact {
+    padding: 20px;
   }
 
-  .hero-title-responsive {
-    font-size: 46px !important;
-    line-height: 1.25 !important;
-    margin-bottom: 4px !important;
-  }
-
-  .hero-desc-responsive {
-    font-size: 20px !important;
-    line-height: 1.55 !important;
-    max-width: 620px !important;
-    margin-bottom: 0px !important;
-
-    
-  }
-  .hero-cta-responsive{
-  }
-
-  /* -------------------------------------------------
-      WHO WE ARE + INTRODUCING DEEPQ SIDE-BY-SIDE
-  ------------------------------------------------- */
-  .who-grid-desktop {
-    max-width: 1700px !important;
-    display: grid !important;
-    grid-template-columns: 2fr 1fr !important;
-     align-items: start !important;
-    column-gap: 0px !important;        /* tighten spacing */
-    padding-top: 0 !important;
-    margin-top: 0 !important;
-    
-    
-  }
-
-  /* LEFT — Who We Are */
-  .who-left-block {
-    max-width: 650px !important;
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-  }
-  .who-title{
-    transform: translateY(60px);
-  }
-
-  .who-desc-responsive {
-    font-size: 18px !important;
-    line-height: 1.55 !important;
-    margin-top: 20px !important;
-    max-width: 920px !important;
-    transform: translateY(70px);
-
-  }
-
-  .capabilities-grid {
-    grid-template-columns: repeat(4, 1fr) !important;
-    gap: 10px !important;
-    margin-top: 0px !important;
-  }
-
-  /* RIGHT — Introducing DeepQ */
-  .deepq-side {
-    display: flex !important;
-      margin-top: 0 !important;
-      align-items: center !important;
-  }
-
-  .deepq-home-card {
-    width: 520px !important;
-    height: 430px !important;
-    padding: 32px !important;
-    background: rgba(255,255,255,0.03) !important;
-    border: 1px solid rgba(255,255,255,0.06) !important;
-    border-radius: 22px !important;
-    position: relative !important;
-    margin-top: 0 !important;
-    transform: translateY(20px);
-  }
-
-  .deepq-torus-responsive {
-    width: 240px !important;
-    right: -10px !important;
-    bottom: -18px !important;
-  }
-
-  .intro-title-responsive {
-    font-size: 30px !important;
-    margin-bottom: 14px !important;
-  }
-
-  .intro-desc-responsive {
-    font-size: 18px !important;
-    line-height: 1.45 !important;
-    max-width: 380px !important;
-    margin-bottom: 20px !important;
-  }
-
-  /* -------------------------------------------------
-       INDUSTRY SOLUTIONS — Below both columns
-  ------------------------------------------------- */
-  .industry-responsive {
-    max-width: 1500px !important;
-    margin: 0px auto 0 auto !important;
-    padding-left: 40px !important;
-    padding-right: 40px !important;
-    
-  }
-
-  .solutions-grid {
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 34px !important;
-    margin-top: 40px !important;
-  }
-
-  .glass-card {
-    height: 260px !important;
-    padding: 30px !important;
-    border-radius: 20px !important;
-    background: rgba(255,255,255,0.04) !important;
-    border: 1px solid rgba(255,255,255,0.08) !important;
-    position: relative !important;
-  }
-
-  .glass-card h4 {
-    font-size: 22px !important;
-    max-width: 65% !important;
-    line-height: 1.35 !important;
-  }
-
-  .glass-card p {
-    font-size: 17px !important;
-    max-width: 65% !important;
-    margin-top: 8px !important;
-    line-height: 1.45 !important;
-  }
-
-  .glass-card .sol-img {
-    width: 140px !important;
-    right: 24px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-  }
-}
-/* ===========================================================
-   FIX INDUSTRY CARDS FOR MOBILE + TABLET (NO DESKTOP CHANGE)
-=========================================================== */
-@media (max-width: 1024px) {
-
-  /* Make card a normal flex box */
-  .glass-card,
-  .glass-card-ind,
-  .industry-cards {
-    position: relative !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 20px !important;
-    height: auto !important;
-    text-align: center !important;
-  }
-
-  /* FIX the icons — remove absolute, put inside flow */
-  .sol-img {
-    position: static !important;
-    transform: none !important;
-    width: 110px !important;
-    margin: 10px auto !important;
-    display: block !important;
-  }
-
-  /* FIX text alignment */
-  .industry-cards h4,
-  .industry-cards p {
-    max-width: 100% !important;
-    text-align: center !important;
-  }
-}
-
-/* EXTRA FIX FOR MOBILE (≤768px) */
-@media (max-width: 768px) {
-  .sol-img {
-    width: 90px !important;
-  }
-}
-/* Fix DeepQ hero button scrolling issue (desktop only) */
-@media (min-width: 1025px) {
-  .deepq-hero-inner {
-    min-height: 480px !important;  /* fixes the overflow */
-    padding-bottom: 80px !important;  /* prevents overlap */
-    position: relative;
-  }
-
-  .deepq-hero-left {
-    position: relative;
-    z-index: 5; /* ensures content stays above background */
-  }
-}
-/* Fix DeepQ hero button scrolling issue (desktop only) */
-
-
-/* Fix DeepQ hero button scrolling issue (desktop only) */
-@media (min-width: 320px) and (max-width: 768px) {
-  /* This block of styles will ONLY apply when the screen width 
-    is between 320px and 500px, inclusive.
-  */
-
-  .deepq-hero-inner {
-    /* Styles specifically for the common mobile phone range */
-    min-height: 350px; /* Maybe a smaller height is needed here */
-    padding-bottom: 50px; 
-  }
-
-  .deepq-hero-left {
-    /* Mobile-specific adjustments */
-    font-size: 16px; 
-    line-height: 1.4;
-  }
-}
-
-
-/* ===============================
-   FIX TABLET VERSION (768–1024px)
-   DeepQ Features Grid & Card Layout
-================================ */
-@media (min-width: 768px) and (max-width: 1024px) {
-
-  .card-heading{
-     background: linear-gradient(90deg, #4da3ff, #9bc9ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  /* Also support Firefox */
-  background-clip: text;
-  color: transparent;
-  }
-  .section-title{
- background: linear-gradient(90deg, #4da3ff, #9bc9ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  /* Also support Firefox */
-  background-clip: text;
-  color: transparent;
-  }
-
-  .features-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 30px !important;
-  }
-
-  .feature-box {
-    padding: 20px !important;
-    text-align: center !important;
-    height: auto !important;
-    min-height: 260px !important;
-
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-start !important;
-    align-items: center !important;
-  }
-
-  .feature-box h4 {
-    font-size: 24px !important;
-    line-height: 1.3 !important;
-    margin-bottom: 10px !important;
-    text-align: center !important;
-  }
-
-  .feature-box p {
-    font-size: 18px !important;
-    margin-top: 14px !important;
-    line-height: 1.45 !important;
-    max-width: 90% !important;
-    text-align: center !important;
-  }
-}
-/* ================================
-   FIX HERO GAP ON DESKTOP ONLY
-================================ */
-@media screen {
-  .hero {
-    min-height: auto !important;   /* remove forced height */
-    padding-bottom: 20px !important; /* small natural spacing */
-  }
-}
-/* ================================
-   CONTACT FORM — DESKTOP FIX
-================================ */
-/* ================================
-   CONTACT FORM — DESKTOP FIX (FINAL)
-================================ */
-@media (min-width: 1025px) {
-
-  /* Form wrapper aligned properly */
-  .glass-card-contact,
-  .contact-form {
-    width: 100% !important;
-    max-width: 900px !important;    /* same width as your layout */
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  /* Inputs visible, full width */
-  .contact-form input,
-  .contact-form textarea {
-    width: 100% !important;
-    border: 1px solid rgba(255,255,255,0.25);
-    background: rgba(255,255,255,0.03);
-    border-radius: 10px;
-    padding: 14px;
-    color: white;
+  .glass-card-contact p {
     font-size: 16px;
   }
 
-  .contact-form input:focus,
-  .contact-form textarea:focus {
-    border-color: #4da3ff;
-    box-shadow: 0 0 10px rgba(77,163,255,0.6);
-    outline: none;
-  }
-}
-
-/* ============================================
-   FINAL FIX — CONTACT PAGE DESKTOP ALIGNMENT
-=============================================*/
-@media (min-width: 1025px) {
-
-  /* The full wrapper should not shrink or shift */
-  .hero-left {
-    max-width: 900px !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-  }
-
-  /* Fix glass card placement */
-  .glass-card-contact {
-    width: 100% !important;
-    max-width: 900px !important;
-    margin: 20px auto !important;
-  }
-
-  /* Fix form card width + alignment */
   .contact-form {
-    width: 100% !important;
-    max-width: 900px !important;
-    margin: 20px auto !important;
+    padding: 24px;
   }
 
-  /* Inputs must be visible, full width */
+  .contact-form h3 {
+    font-size: 24px;
+  }
+
   .contact-form input,
   .contact-form textarea {
-    width: 100% !important;
-    background: transparent !important;
-    border: 1px solid rgba(255,255,255,0.25) !important;
-    padding: 14px !important;
-    color: white !important;
-    border-radius: 8px !important;
+    font-size: 16px;
+    padding: 14px;
+    min-height: 48px;
   }
 
-  /* Fix spacing so footer does NOT overlap */
-  .page {
-    padding-bottom: 120px !important;
+  .contact-form button {
+    width: 100% !important;
+    height: 52px !important;
+  }
+
+  /* About Page Responsive */
+  .about-container {
+    padding: 0 20px;
+  }
+
+  .about-section {
+    padding: 0 20px;
+    margin-top: 40px;
+  }
+
+  .about-page section:first-of-type {
+    padding-top: 80px !important;
+  }
+
+  .vision-mission-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .vision-mission-card {
+    padding: 24px;
+  }
+
+  .vision-mission-card h3 {
+    font-size: 26px;
+  }
+
+  .vision-mission-card p {
+    font-size: 20px;
+  }
+
+  .approach-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .approach-card {
+    padding: 24px;
+  }
+
+  .approach-card h4 {
+    font-size: 22px;
+  }
+
+  .approach-card p {
+    font-size: 18px;
   }
 }
 
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 28px;
+  }
+  
+  .hero-text {
+    font-size: 16px;
+  }
+  
+  .btn {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+  
+  .mobile-nav a {
+    font-size: 22px;
+  }
+
+  /* DeepQ Page */
+  .deepq-wrapper {
+    padding: 30px 20px;
+    border-radius: 16px;
+  }
+
+  .deepq-torus {
+    width: 180px;
+    right: 10px;
+    opacity: 0.3;
+  }
+
+  .fancy-title {
+    font-size: 28px;
+  }
+
+  .muted-deepq {
+    font-size: 18px;
+  }
+
+  .section-title {
+    font-size: 22px !important;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .glass-card-deepq {
+    padding: 16px;
+  }
+
+  .feature-box h4 {
+    font-size: 20px !important;
+  }
+
+  .feature-box p {
+    font-size: 15px !important;
+  }
+
+  /* Contact Page */
+  .hero-wide {
+    padding: 30px 16px;
+  }
+
+  .lead {
+    font-size: 16px;
+  }
+
+  .glass-card-contact {
+    padding: 16px;
+  }
+
+  .glass-card-contact p {
+    font-size: 15px;
+  }
+
+  .contact-form {
+    padding: 20px;
+  }
+
+  .contact-form h3 {
+    font-size: 22px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  /* About Page */
+  .about-page section:first-of-type {
+    padding-top: 60px !important;
+  }
+
+  .vision-mission-card {
+    padding: 20px;
+  }
+
+  .vision-mission-card h3 {
+    font-size: 24px;
+  }
+
+  .vision-mission-card p {
+    font-size: 18px;
+  }
+
+  .approach-card {
+    padding: 20px;
+  }
+
+  .approach-card h4 {
+    font-size: 20px;
+  }
+
+  .approach-card p {
+    font-size: 16px;
+  }
+}
