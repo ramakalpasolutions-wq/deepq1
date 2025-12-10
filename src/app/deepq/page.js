@@ -131,7 +131,7 @@ export default function DeepQPage() {
             digital-first flow systems that boost customer satisfaction and business productivity.
           </p>
 
-          <a href="/contact" className="btn ghost hover-outline" style={{ color: "white", marginTop: "24px", fontSize: "20px" }}>
+          <a href="/contact" className="btn ghost hover-outline" style={{ fontWeight:"bold",color: "white", marginTop: "24px", fontSize: "20px" }}>
             Contact DeepCode Labs
           </a>
         </section>
