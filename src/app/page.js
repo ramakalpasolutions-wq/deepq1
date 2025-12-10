@@ -30,7 +30,7 @@ export default function Home() {
 
       {/* WHO WE ARE + DEEPQ */}
       <section>
-        <div className="section-content" style={{ marginTop: "-180px" }}>
+        <div className="section-content" style={{ marginTop: "-160px" }}>
           <div className="two-col">
             {/* LEFT - WHO WE ARE */}
             <div>
