@@ -12,7 +12,7 @@ export default function Home() {
       {/* HERO */}
       <section className="hero fade-in">
         <div className="hero-content">
-          <h1 className="hero-title gradient-text" style={{margintop:"-30px"}}>
+          <h1 className="hero-title gradient-text">
             BUILDING THE FUTURE<br />
             OF REAL-TIME<br />
             INTELLIGENT SYSTEMS
@@ -34,7 +34,9 @@ export default function Home() {
           <div className="two-col">
             {/* LEFT - WHO WE ARE */}
             <div>
-              <h2 className="section-title gradient-text" style={{fontWeight:"bold"}}>Who We Are</h2>
+              <h2 className="section-title gradient-text" style={{fontWeight:"bold"}}>
+                Who We Are
+              </h2>
               <p style={{ fontSize: "18px", lineHeight: "1.7", marginBottom: "24px" }}>
                 DeepCode Labs is a technology innovation studio focused on designing
                 and building future-ready, high-performance digital systems for India's
@@ -44,14 +46,12 @@ export default function Home() {
                 Our work sits at the intersection of real-time architecture, geospatial
                 intelligence, AI-driven prediction models, and cloud-scale engineering.
               </p>
-
-              {/* CAPABILITIES GRID */}
             </div>
     
             {/* RIGHT - INTRODUCING DEEPQ */}
             <div>
-              <div className="deepq-card" style={{ marginright: "300px" }}>
-                <h2 className="section-title gradient-text"style={{fontWeight:"bold"}}>
+              <div className="deepq-card">
+                <h2 className="section-title gradient-text" style={{fontWeight:"bold"}}>
                   Introducing<br />DeepQ
                 </h2>
                 <img
@@ -72,15 +72,17 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div className="two-col">
+
+      {/* CAPABILITIES GRID - EQUAL WIDTH CARDS */}
+      <div className="section-content">
         <div className="capabilities-grid" style={{ marginTop: "25px" }}>
-          <div className="card" style={{ width: "200px" }}>
+          <div className="card">
             <img
               src="/assets/Real-Time Distributed Systems-Photoroom - Copy.png"
               className="card-icon"
               alt="Real-Time Systems"
             />
-            <h4 className="card-title gradient-text ">
+            <h4 className="card-title gradient-text">
               Real-Time<br />Distributed Systems
             </h4>
             <p className="card-text" style={{marginTop:"10px"}}>
@@ -88,7 +90,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="card" style={{ width: "200px" }}>
+          <div className="card">
             <img
               src="/assets/Cloud-Native Engineering-Photoroom.png"
               className="card-icon"
@@ -97,12 +99,12 @@ export default function Home() {
             <h4 className="card-title gradient-text">
               Cloud-Native<br />Engineering
             </h4>
-            <p className="card-text" style={{ width: "200px",marginTop:"35px" }}>
-              Scalable, secure <br/>architecture on modern<br/> cloud infrastructure.
+            <p className="card-text" style={{marginTop:"30px"}}>
+              Scalable, secure architecture on modern cloud infrastructure.
             </p>
           </div>
 
-          <div className="card" style={{ width: "200px" }}>
+          <div className="card">
             <img
               src="/assets/AI & Predictive Intelligence2-Photoroom.png"
               className="card-icon"
@@ -111,12 +113,12 @@ export default function Home() {
             <h4 className="card-title gradient-text">
               AI & Predictive<br />Intelligence
             </h4>
-            <p className="card-text" style={{ marginTop:"35px" }}>
+            <p className="card-text" style={{marginTop:"30px"}}>
               Forecasting, predicting wait-times, optimizing resources.
             </p>
           </div>
 
-          <div className="card" style={{ width: "200px" }}>
+          <div className="card">
             <img
               src="/assets/Geospatial & Hyperlocal Computing.png"
               className="card-icon"
@@ -125,7 +127,7 @@ export default function Home() {
             <h4 className="card-title gradient-text">
               Geospatial &<br />Hyperlocal Computing
             </h4>
-            <p className="card-text">
+            <p className="card-text" style={{marginTop:"10px"}}>
               Real-time spatial intelligence blending GPS & analytics.
             </p>
           </div>
@@ -135,7 +137,9 @@ export default function Home() {
       {/* INDUSTRY SOLUTIONS */}
       <section>
         <div className="section-content">
-          <h2 className="section-title gradient-text">Industry Solutions</h2>
+          <h2 className="section-title gradient-text" style={{fontWeight:"bold"}}>
+            Industry Solutions
+          </h2>
 
           <div className="industry-grid">
             <div className="industry-card">
@@ -170,12 +174,13 @@ export default function Home() {
               <img
                 src="/assets/Healthcare Wait-Time & Appointment Systems-Photoroom.png"
                 className="industry-icon"
-                alt="Healthcare"style={{width:"90px"}}
+                alt="Healthcare"
+                style={{width:"90px"}}
               />
               <h4 className="card-title gradient-text" style={{marginBottom:"20px"}}>
                 Healthcare Wait-Time &<br />Appointment Systems
               </h4>
-              <p className="card-text" style={{margintop:"90px"}}>
+              <p className="card-text">
                 Reducing congestion in high-footfall environments.
               </p>
             </div>

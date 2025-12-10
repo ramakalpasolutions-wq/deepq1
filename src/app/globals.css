@@ -430,12 +430,18 @@ section {
   opacity: 0.85;
 }
 
-/* ===== CAPABILITY GRID (FALLBACK) ===== */
+/* ===== CAPABILITY GRID (EQUAL WIDTH) ===== */
 .capabilities-grid {
   display: grid;
-  grid-template-columns: repeat(4, 2fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   margin-top: 40px;
+  max-width: 1200px;
+}
+
+.capabilities-grid .card {
+  width: 70%;
+  max-width: 100%;
 }
 
 /* ===== INDUSTRY SOLUTIONS ===== */
@@ -931,6 +937,10 @@ section {
     padding: 20px 20px 60px 20px;
     min-height: 75vh;
   }
+
+  .hero-content {
+    margin-top: 0;
+  }
   
   .hero-title {
     font-size: 32px;
@@ -948,12 +958,42 @@ section {
     font-size: 28px;
   }
   
-  .capabilities-grid,
-  .capabilities-grid-2x2,
+  /* ===== CAPABILITIES GRID 2x2 ON MOBILE ===== */
+  .capabilities-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px;
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .capabilities-grid .card {
+    width: 100% !important;
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .capabilities-grid .card-title {
+    font-size: 16px;
+  }
+
+  .capabilities-grid .card-text {
+    font-size: 13px;
+    margin-top: 10px !important;
+  }
+
+  .capabilities-grid .card-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .capabilities-grid-2x2 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  
   .industry-grid {
     grid-template-columns: 1fr;
     gap: 16px;
-    margin-left: 0;
     text-align: center;
   }
   
@@ -962,7 +1002,6 @@ section {
     gap: 24px;
   }
   
-  .card,
   .industry-card,
   .deepq-card {
     padding: 24px;
@@ -1134,6 +1173,10 @@ section {
   .hero {
     padding: 10px 20px 40px 20px;
     min-height: 70vh;
+  }
+
+  .hero-content {
+    margin-top: 0;
   }
   
   .hero-title {
