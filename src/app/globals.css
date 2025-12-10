@@ -951,7 +951,7 @@ section {
   .capabilities-grid,
   .capabilities-grid-2x2,
   .industry-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 2fr;
     gap: 16px;
     margin-left: 0;
     text-align: center;

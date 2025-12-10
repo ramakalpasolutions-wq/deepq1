@@ -47,7 +47,7 @@ export default function Home() {
 
               {/* CAPABILITIES GRID */}
             </div>
-
+    
             {/* RIGHT - INTRODUCING DEEPQ */}
             <div>
               <div className="deepq-card" style={{ marginright: "300px" }}>
