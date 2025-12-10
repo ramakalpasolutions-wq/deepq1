@@ -90,7 +90,7 @@ export default function DeepQPage() {
               <h4 style={{ fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                 Designed for<br />Indian Market<br />Nuances
               </h4>
-              <p className="muted" style={{ marginTop: "20px", fontSize: "20px" }}>
+              <p className="muted" style={{ marginTop: "30px", fontSize: "20px" }}>
                 Built for the country's dynamic<br />service culture and operational<br />patterns.
               </p>
             </div>
