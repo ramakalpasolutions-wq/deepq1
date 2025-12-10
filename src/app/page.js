@@ -85,7 +85,7 @@ export default function Home() {
             <h4 className="card-title gradient-text">
               Real-Time<br />Distributed Systems
             </h4>
-            <p className="card-text" style={{marginTop:"10px"}}>
+            <p className="card-text" style={{marginTop:"30px"}}>
               Low-latency, event-driven platforms for thousands of users.
             </p>
           </div>
@@ -127,7 +127,7 @@ export default function Home() {
             <h4 className="card-title gradient-text">
               Geospatial &<br />Hyperlocal Computing
             </h4>
-            <p className="card-text" style={{marginTop:"10px"}}>
+            <p className="card-text" style={{marginTop:"30px"}}>
               Real-time spatial intelligence blending GPS & analytics.
             </p>
           </div>

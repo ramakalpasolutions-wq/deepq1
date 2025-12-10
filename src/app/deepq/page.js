@@ -49,8 +49,8 @@ export default function DeepQPage() {
         </section>
 
         {/* WHAT IS DEEPQ */}
-        <section style={{ marginTop: "80px" }}>
-          <h2 className="section-title" style={{ marginTop: "100px", fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+        <section style={{ marginTop: "0px" }}>
+          <h2 className="section-title" style={{fontWeight:"bold", marginTop: "100px", fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
             What is DeepQ?
           </h2>
 
@@ -63,7 +63,7 @@ export default function DeepQPage() {
 
         {/* WHY DEEPQ IS DIFFERENT */}
         <section style={{ marginTop: "80px" }}>
-          <h2 className="section-title" style={{ fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+          <h2 className="section-title" style={{fontWeight:"bold", fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
             Why DeepQ Is Different?
           </h2>
 
@@ -108,7 +108,7 @@ export default function DeepQPage() {
 
         {/* WHO DEEPQ IS FOR */}
         <section style={{ marginTop: "80px" }}>
-          <h2 className="section-title" style={{ marginTop: "-50px", fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+          <h2 className="section-title" style={{fontWeight:"bold", marginTop: "-50px", fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
             Who DeepQ Is For
           </h2>
 
@@ -122,7 +122,7 @@ export default function DeepQPage() {
 
         {/* FUTURE OF SERVICE FLOW */}
         <section style={{ marginTop: "90px" }}>
-          <h2 className="section-title" style={{ marginTop: "-150px", fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+          <h2 className="section-title" style={{fontWeight:"bold", marginTop: "-150px", fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
             Future of Service Flow
           </h2>
 

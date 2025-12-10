@@ -402,6 +402,7 @@ section {
   min-width: 0;
   overflow: hidden;
   contain: layout paint;
+  text-align: center;
 }
 
 .card:hover {
