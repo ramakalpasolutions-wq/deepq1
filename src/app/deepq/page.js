@@ -30,7 +30,7 @@ export default function DeepQPage() {
 
         {/* HERO SECTION */}
         <section className="deepq-hero-inner">
-          <div className="deepq-hero-left">
+          <div className="deepq-hero-left" style={{marginTop:"-80px"}}>
             <h1 className="hero-title fancy-title">
               DeepQ - <br />
               The Next Generation of<br />
@@ -49,7 +49,7 @@ export default function DeepQPage() {
         </section>
 
         {/* WHAT IS DEEPQ */}
-        <section style={{ marginTop: "0px" }}>
+        <section style={{ marginTop: "-80px" }}>
           <h2 className="section-title" style={{fontWeight:"bold", marginTop: "100px", fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
             What is DeepQ?
           </h2>
@@ -62,7 +62,7 @@ export default function DeepQPage() {
         </section>
 
         {/* WHY DEEPQ IS DIFFERENT */}
-        <section style={{ marginTop: "80px" }}>
+        <section style={{ marginTop: "0px" }}>
           <h2 className="section-title" style={{fontWeight:"bold", fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
             Why DeepQ Is Different?
           </h2>
@@ -70,44 +70,44 @@ export default function DeepQPage() {
           <div className="features-grid">
             <div className="feature-box glass-card-deepq hover-card card">
               <h4 style={{ fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-                Hybrid-Ready<br />By Design
-              </h4>
-              <p className="muted" style={{ marginTop: "60px", fontSize: "20px" }}>
-                Works effortlessly for walk-ins,<br /> scheduled visits, and <br />spontaneous customer flow.
-              </p>
-            </div>
-
-            <div className="feature-box glass-card-deepq hover-card card">
-              <h4 style={{ fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-                Real-Time Customer<br />Experience
+                Hybrid-Ready System
               </h4>
               <p className="muted" style={{ marginTop: "30px", fontSize: "20px" }}>
-                Provides a smooth, modern<br /> journey with live updates and<br /> smart notifications.
+                Works effortlessly for walk-ins, scheduled visits, and spontaneous customer flow.
               </p>
             </div>
 
             <div className="feature-box glass-card-deepq hover-card card">
               <h4 style={{ fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-                Designed for<br />Indian Market<br />Nuances
+                Real-Time Experience
               </h4>
               <p className="muted" style={{ marginTop: "30px", fontSize: "20px" }}>
-                Built for the country's dynamic<br />service culture and operational<br />patterns.
+                Provides a smooth, modern journey with live updates and smart notifications.
               </p>
             </div>
 
             <div className="feature-box glass-card-deepq hover-card card">
               <h4 style={{ fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-                Enterprise-Grade<br />Reliability
+                India-First <br/>Design
               </h4>
-              <p className="muted" style={{ marginTop: "50px", fontSize: "20px" }}>
-                Runs on cloud-native<br /> foundations ensuring speed,<br /> security, and scale.
+              <p className="muted" style={{ marginTop: "30px", fontSize: "20px" }}>
+                Built for the country's dynamic service culture and operational patterns.
+              </p>
+            </div>
+
+            <div className="feature-box glass-card-deepq hover-card card">
+              <h4 style={{ fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+                Enterprise-Grade Reliability
+              </h4>
+              <p className="muted" style={{ marginTop: "30px", fontSize: "20px" }}>
+                Runs on cloud-native foundations ensuring speed, security, and scale.
               </p>
             </div>
           </div>
         </section>
 
         {/* WHO DEEPQ IS FOR */}
-        <section style={{ marginTop: "80px" }}>
+        <section style={{ marginTop: "50px" }}>
           <h2 className="section-title" style={{fontWeight:"bold", marginTop: "-50px", fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
             Who DeepQ Is For
           </h2>

@@ -402,7 +402,7 @@ section {
   min-width: 0;
   overflow: hidden;
   contain: layout paint;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .card:hover {
@@ -617,7 +617,7 @@ section {
 }
 
 .fancy-title {
-  font-size: 43px;
+  font-size: 30px;
   background: linear-gradient(90deg, #4da3ff, #9bc9ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -627,7 +627,7 @@ section {
 .muted-deepq {
   max-width: 500px;
   margin-top: 20px;
-  font-size: 30px;
+  font-size: 23px;
   line-height: 1.4;
 }
 
@@ -637,6 +637,7 @@ section {
   border-radius: 16px;
   padding: 24px;
   backdrop-filter: blur(8px);
+  text-align: left;
 }
 
 .muted {
