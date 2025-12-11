@@ -20,7 +20,7 @@ export default function DeepQPage() {
   return (
     <div className="relative z-20 w-full">
       <div className="deepq-wrapper fade-in">
-        
+
         {/* TORUS TOP-RIGHT IMAGE */}
         <img
           src="/assets/torus (3).png"
@@ -30,16 +30,13 @@ export default function DeepQPage() {
 
         {/* HERO SECTION */}
         <section className="deepq-hero-inner">
-          <div className="deepq-hero-left" style={{marginTop:"-80px"}}>
+          <div className="deepq-hero-left" style={{ marginTop: "-80px" }}>
             <h1 className="hero-title fancy-title">
-              DeepQ - <br />
-              The Next Generation of<br />
-              Queue Management Systems
+              DeepQ — Next-Generation <br />Queue Systems
             </h1>
 
             <p className="muted-deepq glass-card-deepq">
-              An intelligent, hyperlocal, real-time platform designed to modernize customer flow
-              and service delivery in India's fast-moving service economy.
+              DeepQ is a hyperlocal, real-time intelligence platform built to transform customer flow and modernize service delivery. Designed for India’s fast-moving service economy, it brings speed, transparency, and efficiency to every interaction.
             </p>
 
             <a className="btn ghost hover-outline" href="/contact" style={{ marginTop: "25px" }}>
@@ -50,20 +47,18 @@ export default function DeepQPage() {
 
         {/* WHAT IS DEEPQ */}
         <section style={{ marginTop: "-80px" }}>
-          <h2 className="section-title" style={{fontWeight:"bold", marginTop: "100px", fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+          <h2 className="section-title" style={{ fontWeight: "bold", marginTop: "100px", fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
             What is DeepQ?
           </h2>
 
           <p className="muted glass-card-deepq" style={{ marginTop: "12px", maxWidth: "750px", fontSize: "20px" }}>
-            DeepQ is a futuristic queue management system engineered for the unique needs of
-            walk-in–heavy businesses such as beauty salons, wellness centers, clinics, and
-            service outlets.
+            DeepQ is a next-generation queue intelligence platform built for high-footfall, walk-in–driven businesses, enabling smoother customer flow and real-time operational efficiency across clinics, wellness centers, and service outlets.
           </p>
         </section>
 
         {/* WHY DEEPQ IS DIFFERENT */}
         <section style={{ marginTop: "0px" }}>
-          <h2 className="section-title" style={{fontWeight:"bold", fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+          <h2 className="section-title" style={{ fontWeight: "bold", fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
             Why DeepQ Is Different?
           </h2>
 
@@ -73,7 +68,7 @@ export default function DeepQPage() {
                 Hybrid-Ready System
               </h4>
               <p className="muted" style={{ marginTop: "30px", fontSize: "20px" }}>
-                Works effortlessly for walk-ins, scheduled visits, and spontaneous customer flow.
+                Designed for the next era of service flow, DeepQ seamlessly orchestrates walk-ins, scheduled visits, and dynamic real-time demand through intelligent, adaptive queue logic.
               </p>
             </div>
 
@@ -82,16 +77,16 @@ export default function DeepQPage() {
                 Real-Time Experience
               </h4>
               <p className="muted" style={{ marginTop: "30px", fontSize: "20px" }}>
-                Provides a smooth, modern journey with live updates and smart notifications.
+                Delivers an ultra-responsive, modern customer journey powered by instant updates, predictive alerts, and smart notifications that keep every interaction in sync.
               </p>
             </div>
 
             <div className="feature-box glass-card-deepq hover-card card">
               <h4 style={{ fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-                India-First<br/> Design
+                India-First<br /> Design
               </h4>
               <p className="muted" style={{ marginTop: "30px", fontSize: "20px" }}>
-                Built for the country's dynamic service culture and operational patterns.
+                Engineered for the complexity and pace of India’s service ecosystem, DeepQ adapts to hyperlocal patterns, cultural behaviors, and high-volume operational environments.
               </p>
             </div>
 
@@ -100,7 +95,7 @@ export default function DeepQPage() {
                 Enterprise-Grade Reliability
               </h4>
               <p className="muted" style={{ marginTop: "30px", fontSize: "20px" }}>
-                Runs on cloud-native foundations ensuring speed, security, and scale.
+                Built on cloud-native, distributed architecture to guarantee unmatched speed, security, and scalability—even under peak footfall and concurrent user loads.
               </p>
             </div>
           </div>
@@ -108,7 +103,7 @@ export default function DeepQPage() {
 
         {/* WHO DEEPQ IS FOR */}
         <section style={{ marginTop: "50px" }}>
-          <h2 className="section-title" style={{fontWeight:"bold", marginTop: "-50px", fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+          <h2 className="section-title" style={{ fontWeight: "bold", marginTop: "-50px", fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
             Who DeepQ Is For
           </h2>
 
@@ -122,16 +117,15 @@ export default function DeepQPage() {
 
         {/* FUTURE OF SERVICE FLOW */}
         <section style={{ marginTop: "90px" }}>
-          <h2 className="section-title" style={{fontWeight:"bold", marginTop: "-150px", fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+          <h2 className="section-title" style={{ fontWeight: "bold", marginTop: "-150px", fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
             Future of Service Flow
           </h2>
 
           <p className="muted glass-card-deepq" style={{ marginTop: "14px", maxWidth: "700px", fontSize: "20px" }}>
-            DeepQ represents a shift from traditional manual queues to intelligent,
-            digital-first flow systems that boost customer satisfaction and business productivity.
+           DeepQ marks a breakthrough in how service flow is managed—moving beyond manual queues to intelligent, digital-first systems that elevate customer experience, maximize throughput, and unlock new levels of operational efficiency.
           </p>
 
-          <a href="/contact" className="btn ghost hover-outline" style={{ fontWeight:"bold",color: "white", marginTop: "24px", fontSize: "20px" }}>
+          <a href="/contact" className="btn ghost hover-outline" style={{ fontWeight: "bold", color: "white", marginTop: "24px", fontSize: "20px" }}>
             Contact DeepCode Labs
           </a>
         </section>

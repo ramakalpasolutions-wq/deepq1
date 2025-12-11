@@ -63,20 +63,28 @@ export default function AboutPage() {
           </h2>
           <div className="approach-grid">
             <div className="approach-card hover-card">
-              <h4 style={{ fontSize: "26px" }}>Innovation First</h4>
-              <p style={{ fontSize: "20px", marginTop: "40px" }}>We design with the future in mind.</p>
+              <h4 style={{ fontSize: "26px" }}>Innovation Engineered</h4>
+              <p style={{ fontSize: "20px", marginTop: "40px" }}>We build adaptive, AI-forward systems designed to evolve with emerging technologies.
+Every solution is crafted to stay ahead of tomorrow’s challenges.
+</p>
             </div>
             <div className="approach-card hover-card">
-              <h4 style={{ fontSize: "26px" }}>Technology with Purpose</h4>
-              <p style={{ fontSize: "20px" }}>Practical solutions that solve real-world challenges.</p>
+              <h4 style={{ fontSize: "26px" }}>Intelligent Purpose Tech</h4>
+              <p style={{ fontSize: "20px" ,marginTop:"40px"}}>Our platforms use AI-driven logic to solve real-world problems with precision and clarity.
+Technology is built with intent—optimized for impact, efficiency, and scalability.
+</p>
             </div>
             <div className="approach-card hover-card">
-              <h4 style={{ fontSize: "26px" }}>Scalable & Secure</h4>
-              <p style={{ fontSize: "20px", marginTop: "40px" }}>Built on robust cloud-native foundations.</p>
+              <h4 style={{ fontSize: "26px" }}>Hyper-Scalable Architecture</h4>
+              <p style={{ fontSize: "20px", marginTop: "40px" }}>AI-enhanced, cloud-native foundations allow our systems to scale without limits.
+Speed, resilience, and reliability remain constant—even under extreme demand.
+</p>
             </div>
             <div className="approach-card hover-card">
-              <h4 style={{ fontSize: "26px" }}>Human-Centric</h4>
-              <p style={{ fontSize: "20px", marginTop: "40px" }}>Prioritizing simplicity, speed, and intuitive experiences.</p>
+              <h4 style={{ fontSize: "26px" }}>Human-Aligned Design</h4>
+              <p style={{ fontSize: "20px", marginTop: "40px" }}>We create interfaces that adapt intelligently to user behavior in real time.
+Every interaction is engineered to be seamless, intuitive, and effortlessly fast.
+</p>
             </div>
           </div>
         </section>

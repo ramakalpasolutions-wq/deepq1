@@ -154,10 +154,10 @@ export default function Home() {
 
                 />
                 <h4 className="card-title gradient-text">
-                  Service Economy<br />Digitization
+                  Service Digitization
                 </h4>
                 <p className="card-text" style={{marginTop:"20px"}}>
-                  Empowering salons, clinics, micro-businesses.
+                 We help service businesses transition from manual processes to seamless, real-time digital operations. Our solutions modernize workflows, improve transparency, and elevate customer experience.
                 </p>
               </div>
 
@@ -170,10 +170,10 @@ export default function Home() {
 
                 />
                 <h4 className="card-title gradient-text">
-                  Retail & Customer<br />Flow Optimization
+                 Retail Flow Control
                 </h4>
                 <p className="card-text" style={{marginTop:"20px"}}>
-                  Improving customer throughput & operations.
+                 Optimize customer movement and reduce bottlenecks with intelligent, data-driven flow management. Our system enhances efficiency, boosts throughput, and ensures smoother in-store experiences.
                 </p>
               </div>
 
@@ -185,10 +185,10 @@ export default function Home() {
                  style={{width:"80px" ,height:"80px"}}
                 />
                 <h4 className="card-title gradient-text" style={{marginBottom:"20px"}}>
-                  Healthcare Wait-Time &<br />Appointment Systems
+                  Healthcare Queues
                 </h4>
                 <p className="card-text">
-                  Reducing congestion in high-footfall environments.
+                  Streamline patient wait times with real-time queue visibility and smart scheduling. Designed for clinics and diagnostic centers, it improves service flow while reducing congestion and delays.
                 </p>
               </div>
             </div>
