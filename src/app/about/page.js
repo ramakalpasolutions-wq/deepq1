@@ -23,10 +23,10 @@ export default function AboutPage() {
         {/* HERO SECTION */}
         <section style={{ padding: 0, marginTop: 40, marginBottom: 60 }}>
           <div className="about-left" style={{ maxWidth: "100%" }}>
-            <h1 className="fancy-title" style={{ fontSize: 48 }}>
+            <h1 className="fancy-title" style={{ fontSize:"30px" }}>
               About DeepCode Labs
             </h1>
-            <p className="lead soft-fade muted" style={{ fontSize: 24, maxWidth: 900, marginTop: 15 }}>
+            <p className="lead soft-fade muted" style={{ fontSize: 23, maxWidth: 900, marginTop: 15 }}>
               DeepCode Labs is a modern engineering and innovation company focused on creating high-impact digital solutions for India's service ecosystem.
               <br /><br />
               We specialize in real-time systems, distributed computing, intelligent scheduling, predictive analytics, and geospatial intelligence.

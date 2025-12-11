@@ -343,7 +343,7 @@ section {
 }
 
 .section-title {
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 300;
   margin-bottom: 24px;
 }
@@ -420,14 +420,14 @@ section {
 }
 
 .card-title {
-  font-size: 20px;
+  font-size: 26px;
   font-weight: 600;
   margin-bottom: 12px;
   color: white;
 }
 
 .card-text {
-  font-size: 15px;
+  font-size: 20px;
   line-height: 1.5;
   opacity: 0.85;
 }
@@ -990,7 +990,7 @@ section {
   }
   
   .section-title {
-    font-size: 28px;
+    font-size: 26px;
   }
   
   /* ===== CAPABILITIES GRID 2x2 ON MOBILE ===== */
@@ -1276,7 +1276,7 @@ section {
   }
 
   .section-title {
-    font-size: 22px !important;
+    font-size: 26px !important;
   }
 
   .btn {

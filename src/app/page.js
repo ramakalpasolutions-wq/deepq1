@@ -20,7 +20,7 @@ export default function Home() {
               OF REAL-TIME<br />
               INTELLIGENT SYSTEMS
             </h1>
-            <p className="hero-text" style={{fontSize:"20px"}}>
+            <p className="hero-text" style={{fontSize:"23px"}}>
               DeepCode Labs develops next-generation, cloud-native platforms that power
               the future of customer experiences, operational automation, and intelligent
               decision systems.
@@ -40,12 +40,12 @@ export default function Home() {
                 <h2 className="section-title gradient-text" style={{fontWeight:"bold"}}>
                   Who We Are
                 </h2>
-                <p style={{ fontSize: "18px", lineHeight: "1.7", marginBottom: "24px" }}>
+                <p style={{ fontSize: "20px", lineHeight: "1.7", marginBottom: "24px" }}>
                   DeepCode Labs is a technology innovation studio focused on designing
                   and building future-ready, high-performance digital systems for India's
                   fast-growing service economy.
                 </p>
-                <p style={{ fontSize: "18px", lineHeight: "1.7", marginBottom: "40px" }}>
+                <p style={{ fontSize: "20px", lineHeight: "1.7", marginBottom: "40px" }}>
                   Our work sits at the intersection of real-time architecture, geospatial
                   intelligence, AI-driven prediction models, and cloud-scale engineering.
                 </p>
@@ -62,7 +62,7 @@ export default function Home() {
                     alt="DeepQ Torus"
                     className="deepq-torus-intro"
                   />
-                  <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "28px", maxWidth: "400px" }}>
+                  <p style={{ fontSize: "20px", lineHeight: "1.6", marginBottom: "28px", maxWidth: "400px" }}>
                     DeepQ is a next-generation <br />queue management ecosystem<br /> designed for
                     the hybrid <br />Indian service sector — built for<br /> transparency, efficiency
                     & real-time <br />decision-making.
@@ -86,9 +86,9 @@ export default function Home() {
                 alt="Real-Time Systems"
               />
               <h4 className="card-title gradient-text">
-                Real-Time<br />Distributed Systems
+                Real-Time Distributed Systems
               </h4>
-              <p className="card-text" style={{marginTop:"30px"}}>
+              <p className="card-text" style={{marginTop:"20px"}}>
                 Low-latency, event-driven platforms for thousands of users.
               </p>
             </div>
@@ -100,9 +100,9 @@ export default function Home() {
                 alt="Cloud Native"
               />
               <h4 className="card-title gradient-text">
-                Cloud-Native<br />Engineering
+                Cloud-Native Engineering
               </h4>
-              <p className="card-text" style={{marginTop:"30px"}}>
+              <p className="card-text" style={{marginTop:"50px"}}>
                 Scalable, secure architecture on modern cloud infrastructure.
               </p>
             </div>
@@ -116,7 +116,7 @@ export default function Home() {
               <h4 className="card-title gradient-text">
                 AI & Predictive<br />Intelligence
               </h4>
-              <p className="card-text" style={{marginTop:"30px"}}>
+              <p className="card-text" style={{marginTop:"50px"}}>
                 Forecasting, predicting wait-times, optimizing resources.
               </p>
             </div>
@@ -130,7 +130,7 @@ export default function Home() {
               <h4 className="card-title gradient-text">
                 Geospatial &<br />Hyperlocal Computing
               </h4>
-              <p className="card-text" style={{marginTop:"30px"}}>
+              <p className="card-text" style={{marginTop:"20px"}}>
                 Real-time spatial intelligence blending GPS & analytics.
               </p>
             </div>
