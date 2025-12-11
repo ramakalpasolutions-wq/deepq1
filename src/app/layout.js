@@ -35,18 +35,14 @@ export const metadata = {
   manifest: "/manifest.json",
   icons: {
     icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.ico?v=2" },
+      { url: "/favicon-16x16.png?v=2", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png?v=2", sizes: "32x32", type: "image/png" },
     ],
     apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "/apple-touch-icon.png?v=2", sizes: "180x180", type: "image/png" },
     ],
   },
-  themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#05060a" },
-    { media: "(prefers-color-scheme: light)", color: "#05060a" },
-  ],
 };
 
 export const viewport = {
@@ -54,24 +50,24 @@ export const viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-  themeColor: "#05060a",
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#05060a" },
+    { media: "(prefers-color-scheme: light)", color: "#05060a" },
+  ],
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Additional meta tags for older browsers */}
         <meta name="msapplication-TileColor" content="#05060a" />
         <meta name="msapplication-navbutton-color" content="#05060a" />
       </head>
       <body>
-        {/* Skip to main content for accessibility */}
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
 
-        {/* NAV */}
         <header className="site-nav z-30 relative w-full">
           <div className="nav-inner">
             <div className="brand">
@@ -93,7 +89,6 @@ export default function RootLayout({ children }) {
               <Link href="/contact" className="btn ghost">Contact</Link>
             </nav>
 
-            {/* Mobile client navigation */}
             <MobileNav />
           </div>
         </header>
@@ -102,13 +97,11 @@ export default function RootLayout({ children }) {
           {children}
         </main>
 
-        {/* Footer */}
         <footer className="site-footer">
           <div className="footer-container">
             <div className="footer-column">
               <h4 className="footer-title">Follow Us</h4>
               <div className="social-row">
-                {/* Facebook */}
                 <a 
                   href="https://facebook.com" 
                   target="_blank" 
@@ -121,7 +114,6 @@ export default function RootLayout({ children }) {
                   </svg>
                 </a>
 
-                {/* LinkedIn */}
                 <a 
                   href="https://linkedin.com" 
                   target="_blank" 
@@ -134,7 +126,6 @@ export default function RootLayout({ children }) {
                   </svg>
                 </a>
 
-                {/* Instagram */}
                 <a 
                   href="https://instagram.com" 
                   target="_blank" 

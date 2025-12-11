@@ -150,6 +150,8 @@ export default function Home() {
                   src="/assets/Service Economy Digitization-Photoroom.png"
                   className="industry-icon"
                   alt="Service Economy"
+                  style={{width:"80px" ,height:"80px"}}
+
                 />
                 <h4 className="card-title gradient-text">
                   Service Economy<br />Digitization
@@ -164,6 +166,8 @@ export default function Home() {
                   src="/assets/Retail & Customer Flow Optimization-Photoroom.png"
                   className="industry-icon"
                   alt="Retail"
+                  style={{width:"80px" ,height:"80px"}}
+
                 />
                 <h4 className="card-title gradient-text">
                   Retail & Customer<br />Flow Optimization
@@ -178,7 +182,7 @@ export default function Home() {
                   src="/assets/Healthcare Wait-Time & Appointment Systems-Photoroom.png"
                   className="industry-icon"
                   alt="Healthcare"
-                  style={{width:"90px"}}
+                 style={{width:"80px" ,height:"80px"}}
                 />
                 <h4 className="card-title gradient-text" style={{marginBottom:"20px"}}>
                   Healthcare Wait-Time &<br />Appointment Systems
