@@ -17,7 +17,7 @@ export default function Home() {
             OF REAL-TIME<br />
             INTELLIGENT SYSTEMS
           </h1>
-          <p className="hero-text">
+          <p className="hero-text" style={{fontsize:"20px"}}>
             DeepCode Labs develops next-generation, cloud-native platforms that power
             the future of customer experiences, operational automation, and intelligent
             decision systems.

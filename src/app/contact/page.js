@@ -4,11 +4,51 @@ import { useState } from "react";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    message: ''
+  });
 
-  function handleSubmit(e) {
+  function handleChange(e) {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  }
+
+  async function handleSubmit(e) {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+    setLoading(true);
+    setError('');
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', company: '', message: '' }); // Reset form
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        setError(data.message || 'Failed to send message. Please try again.');
+      }
+    } catch (err) {
+      console.error('Error:', err);
+      setError('Network error. Please check your connection and try again.');
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -22,7 +62,7 @@ export default function ContactPage() {
 
           <div className="glass-card-contact fade-in-delayed">
             <p className="muted">
-              <strong>📧 Email:</strong> info@deepcodelabs.io
+              <strong>📧 Email:</strong> <a href="mailto:info@deepcodelabs.io" style={{color: '#4da3ff', textDecoration: 'none'}}>info@deepcodelabs.io</a>
             </p>
             <p className="muted">
               <strong>🌐 Website:</strong> deepcodelabs.io
@@ -41,6 +81,9 @@ export default function ContactPage() {
               placeholder="Your Name"
               required
               autoComplete="name"
+              value={formData.name}
+              onChange={handleChange}
+              disabled={loading}
             />
 
             <input
@@ -49,6 +92,9 @@ export default function ContactPage() {
               placeholder="Your Email"
               required
               autoComplete="email"
+              value={formData.email}
+              onChange={handleChange}
+              disabled={loading}
             />
 
             <input
@@ -56,6 +102,9 @@ export default function ContactPage() {
               name="company"
               placeholder="Company / Organization"
               autoComplete="organization"
+              value={formData.company}
+              onChange={handleChange}
+              disabled={loading}
             />
 
             <textarea
@@ -63,15 +112,32 @@ export default function ContactPage() {
               rows="6"
               placeholder="Your Message"
               required
+              value={formData.message}
+              onChange={handleChange}
+              disabled={loading}
             />
 
-            <button className="btn primary hover-glow" type="submit">
-              Submit
+            <button 
+              className="btn primary hover-glow" 
+              type="submit"
+              disabled={loading}
+              style={{
+                opacity: loading ? 0.6 : 1,
+                cursor: loading ? 'not-allowed' : 'pointer'
+              }}
+            >
+              {loading ? 'Sending...' : 'Submit'}
             </button>
 
             {submitted && (
               <p className="muted fade-in" style={{ color: "#4da3ff", marginTop: 16 }}>
-                ✔ Message submitted! (Email service not yet connected)
+                ✔ Message sent successfully! We'll get back to you soon.
+              </p>
+            )}
+
+            {error && (
+              <p className="muted fade-in" style={{ color: "#ff4d4d", marginTop: 16 }}>
+                ✖ {error}
               </p>
             )}
           </form>

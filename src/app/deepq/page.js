@@ -88,7 +88,7 @@ export default function DeepQPage() {
 
             <div className="feature-box glass-card-deepq hover-card card">
               <h4 style={{ fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-                India-First <br/>Design
+                India-First Design
               </h4>
               <p className="muted" style={{ marginTop: "30px", fontSize: "20px" }}>
                 Built for the country's dynamic service culture and operational patterns.
