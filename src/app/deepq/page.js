@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Image from "next/image";
 
 export default function DeepQPage() {
   useEffect(() => {
@@ -36,7 +37,7 @@ export default function DeepQPage() {
             </h1>
 
             <p className="muted-deepq glass-card-deepq">
-              DeepQ is a hyperlocal, real-time intelligence platform built to transform customer flow and modernize service delivery. Designed for India’s fast-moving service economy, it brings speed, transparency, and efficiency to every interaction.
+              DeepQ is a hyperlocal, real-time intelligence platform built to transform customer flow and modernize service delivery. Designed for India's fast-moving service economy, it brings speed, transparency, and efficiency to every interaction.
             </p>
 
             <a className="btn ghost hover-outline" href="/contact" style={{ marginTop: "25px" }}>
@@ -63,7 +64,15 @@ export default function DeepQPage() {
           </h2>
 
           <div className="features-grid">
+            {/* Feature 1 - Hybrid Ready */}
             <div className="feature-box glass-card-deepq hover-card card">
+              <div className="feature-image-wrapper" style={{ marginBottom: "20px", display: "flex", justifyContent: "center" }}>
+                <img
+                  src="/assets/01.png"
+                  alt="Hybrid Ready System"
+                  style={{ width: "120px", height: "120px", objectFit: "contain" }}
+                />
+              </div>
               <h4 style={{ fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                 Hybrid-Ready System
               </h4>
@@ -72,7 +81,15 @@ export default function DeepQPage() {
               </p>
             </div>
 
+            {/* Feature 2 - Real-Time */}
             <div className="feature-box glass-card-deepq hover-card card">
+              <div className="feature-image-wrapper" style={{ marginBottom: "20px", display: "flex", justifyContent: "center" }}>
+                <img
+                  src="/assets/08.png"
+                  alt="Real-Time Experience"
+                  style={{ width: "120px", height: "120px", objectFit: "contain" }}
+                />
+              </div>
               <h4 style={{ fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                 Real-Time Experience
               </h4>
@@ -81,16 +98,32 @@ export default function DeepQPage() {
               </p>
             </div>
 
+            {/* Feature 3 - India First */}
             <div className="feature-box glass-card-deepq hover-card card">
+              <div className="feature-image-wrapper" style={{ marginBottom: "20px", display: "flex", justifyContent: "center" }}>
+                <img
+                  src="/assets/04.png"
+                  alt="India First Design"
+                  style={{ width: "120px", height: "120px", objectFit: "contain" }}
+                />
+              </div>
               <h4 style={{ fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                 India-First<br /> Design
               </h4>
               <p className="muted" style={{ marginTop: "30px", fontSize: "20px" }}>
-                Engineered for the complexity and pace of India’s service ecosystem, DeepQ adapts to hyperlocal patterns, cultural behaviors, and high-volume operational environments.
+                Engineered for the complexity and pace of India's service ecosystem, DeepQ adapts to hyperlocal patterns, cultural behaviors, and high-volume operational environments.
               </p>
             </div>
 
+            {/* Feature 4 - Enterprise Grade */}
             <div className="feature-box glass-card-deepq hover-card card">
+              <div className="feature-image-wrapper" style={{ marginBottom: "20px", display: "flex", justifyContent: "center" }}>
+                <img
+                  src="/assets/05.png"
+                  alt="Enterprise Grade Reliability"
+                  style={{ width: "120px", height: "120px", objectFit: "contain" }}
+                />
+              </div>
               <h4 style={{ fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                 Enterprise-Grade Reliability
               </h4>

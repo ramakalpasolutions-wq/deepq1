@@ -62,29 +62,68 @@ export default function AboutPage() {
             Our Approach
           </h2>
           <div className="approach-grid">
+            {/* Card 1 - Innovation Engineered */}
             <div className="approach-card hover-card">
+              <div className="approach-image-wrapper" style={{ marginBottom: "20px", display: "flex", justifyContent: "center" }}>
+                <img
+                  src="/assets/06.png"
+                  alt="Innovation Engineered"
+                  style={{ width: "100px", height: "100px", objectFit: "contain" }}
+                />
+              </div>
               <h4 style={{ fontSize: "26px" }}>Innovation Engineered</h4>
-              <p style={{ fontSize: "20px", marginTop: "40px" }}>We build adaptive, AI-forward systems designed to evolve with emerging technologies.
-Every solution is crafted to stay ahead of tomorrow’s challenges.
-</p>
+              <p style={{ fontSize: "20px", marginTop: "40px" }}>
+                We build adaptive, AI-forward systems designed to evolve with emerging technologies.
+                Every solution is crafted to stay ahead of tomorrow's challenges.
+              </p>
             </div>
+
+            {/* Card 2 - Intelligent Purpose Tech */}
             <div className="approach-card hover-card">
+              <div className="approach-image-wrapper" style={{ marginBottom: "20px", display: "flex", justifyContent: "center" }}>
+                <img
+                  src="/assets/03.png"
+                  alt="Intelligent Purpose Tech"
+                  style={{ width: "100px", height: "100px", objectFit: "contain" }}
+                />
+              </div>
               <h4 style={{ fontSize: "26px" }}>Intelligent Purpose Tech</h4>
-              <p style={{ fontSize: "20px" ,marginTop:"40px"}}>Our platforms use AI-driven logic to solve real-world problems with precision and clarity.
-Technology is built with intent—optimized for impact, efficiency, and scalability.
-</p>
+              <p style={{ fontSize: "20px", marginTop:"40px"}}>
+                Our platforms use AI-driven logic to solve real-world problems with precision and clarity.
+                Technology is built with intent—optimized for impact, efficiency, and scalability.
+              </p>
             </div>
+
+            {/* Card 3 - Hyper-Scalable Architecture */}
             <div className="approach-card hover-card">
+              <div className="approach-image-wrapper" style={{ marginBottom: "20px", display: "flex", justifyContent: "center" }}>
+                <img
+                  src="/assets/02.png"
+                  alt="Hyper-Scalable Architecture"
+                  style={{ width: "100px", height: "100px", objectFit: "contain" }}
+                />
+              </div>
               <h4 style={{ fontSize: "26px" }}>Hyper-Scalable Architecture</h4>
-              <p style={{ fontSize: "20px", marginTop: "40px" }}>AI-enhanced, cloud-native foundations allow our systems to scale without limits.
-Speed, resilience, and reliability remain constant—even under extreme demand.
-</p>
+              <p style={{ fontSize: "20px", marginTop: "40px" }}>
+                AI-enhanced, cloud-native foundations allow our systems to scale without limits.
+                Speed, resilience, and reliability remain constant—even under extreme demand.
+              </p>
             </div>
+
+            {/* Card 4 - Human-Aligned Design */}
             <div className="approach-card hover-card">
+              <div className="approach-image-wrapper" style={{ marginBottom: "20px", display: "flex", justifyContent: "center" }}>
+                <img
+                  src="/assets/09.png"
+                  alt="Human-Aligned Design"
+                  style={{ width: "100px", height: "100px", objectFit: "contain" }}
+                />
+              </div>
               <h4 style={{ fontSize: "26px" }}>Human-Aligned Design</h4>
-              <p style={{ fontSize: "20px", marginTop: "40px" }}>We create interfaces that adapt intelligently to user behavior in real time.
-Every interaction is engineered to be seamless, intuitive, and effortlessly fast.
-</p>
+              <p style={{ fontSize: "20px", marginTop: "40px" }}>
+                We create interfaces that adapt intelligently to user behavior in real time.
+                Every interaction is engineered to be seamless, intuitive, and effortlessly fast.
+              </p>
             </div>
           </div>
         </section>
