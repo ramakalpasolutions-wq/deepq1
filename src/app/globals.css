@@ -637,7 +637,7 @@ section {
   background: rgba(10, 15, 25, 0.4);
   border: 1px solid rgba(77, 163, 255, 0.15);
   border-radius: 16px;
-  padding: 24px;
+  padding: 26px;
   backdrop-filter: blur(8px);
   text-align: left;
 }
@@ -1101,7 +1101,7 @@ section {
   }
 
   .glass-card-deepq {
-    padding: 20px;
+    padding: 22px;
   }
 
   .feature-box h4 {
@@ -1285,7 +1285,7 @@ section {
   }
 
   .glass-card-deepq {
-    padding: 16px;
+    padding: 18px;
   }
 
   .feature-box h4 {
