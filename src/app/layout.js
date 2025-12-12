@@ -1,6 +1,7 @@
 import "./globals.css";
 import Link from "next/link";
 import MobileNav from "./components/MobileNav";
+import Navigation from "./components/Navigation";
 
 export const metadata = {
   title: "DeepQ — DeepCode Labs",
@@ -82,12 +83,7 @@ export default function RootLayout({ children }) {
               </Link>
             </div>
 
-            <nav className="nav-links" aria-label="Main navigation">
-              <Link href="/">Home</Link>
-              <Link href="/deepq">DeepQ</Link>
-              <Link href="/about">About</Link>
-              <Link href="/contact" className="btn ghost">Contact</Link>
-            </nav>
+            <Navigation />
 
             <MobileNav />
           </div>

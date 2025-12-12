@@ -226,6 +226,31 @@ main, section, .page {
 .nav-links a:hover { 
   color: var(--accent); 
 }
+/* ===== ACTIVE NAVIGATION LINK STYLES ===== */
+.nav-links a.active {
+  color: var(--accent);
+  position: relative;
+  font-weight: 700;
+}
+
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #4da3ff, #9bc9ff);
+  border-radius: 2px;
+}
+
+/* Mobile nav active state */
+.mobile-nav a.active {
+  color: var(--accent);
+  background: rgba(77, 163, 255, 0.15);
+  border-left: 4px solid var(--accent);
+  padding-left: 20px;
+}
 
 /* ===== MOBILE MENU BUTTON ===== */
 .mobile-menu-btn {

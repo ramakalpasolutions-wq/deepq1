@@ -1,4 +1,3 @@
-// src/app/components/MobileNav.jsx
 "use client";
 
 import { useState, useEffect } from "react";
@@ -8,6 +7,14 @@ import { usePathname } from "next/navigation";
 export default function MobileNav() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+
+  // Helper function to check if link is active
+  const isActive = (path) => {
+    if (path === "/") {
+      return pathname === path;
+    }
+    return pathname.startsWith(path);
+  };
 
   // close when route changes
   useEffect(() => {
@@ -48,10 +55,18 @@ export default function MobileNav() {
           className="mobile-nav"
           aria-label="Mobile navigation"
         >
-          <Link href="/">Home</Link>
-          <Link href="/deepq">DeepQ</Link>
-          <Link href="/about">About</Link>
-          <Link href="/contact">Contact</Link>
+          <Link href="/" className={isActive("/") ? "active" : ""}>
+            Home
+          </Link>
+          <Link href="/deepq" className={isActive("/deepq") ? "active" : ""}>
+            DeepQ
+          </Link>
+          <Link href="/about" className={isActive("/about") ? "active" : ""}>
+            About
+          </Link>
+          <Link href="/contact" className={isActive("/contact") ? "active" : ""}>
+            Contact
+          </Link>
           <button
             className="btn primary"
             onClick={() => setOpen(false)}
