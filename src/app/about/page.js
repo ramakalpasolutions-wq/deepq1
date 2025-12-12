@@ -68,7 +68,7 @@ export default function AboutPage() {
                 <img
                   src="/assets/06.png"
                   alt="Innovation Engineered"
-                  style={{ width: "100px", height: "100px", objectFit: "contain" }}
+                  style={{ width: "80px", height: "80px", objectFit: "contain" }}
                 />
               </div>
               <h4 style={{ fontSize: "26px" }}>Innovation Engineered</h4>
@@ -84,7 +84,7 @@ export default function AboutPage() {
                 <img
                   src="/assets/03.png"
                   alt="Intelligent Purpose Tech"
-                  style={{ width: "100px", height: "100px", objectFit: "contain" }}
+                  style={{ width: "80px", height: "80px", objectFit: "contain" }}
                 />
               </div>
               <h4 style={{ fontSize: "26px" }}>Intelligent Purpose Tech</h4>
@@ -100,7 +100,7 @@ export default function AboutPage() {
                 <img
                   src="/assets/02.png"
                   alt="Hyper-Scalable Architecture"
-                  style={{ width: "100px", height: "100px", objectFit: "contain" }}
+                  style={{ width: "80px", height: "80px", objectFit: "contain" }}
                 />
               </div>
               <h4 style={{ fontSize: "26px" }}>Hyper-Scalable Architecture</h4>
@@ -116,7 +116,7 @@ export default function AboutPage() {
                 <img
                   src="/assets/09.png"
                   alt="Human-Aligned Design"
-                  style={{ width: "100px", height: "100px", objectFit: "contain" }}
+                  style={{ width: "80px", height: "80px", objectFit: "contain" }}
                 />
               </div>
               <h4 style={{ fontSize: "26px" }}>Human-Aligned Design</h4>

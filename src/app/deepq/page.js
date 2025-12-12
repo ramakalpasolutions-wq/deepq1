@@ -70,7 +70,7 @@ export default function DeepQPage() {
                 <img
                   src="/assets/01.png"
                   alt="Hybrid Ready System"
-                  style={{ width: "120px", height: "120px", objectFit: "contain" }}
+                  style={{ width: "80px", height: "80px", objectFit: "contain" }}
                 />
               </div>
               <h4 style={{ fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
@@ -87,7 +87,7 @@ export default function DeepQPage() {
                 <img
                   src="/assets/08.png"
                   alt="Real-Time Experience"
-                  style={{ width: "120px", height: "120px", objectFit: "contain" }}
+                  style={{ width: "80px", height: "80px", objectFit: "contain" }}
                 />
               </div>
               <h4 style={{ fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
@@ -104,7 +104,7 @@ export default function DeepQPage() {
                 <img
                   src="/assets/04.png"
                   alt="India First Design"
-                  style={{ width: "120px", height: "120px", objectFit: "contain" }}
+                  style={{ width: "80px", height: "80px", objectFit: "contain" }}
                 />
               </div>
               <h4 style={{ fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
@@ -121,7 +121,7 @@ export default function DeepQPage() {
                 <img
                   src="/assets/05.png"
                   alt="Enterprise Grade Reliability"
-                  style={{ width: "120px", height: "120px", objectFit: "contain" }}
+                  style={{ width: "80px", height: "80px", objectFit: "contain" }}
                 />
               </div>
               <h4 style={{ fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
@@ -135,7 +135,7 @@ export default function DeepQPage() {
         </section>
 
         {/* WHO DEEPQ IS FOR */}
-        <section style={{ marginTop: "50px" }}>
+        {/* <section style={{ marginTop: "50px" }}>
           <h2 className="section-title" style={{ fontWeight: "bold", marginTop: "-50px", fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
             Who DeepQ Is For
           </h2>
@@ -146,7 +146,7 @@ export default function DeepQPage() {
             <li>Spas and wellness outlets</li>
             <li>Any high-footfall service business that values efficiency</li>
           </ul>
-        </section>
+        </section> */}
 
         {/* FUTURE OF SERVICE FLOW */}
         <section style={{ marginTop: "90px" }}>
