@@ -358,8 +358,9 @@ body:has(.mobile-nav) {
 .hero-text {
   line-height: 1.6;
   margin-bottom: 32px;
-  max-width: 700px;
+  max-width: 600px;
   color: var(--text);
+  text-align: justify;
 }
 
 /* ===== SECTIONS ===== */
@@ -464,6 +465,7 @@ section {
   gap: 20px;
   margin-top: 40px;
   max-width: 1200px;
+  text-align: justify;
 }
 
 .capabilities-grid .card {
@@ -484,7 +486,7 @@ section {
   border: 1px solid rgba(77, 163, 255, 0.2);
   border-radius: 16px;
   padding: 32px;
-  text-align: center;
+  text-align: justify;
   transition: all 0.3s;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
