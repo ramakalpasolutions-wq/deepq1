@@ -1203,6 +1203,9 @@ section {
   .vision-mission-card {
     padding: 24px;
   }
+    .who-p{
+    text-align: left !important;
+  }
 
   .vision-mission-card h3 {
     font-size: 26px;
@@ -1260,7 +1263,7 @@ section {
     font-size: 28px;
   }
   .who-p{
-    text-align: left;
+    text-align: left !important;
   }
   .hero-text {
     font-size: 16px;
