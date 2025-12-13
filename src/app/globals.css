@@ -456,7 +456,7 @@ section {
   font-size: 20px;
   line-height: 1.5;
   opacity: 0.85;
-  /* text-align: justify; */
+  text-align: justify;
 }
 
 /* ===== CAPABILITY GRID (EQUAL WIDTH) ===== */
@@ -1258,7 +1258,9 @@ section {
   .hero-content {
     margin-top: 0;
   }
-  
+  .card-text{
+    text-align: left !important;
+  }
   .hero-title {
     font-size: 28px;
   }
