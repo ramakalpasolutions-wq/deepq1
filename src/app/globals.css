@@ -1303,7 +1303,7 @@ section {
     z-index: 0 !important;
   }
  .deepq-hero-left{
-  margin-top: 0px !important;
+  margin-top: -45px !important;
  }
   .fancy-title {
     font-size: 28px;
@@ -1401,6 +1401,7 @@ section {
 @media (max-width: 374px) {
   .hero-title {
     font-size: 24px;
+    margin-top: 20px;
   }
   
   .hero-text {
