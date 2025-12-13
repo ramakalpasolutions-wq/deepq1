@@ -150,7 +150,7 @@ export default function DeepQPage() {
 
         {/* FUTURE OF SERVICE FLOW */}
         <section style={{ marginTop: "90px" }}>
-          <h2 className="section-title" style={{ fontWeight: "bold", marginTop: "-150px", fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+          <h2 className="section-title" style={{ fontWeight: "bold", marginTop: "-100px", fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
             Future of Service Flow
           </h2>
 
@@ -159,7 +159,7 @@ export default function DeepQPage() {
           </p>
 
           <a href="/contact" className="btn ghost hover-outline" style={{ fontWeight: "bold", color: "white", marginTop: "24px", fontSize: "20px" }}>
-            Contact DeepCode Labs
+          More Info
           </a>
         </section>
       </div>
