@@ -62,7 +62,7 @@ export default function Home() {
                     alt="DeepQ Torus"
                     className="deepq-torus-intro"
                   />
-                  <p style={{textAlign:"justify",fontSize: "20px", lineHeight: "1.6", marginBottom: "28px", maxWidth: "280px" }}>
+                  <p style={{textAlign:"justity",fontSize: "20px", lineHeight: "1.6", marginBottom: "28px", maxWidth: "280px" }}>
                     DeepQ is a next-generation queue management ecosystem designed for
                     the hybrid Indian service sector — built for transparency, efficiency
                     & real-time decision-making.
