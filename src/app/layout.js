@@ -141,8 +141,8 @@ export default function RootLayout({ children }) {
               <nav className="footer-links" aria-label="Footer navigation">
                 <Link href="/">Home</Link>
                 <Link href="/deepq">DeepQ</Link>
-                <Link href="/about">About</Link>
-                <Link href="/contact">Contact</Link>
+                <Link href="/about">About Us</Link>
+                <Link href="/contact">Contact Us</Link>
               </nav>
             </div>
 

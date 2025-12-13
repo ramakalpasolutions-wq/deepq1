@@ -62,10 +62,10 @@ export default function MobileNav() {
             DeepQ
           </Link>
           <Link href="/about" className={isActive("/about") ? "active" : ""}>
-            About
+            About Us
           </Link>
           <Link href="/contact" className={isActive("/contact") ? "active" : ""}>
-            Contact
+            Contact Us
           </Link>
           <button
             className="btn primary"
