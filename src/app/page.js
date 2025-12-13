@@ -158,7 +158,7 @@ export default function Home() {
                 <h4 className="card-title gradient-text">
                   Service Digitization
                 </h4>
-                <p className="card-text" style={{ marginTop: "20px" }}>
+                <p className="card-text" style={{ marginTop: "20px", textAlign:"justify" }}>
                   We help service businesses transition from manual processes to seamless, real-time digital operations. Our solutions modernize workflows, improve transparency, and elevate customer experience.
                 </p>
               </div>
@@ -174,7 +174,7 @@ export default function Home() {
                 <h4 className="card-title gradient-text">
                   Retail Flow Control
                 </h4>
-                <p className="card-text" style={{ marginTop: "20px" }}>
+                <p className="card-text" style={{ marginTop: "20px" , textAlign:"justify"}}>
                   Optimize customer movement and reduce bottlenecks with intelligent, data-driven flow management. Our system enhances efficiency, boosts throughput, and ensures smoother in-store experiences.
                 </p>
               </div>
@@ -189,7 +189,7 @@ export default function Home() {
                 <h4 className="card-title gradient-text" style={{ marginBottom: "20px" }}>
                   Healthcare Queues
                 </h4>
-                <p className="card-text">
+                <p className="card-text" style={{ textAlign:"justify"}}>
                   Streamline patient wait times with real-time queue visibility and smart scheduling. Designed for clinics and diagnostic centers, it improves service flow while reducing congestion and delays.
                 </p>
               </div>
