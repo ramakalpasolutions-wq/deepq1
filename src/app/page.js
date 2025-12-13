@@ -40,12 +40,12 @@ export default function Home() {
                 <h2 className="section-title gradient-text" style={{fontWeight:"bold"}}>
                   Who We Are
                 </h2>
-                <p style={{maxWidth:"650px", textAlign:"justify",fontSize: "20px", lineHeight: "1.7", marginBottom: "24px" }}>
+                <p className="who-p" style={{maxWidth:"650px", textAlign:"justify",fontSize: "20px", lineHeight: "1.7", marginBottom: "24px" }}>
                   DeepCode Labs is a technology innovation studio focused on designing
                   and building future-ready, high-performance digital systems for India's
                   fast-growing service economy.
                 </p>
-                <p style={{maxWidth:"600px", textAlign:"justify", fontSize: "20px", lineHeight: "1.7", marginBottom: "40px" }}>
+                <p className="who-p" style={{maxWidth:"600px", textAlign:"justify", fontSize: "20px", lineHeight: "1.7", marginBottom: "40px" }}>
                   Our work sits at the intersection of real-time architecture, geospatial
                   intelligence, AI-driven prediction models, and cloud-scale engineering.
                 </p>

@@ -1259,7 +1259,9 @@ section {
   .hero-title {
     font-size: 28px;
   }
-  
+  .who-p{
+    text-align: left;
+  }
   .hero-text {
     font-size: 16px;
     text-align: left;
