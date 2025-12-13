@@ -87,7 +87,7 @@ export default function DeepQPage() {
                 <img
                   src="/assets/08.png"
                   alt="Real-Time Experience"
-                  style={{ width: "80px", height: "80px", objectFit: "contain" }}
+                  style={{ width: "70px", height: "70px", objectFit: "contain" }}
                 />
               </div>
               <h4 style={{ fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
@@ -108,7 +108,7 @@ export default function DeepQPage() {
                 />
               </div>
               <h4  className="head-ind" style={{ fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-                India-First<br /> Design
+                India-First Design
               </h4>
               <p className="muted" style={{ marginTop: "30px", fontSize: "20px" }}>
                 Engineered for the complexity and pace of India's service ecosystem, DeepQ adapts to hyperlocal patterns, cultural behaviors, and high-volume operational environments.

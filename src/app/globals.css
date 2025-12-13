@@ -685,7 +685,7 @@ section {
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 22px;
   margin-top: 30px;
 }
@@ -1394,11 +1394,11 @@ section {
   }
 
   .approach-card h4 {
-    font-size: 20px;
+    font-size: 26px;
   }
 
   .approach-card p {
-    font-size: 16px;
+    font-size: 20px;
   }
 }
 
