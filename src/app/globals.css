@@ -1256,7 +1256,7 @@ section {
   }
 
   .hero-content {
-    margin-top: 0;
+    margin-top: -90px !important;
   }
   .card-text{
     text-align: left !important;
