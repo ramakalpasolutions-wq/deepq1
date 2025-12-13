@@ -102,7 +102,7 @@ export default function Home() {
               <h4 className="card-title gradient-text">
                 Cloud-Native Engineering
               </h4>
-              <p className="card-text" style={{ marginTop: "20px" }}>
+              <p className="card-text" style={{ marginTop: "40px" }}>
                 Architecting scalable systems on Microsoft Azure with seamless data flow, security, and high availability.
               </p>
             </div>
@@ -116,7 +116,7 @@ export default function Home() {
               <h4 className="card-title gradient-text">
                 AI & Predictive<br />Intelligence
               </h4>
-              <p className="card-text" style={{ marginTop: "20px" }}>
+              <p className="card-text" style={{ marginTop: "40px" }}>
                 Developing intelligent models for forecasting demand, predicting wait times, and optimizing resources.
               </p>
             </div>
@@ -130,7 +130,7 @@ export default function Home() {
               <h4 className="card-title gradient-text">
                 Geospatial Intelligence
               </h4>
-              <p className="card-text" style={{ marginTop: "20px" }}>
+              <p className="card-text" style={{ marginTop: "40px" }}>
                 {/* Geospatial & Hyperlocal Computing */}
                 Building location-aware applications that blend GPS, real-time analytics, and spatial intelligence.
 
