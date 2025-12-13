@@ -1302,11 +1302,17 @@ section {
     opacity: 1 !important;
     z-index: 0 !important;
   }
-
+ .deepq-hero-left{
+  margin-top: 0px !important;
+ }
   .fancy-title {
     font-size: 28px;
   }
-
+.head-ind{
+  br{
+    display: none !important ;
+  }
+}
   .muted-deepq {
     font-size: 18px;
   }

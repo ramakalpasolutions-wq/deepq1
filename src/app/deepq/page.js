@@ -107,7 +107,7 @@ export default function DeepQPage() {
                   style={{ width: "80px", height: "80px", objectFit: "contain" }}
                 />
               </div>
-              <h4 style={{ fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+              <h4  className="head-ind" style={{ fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                 India-First<br /> Design
               </h4>
               <p className="muted" style={{ marginTop: "30px", fontSize: "20px" }}>
