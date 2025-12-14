@@ -67,10 +67,10 @@ export default function ContactPage() {
             <p className="muted">
               <strong>🌐 Website:</strong> deepcodelabs.io
             </p>
-            <p className="muted">
+            <p className="muted location-text">
               <strong>📍 Location:</strong> 406, Regus Business Center,
-              <span style={{ display: 'block', marginLeft: '115px' }}>Gumidelli Towers, Begumpet,</span>
-              <span style={{ display: 'block', marginLeft: '115px' }}>Hyderabad, Telangana 500016.</span>
+              <span className="location-line">Gumidelli Towers, Begumpet,</span>
+              <span className="location-line">Hyderabad, Telangana 500016.</span>
             </p>
           </div>
 

@@ -1674,3 +1674,38 @@ section {
     page-break-inside: avoid;
   }
 }
+/* ===== CONTACT PAGE - LOCATION FORMATTING ===== */
+.location-text {
+  line-height: 1.8;
+}
+
+.location-line {
+  display: block;
+  margin-left: 115px;
+}
+
+/* Tablet responsive */
+@media (max-width: 1024px) {
+  .location-line {
+    margin-left: 110px;
+  }
+}
+
+/* Mobile responsive location alignment */
+@media (max-width: 768px) {
+  .location-line {
+    margin-left: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .location-line {
+    margin-left: 85px;
+  }
+}
+
+@media (max-width: 374px) {
+  .location-line {
+    margin-left: 75px;
+  }
+}
