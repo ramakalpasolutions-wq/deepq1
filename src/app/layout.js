@@ -63,6 +63,15 @@ export default function RootLayout({ children }) {
       <head>
         <meta name="msapplication-TileColor" content="#05060a" />
         <meta name="msapplication-navbutton-color" content="#05060a" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+              }
+            `,
+          }}
+        />
       </head>
       <body>
         <a href="#main-content" className="skip-link">
@@ -134,6 +143,9 @@ export default function RootLayout({ children }) {
                   </svg>
                 </a>
               </div>
+              <p className="footer-copy" style={{ marginTop: '16px' }}>
+                © {new Date().getFullYear()} DeepCode Labs
+              </p>
             </div>
 
             <div className="footer-column">
@@ -147,7 +159,7 @@ export default function RootLayout({ children }) {
             </div>
 
             <div className="footer-column">
-              <p className="footer-copy">© {new Date().getFullYear()} DeepCode Labs</p>
+              {/* Empty column for layout balance */}
             </div>
           </div>
         </footer>
