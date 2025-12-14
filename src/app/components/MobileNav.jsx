@@ -2,11 +2,12 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function MobileNav() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
 
   // Helper function to check if link is active
   const isActive = (path) => {
@@ -16,12 +17,12 @@ export default function MobileNav() {
     return pathname.startsWith(path);
   };
 
-  // close when route changes
+  // Close when route changes
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
 
-  // optional: close on Escape
+  // Close on Escape key
   useEffect(() => {
     if (!open) return;
 
@@ -34,6 +35,15 @@ export default function MobileNav() {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [open]);
+
+  // Handle click - reload if same page
+  const handleLinkClick = (e, path) => {
+    if (pathname === path) {
+      e.preventDefault();
+      setOpen(false);
+      router.refresh(); // Refresh the current page
+    }
+  };
 
   return (
     <>
@@ -55,16 +65,32 @@ export default function MobileNav() {
           className="mobile-nav"
           aria-label="Mobile navigation"
         >
-          <Link href="/" className={isActive("/") ? "active" : ""}>
+          <Link 
+            href="/" 
+            className={isActive("/") ? "active" : ""}
+            onClick={(e) => handleLinkClick(e, "/")}
+          >
             Home
           </Link>
-          <Link href="/deepq" className={isActive("/deepq") ? "active" : ""}>
+          <Link 
+            href="/deepq" 
+            className={isActive("/deepq") ? "active" : ""}
+            onClick={(e) => handleLinkClick(e, "/deepq")}
+          >
             DeepQ
           </Link>
-          <Link href="/about" className={isActive("/about") ? "active" : ""}>
+          <Link 
+            href="/about" 
+            className={isActive("/about") ? "active" : ""}
+            onClick={(e) => handleLinkClick(e, "/about")}
+          >
             About Us
           </Link>
-          <Link href="/contact" className={isActive("/contact") ? "active" : ""}>
+          <Link 
+            href="/contact" 
+            className={isActive("/contact") ? "active" : ""}
+            onClick={(e) => handleLinkClick(e, "/contact")}
+          >
             Contact Us
           </Link>
           <button
