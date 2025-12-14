@@ -38,7 +38,7 @@ export default function ContactPage() {
 
       if (response.ok) {
         setSubmitted(true);
-        setFormData({ name: '', email: '', company: '', message: '' }); // Reset form
+        setFormData({ name: '', email: '', company: '', message: '' });
         setTimeout(() => setSubmitted(false), 5000);
       } else {
         setError(data.message || 'Failed to send message. Please try again.');
@@ -68,7 +68,9 @@ export default function ContactPage() {
               <strong>🌐 Website:</strong> deepcodelabs.io
             </p>
             <p className="muted">
-              <strong>📍 Locations:</strong> Hyderabad • Chennai • Bangalore
+              <strong>📍 Location:</strong> 406, Regus Business Center,
+              <span style={{ display: 'block', marginLeft: '115px' }}>Gumidelli Towers, Begumpet,</span>
+              <span style={{ display: 'block', marginLeft: '115px' }}>Hyderabad, Telangana 500016.</span>
             </p>
           </div>
 
