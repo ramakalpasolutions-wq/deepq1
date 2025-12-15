@@ -63,15 +63,6 @@ export default function RootLayout({ children }) {
       <head>
         <meta name="msapplication-TileColor" content="#05060a" />
         <meta name="msapplication-navbutton-color" content="#05060a" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              if ('scrollRestoration' in history) {
-                history.scrollRestoration = 'manual';
-              }
-            `,
-          }}
-        />
       </head>
       <body>
         <a href="#main-content" className="skip-link">
@@ -104,6 +95,7 @@ export default function RootLayout({ children }) {
 
         <footer className="site-footer">
           <div className="footer-container">
+            {/* LEFT COLUMN - SOCIAL MEDIA */}
             <div className="footer-column">
               <h4 className="footer-title">Follow Us</h4>
               <div className="social-row">
@@ -148,6 +140,7 @@ export default function RootLayout({ children }) {
               </p>
             </div>
 
+            {/* MIDDLE COLUMN - QUICK LINKS */}
             <div className="footer-column">
               <h4 className="footer-title">Quick Links</h4>
               <nav className="footer-links" aria-label="Footer navigation">
@@ -158,8 +151,43 @@ export default function RootLayout({ children }) {
               </nav>
             </div>
 
+            {/* RIGHT COLUMN - COMPANY NAME, ADDRESS, EMAIL, PHONE */}
             <div className="footer-column">
-              {/* Empty column for layout balance */}
+              <h4 className="footer-title">DeepCode Labs Pvt Ltd</h4>
+              
+              <div className="footer-contact">
+                {/* Address with icon on side */}
+                <div className="contact-item-address">
+                  <svg width="16" height="16" fill="#4da3ff" viewBox="0 0 24 24" className="contact-icon-side">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                  </svg>
+                  <div className="address-text">
+                    <span>406, Regus Business Center,</span>
+                    <span>Gumidelli Towers, Begumpet,</span>
+                    <span>Hyderabad, Telangana 500016</span>
+                  </div>
+                </div>
+
+                {/* Email */}
+                <div className="contact-item">
+                  <svg width="16" height="16" fill="#4da3ff" viewBox="0 0 24 24" style={{marginRight: '8px', flexShrink: 0}}>
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                  </svg>
+                  <a href="mailto:info@deepcodelabs.io" className="footer-contact-link">
+                    info@deepcodelabs.io
+                  </a>
+                </div>
+
+                {/* Phone */}
+                <div className="contact-item">
+                  <svg width="16" height="16" fill="#4da3ff" viewBox="0 0 24 24" style={{marginRight: '8px', flexShrink: 0}}>
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                  </svg>
+                  <a href="tel:+911234567890" className="footer-contact-link">
+                    +91 939 053 3233
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </footer>

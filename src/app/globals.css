@@ -1675,37 +1675,309 @@ section {
   }
 }
 /* ===== CONTACT PAGE - LOCATION FORMATTING ===== */
-.location-text {
+.location-wrapper {
   line-height: 1.8;
 }
 
-.location-line {
+.location-wrapper strong {
+  display: inline;
+}
+
+.location-remaining {
+  padding-left: 115px;
   display: block;
-  margin-left: 115px;
 }
 
 /* Tablet responsive */
 @media (max-width: 1024px) {
-  .location-line {
-    margin-left: 110px;
+  .location-remaining {
+    padding-left: 110px;
   }
 }
 
 /* Mobile responsive location alignment */
 @media (max-width: 768px) {
-  .location-line {
-    margin-left: 100px;
+  .location-remaining {
+    padding-left: 105px;
   }
 }
 
 @media (max-width: 480px) {
-  .location-line {
-    margin-left: 85px;
+  .location-remaining {
+    padding-left: 100px;
+  }
+}
+
+@media (max-width: 414px) {
+  .location-remaining {
+    padding-left: 95px;
+  }
+}
+
+@media (max-width: 390px) {
+  .location-remaining {
+    padding-left: 90px;
   }
 }
 
 @media (max-width: 374px) {
-  .location-line {
-    margin-left: 75px;
+  .location-remaining {
+    padding-left: 85px;
+  }
+}
+
+@media (max-width: 360px) {
+  .location-remaining {
+    padding-left: 80px;
+  }
+}
+/* ===== ABOUT PAGE HERO GRID ===== */
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-left {
+  position: relative;
+  z-index: 2;
+}
+
+.about-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.about-sphere {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  filter: drop-shadow(0 0 30px rgba(77, 163, 255, 0.5));
+  animation: slowFloat 6s ease-in-out infinite;
+}
+
+@keyframes slowFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Tablet responsive */
+@media (max-width: 1024px) {
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .about-right {
+    order: -1;
+  }
+  
+  .about-sphere {
+    max-width: 350px;
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .about-hero-grid {
+    gap: 30px;
+  }
+  
+  .about-sphere {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-sphere {
+    max-width: 220px;
+  }
+}
+/* ===== FOOTER ENHANCEMENTS ===== */
+.footer-contact {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Address with icon on side */
+.contact-item-address {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.contact-icon-side {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.address-text {
+  display: flex;
+  flex-direction: column;
+  color: #9fc9ff;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.address-text span {
+  display: block;
+}
+
+/* Email and Phone items */
+.contact-item {
+  display: flex;
+  align-items: center;
+  color: #9fc9ff;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-contact-link {
+  color: #9fc9ff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-contact-link:hover {
+  color: #4da3ff;
+}
+
+/* Mobile responsive footer */
+@media (max-width: 768px) {
+  .footer-contact {
+    font-size: 13px;
+  }
+  
+  .address-text {
+    font-size: 13px;
+  }
+  
+  .contact-item svg,
+  .contact-icon-side {
+    width: 14px;
+    height: 14px;
+  }
+}
+.world-map-container {
+  
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+}
+.world-map-container {
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+.world-map {
+  width: 50%;
+  display: block;
+}
+
+.map-pin {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #f30824;
+  border-radius: 100%;
+  box-shadow: 0 0 14px rgba(235, 34, 3, 0.9);
+  animation: pulse 5s infinite ease-in-out;
+  transform: translate(-50%, -50%);
+}
+
+/* glow pulse */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.6); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}
+/* San Diego, California */
+.map-pin.san-diego {
+  left: 14.5%;
+  top: 45.8%;
+}
+
+
+
+/* Hyderabad, India */
+.map-pin.hyderabad {
+  left: 70.4%;
+  top: 53.1%;
+}
+
+/* Bangalore, India */
+.map-pin.bangalore {
+  left: 69.8%;
+  top: 54.8%;
+}
+
+
+.map-pin::after {
+  content: attr(title);
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.map-pin:hover::after {
+  opacity: 1;
+}
+/* Parent layout */
+.contact-map-section {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Left card */
+.glass-card-contact {
+  flex: 1;
+  min-width: 320px;
+}
+
+/* Right map */
+.world-map-container {
+  flex: 1.2;
+  position: relative;
+  max-width: 600px;
+}
+
+/* Map image */
+.world-map {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 768px) {
+  .contact-map-section {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .world-map-container {
+    max-width: 100%;
   }
 }

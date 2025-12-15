@@ -60,21 +60,8 @@ export default function ContactPage() {
             We'd love to hear from you. Our team will get back to you shortly.
           </p>
 
-          <div className="glass-card-contact fade-in-delayed">
-            <p className="muted">
-              <strong>📧 Email:</strong> <a href="mailto:info@deepcodelabs.io" style={{color: '#4da3ff', textDecoration: 'none'}}>info@deepcodelabs.io</a>
-            </p>
-            <p className="muted">
-              <strong>🌐 Website:</strong> deepcodelabs.io
-            </p>
-            <p className="muted location-text">
-              <strong>📍 Location:</strong> 406, Regus Business Center,
-              <span className="location-line">Gumidelli Towers, Begumpet,</span>
-              <span className="location-line">Hyderabad, Telangana 500016.</span>
-            </p>
-          </div>
-
-          <form onSubmit={handleSubmit} className="contact-form fade-in-delayed-2">
+          {/* FORM FIRST */}
+          <form onSubmit={handleSubmit} className="contact-form fade-in-delayed">
             <h3 className="section-title">Send a Message</h3>
 
             <input
@@ -143,6 +130,45 @@ export default function ContactPage() {
               </p>
             )}
           </form>
+
+          {/* CONTACT INFO SECOND */}
+<div className="contact-map-section fade-in-delayed-2">
+
+  {/* LEFT: Glass Card */}
+  <div className="glass-card-contact">
+    <p className="muted">
+      <strong>📧 Email:</strong>{" "}
+      <a
+        href="mailto:info@deepcodelabs.io"
+        style={{ color: "#4da3ff", textDecoration: "none" }}
+      >
+        info@deepcodelabs.io
+      </a>
+    </p>
+
+    <p className="muted">
+      <strong>🌐 Website:</strong> deepcodelabs.io
+    </p>
+
+    <div className="muted location-wrapper">
+      <strong>📍 Location:</strong> 406, Regus Business Center,
+      <div className="location-remaining">Gumidelli Towers, Begumpet,</div>
+      <div className="location-remaining">Hyderabad, Telangana 500016.</div>
+    </div>
+  </div>
+
+  {/* RIGHT: World Map */}
+  <div className="world-map-container">
+    <img src="/world-map.jpg" alt="World Map" className="world-map" />
+
+    <span className="map-pin san-diego" title="San Diego, USA"></span>
+    <span className="map-pin hyderabad" title="Hyderabad, India"></span>
+    <span className="map-pin bangalore" title="Bangalore, India"></span>
+  </div>
+
+</div>
+
+          
         </div>
       </section>
     </div>

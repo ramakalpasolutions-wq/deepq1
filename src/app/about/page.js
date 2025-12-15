@@ -20,17 +20,29 @@ export default function AboutPage() {
       {/* WRAPPER WITH DEEPQ-STYLE PADDING */}
       <div className="deepq-wrapper fade-in">
         
-        {/* HERO SECTION */}
+        {/* HERO SECTION WITH TWO COLUMNS */}
         <section style={{ padding: 0, marginTop: 40, marginBottom: 60 }}>
-          <div className="about-left" style={{ maxWidth: "100%" }}>
-            <h1 className="fancy-title" style={{ fontSize:"30px" }}>
-              About DeepCode Labs
-            </h1>
-            <p className="lead soft-fade muted glass-card-deepq" style={{ fontSize: 23, maxWidth: 900, marginTop: 15 }}>
-              DeepCode Labs is a modern engineering and innovation company focused on creating high-impact digital solutions for India's service ecosystem.
-              <br /><br />
-              We specialize in real-time systems, distributed computing, intelligent scheduling, predictive analytics, and geospatial intelligence.
-            </p>
+          <div className="about-hero-grid">
+            {/* LEFT SIDE - TEXT */}
+            <div className="about-left">
+              <h1 className="fancy-title" style={{ fontSize:"30px" }}>
+                About DeepCode Labs
+              </h1>
+              <p className="lead soft-fade muted glass-card-deepq" style={{ fontSize: 23, maxWidth: 900, marginTop: 15 }}>
+                DeepCode Labs is a modern engineering and innovation company focused on creating high-impact digital solutions for India's service ecosystem.
+                <br /><br />
+                We specialize in real-time systems, distributed computing, intelligent scheduling, predictive analytics, and geospatial intelligence.
+              </p>
+            </div>
+
+            {/* RIGHT SIDE - SPHERE IMAGE */}
+            <div className="about-right">
+              <img
+                src="/assets/about page.png"
+                alt="Sphere Animation"
+                className="about-sphere"
+              />
+            </div>
           </div>
         </section>
 
