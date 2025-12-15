@@ -82,7 +82,7 @@ export default function ContactPage() {
       <strong>🏢 Headquarters:</strong> 406, Regus Business Center,
       <div className="location-remaining">Gumidelli Towers, Begumpet,</div>
       <div className="location-remaining">Hyderabad, Telangana 500016.</div>
-      <strong>📍 Locations: </strong>Hyderabad | Bangalore | San Diego
+      <strong> 📍 Locations: </strong>Hyderabad | Bangalore | San Diego
     </div>
   </div>
 

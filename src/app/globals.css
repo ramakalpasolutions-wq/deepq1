@@ -1818,6 +1818,7 @@ section {
   display: flex;
   align-items: flex-start;
   gap: 8px;
+  margin-top: -15px;
 }
 
 .contact-icon-side {
@@ -1844,6 +1845,7 @@ section {
   color: #9fc9ff;
   font-size: 14px;
   line-height: 1.6;
+  margin-top: -10px;
 }
 
 .footer-contact-link {
