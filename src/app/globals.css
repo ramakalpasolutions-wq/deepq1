@@ -817,7 +817,7 @@ section {
 
 .lead {
   font-size: 20px;
-  line-height: 1.6;
+  line-height: 1;
   margin-bottom: 20px;
   color: var(--text);
 }

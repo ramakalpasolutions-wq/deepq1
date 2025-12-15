@@ -56,11 +56,70 @@ export default function ContactPage() {
       <section className="hero hero-wide">
         <div className="hero-left">
           <h1 className="fancy-title">Contact Us</h1>
-          <p className="lead soft-fade">
-            We'd love to hear from you. Our team will get back to you shortly.
-          </p>
+         
 
-          {/* FORM FIRST */}
+         
+          {/* CONTACT INFO SECOND */}
+<div className="contact-map-section fade-in-delayed-2">
+
+  {/* LEFT: Glass Card */}
+  <div className="glass-card-contact">
+    <p className="muted">
+      <strong>📧 Email:</strong>{" "}
+      <a
+        href="mailto:info@deepcodelabs.io"
+        style={{ color: "#4da3ff", textDecoration: "none" }}
+      >
+        info@deepcodelabs.io
+      </a>
+    </p>
+
+    <p className="muted">
+      <strong>🌐 Website:</strong> deepcodelabs.io
+    </p>
+
+    <div className="muted location-wrapper">
+      <strong>🏢 Headquarters:</strong> 406, Regus Business Center,
+      <div className="location-remaining">Gumidelli Towers, Begumpet,</div>
+      <div className="location-remaining">Hyderabad, Telangana 500016.</div>
+      <strong>📍 Locations: </strong>Hyderabad | Bangalore | San Diego
+    </div>
+  </div>
+
+  {/* RIGHT: World Map */}
+  <div className="world-map-container">
+  <img src="/world-map.jpg" alt="World Map" className="world-map" />
+
+
+  <div className="map-pin san-diego left">
+  <span className="pin-dot"></span>
+  <span className="pin-line"></span>
+  <span className="pin-line-vert"></span>
+  <span className="pin-label">San Diego, USA</span>
+</div>
+
+<div className="map-pin hyderabad top-left">
+  <span className="pin-dot"></span>
+  <span className="pin-line"></span>
+  <span className="pin-line-vert"></span>
+  <span className="pin-label">Bangalore, India</span>
+</div>
+
+<div className="map-pin bangalore top-right">
+  <span className="pin-dot"></span>
+  <span className="pin-line"></span>
+  <span className="pin-line-vert"></span>
+  <span className="pin-label">Hyderabad, India</span>
+</div>
+
+</div>
+
+
+    </div>    
+     <p className="lead soft-fade" style={{marginTop:"50px"}}>
+            We'd love to hear from you. Our team will get back to you shortly.
+          </p>  
+     {/* FORM FIRST */}
           <form onSubmit={handleSubmit} className="contact-form fade-in-delayed">
             <h3 className="section-title">Send a Message</h3>
 
@@ -131,63 +190,6 @@ export default function ContactPage() {
             )}
           </form>
 
-          {/* CONTACT INFO SECOND */}
-<div className="contact-map-section fade-in-delayed-2">
-
-  {/* LEFT: Glass Card */}
-  <div className="glass-card-contact">
-    <p className="muted">
-      <strong>📧 Email:</strong>{" "}
-      <a
-        href="mailto:info@deepcodelabs.io"
-        style={{ color: "#4da3ff", textDecoration: "none" }}
-      >
-        info@deepcodelabs.io
-      </a>
-    </p>
-
-    <p className="muted">
-      <strong>🌐 Website:</strong> deepcodelabs.io
-    </p>
-
-    <div className="muted location-wrapper">
-      <strong>🏢 Headquarters:</strong> 406, Regus Business Center,
-      <div className="location-remaining">Gumidelli Towers, Begumpet,</div>
-      <div className="location-remaining">Hyderabad, Telangana 500016.</div>
-      <strong>📍 Locations: </strong>Hyderabad | Bangalore | San Diego
-    </div>
-  </div>
-
-  {/* RIGHT: World Map */}
-  <div className="world-map-container">
-  <img src="/world-map.jpg" alt="World Map" className="world-map" />
-
-
-  <div className="map-pin san-diego left">
-  <span className="pin-dot"></span>
-  <span className="pin-line"></span>
-  <span className="pin-line-vert"></span>
-  <span className="pin-label">San Diego, USA</span>
-</div>
-
-<div className="map-pin hyderabad top-left">
-  <span className="pin-dot"></span>
-  <span className="pin-line"></span>
-  <span className="pin-line-vert"></span>
-  <span className="pin-label">Bangalore, India</span>
-</div>
-
-<div className="map-pin bangalore top-right">
-  <span className="pin-dot"></span>
-  <span className="pin-line"></span>
-  <span className="pin-line-vert"></span>
-  <span className="pin-label">Hyderabad, India</span>
-</div>
-
-</div>
-
-
-    </div>      
         </div>
       </section>
     </div>

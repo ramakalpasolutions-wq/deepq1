@@ -4,13 +4,18 @@ import { useEffect } from "react";
 
 export default function AboutPage() {
   useEffect(() => {
+    // Reset scroll position to top on mount
+    window.scrollTo(0, 0);
+
     const left = document.querySelector(".about-left");
     if (!left) return;
+
     const scroll = () => {
       const y = window.scrollY;
       left.style.transform = `translateY(${y * 0.06}px)`;
       left.style.opacity = `${1 - y * 0.0005}`;
     };
+
     window.addEventListener("scroll", scroll);
     return () => window.removeEventListener("scroll", scroll);
   }, []);
@@ -25,7 +30,7 @@ export default function AboutPage() {
           <div className="about-hero-grid">
             {/* LEFT SIDE - TEXT */}
             <div className="about-left">
-              <h1 className="fancy-title" style={{ fontSize:"30px" ,marginTop:"30px"}}>
+              <h1 className="fancy-title" style={{ fontSize:"30px" }}>
                 About DeepCode Labs
               </h1>
               <p className="lead soft-fade muted glass-card-deepq" style={{ fontSize: 23, maxWidth: 900, marginTop: 15 }}>
