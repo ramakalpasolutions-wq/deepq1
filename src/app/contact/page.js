@@ -159,16 +159,34 @@ export default function ContactPage() {
 
   {/* RIGHT: World Map */}
   <div className="world-map-container">
-    <img src="/world-map.jpg" alt="World Map" className="world-map" />
+  <img src="/world-map.jpg" alt="World Map" className="world-map" />
 
-    <span className="map-pin san-diego" title="San Diego, USA"></span>
-    <span className="map-pin hyderabad" title="Hyderabad, India"></span>
-    <span className="map-pin bangalore" title="Bangalore, India"></span>
-  </div>
+
+  <div className="map-pin san-diego left">
+  <span className="pin-dot"></span>
+  <span className="pin-line"></span>
+  <span className="pin-line-vert"></span>
+  <span className="pin-label">San Diego, USA</span>
+</div>
+
+<div className="map-pin hyderabad top-left">
+  <span className="pin-dot"></span>
+  <span className="pin-line"></span>
+  <span className="pin-line-vert"></span>
+  <span className="pin-label">Hyderabad, India</span>
+</div>
+
+<div className="map-pin bangalore top-right">
+  <span className="pin-dot"></span>
+  <span className="pin-line"></span>
+  <span className="pin-line-vert"></span>
+  <span className="pin-label">Bangalore, India</span>
+</div>
 
 </div>
 
-          
+
+    </div>      
         </div>
       </section>
     </div>

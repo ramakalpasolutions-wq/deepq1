@@ -1868,109 +1868,166 @@ section {
     height: 14px;
   }
 }
+/* ===================================================== */
+/* ================= WORLD MAP ========================= */
+/* ===================================================== */
+
 .world-map-container {
-  
   width: 100%;
   max-width: 1000px;
   margin: auto;
-}
-.world-map-container {
   padding-top: 3%;
   padding-bottom: 3%;
-}
-
-.world-map {
-  width: 50%;
-  display: block;
-}
-
-.map-pin {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: #f30824;
-  border-radius: 100%;
-  box-shadow: 0 0 14px rgba(235, 34, 3, 0.9);
-  animation: pulse 5s infinite ease-in-out;
-  transform: translate(-50%, -50%);
-}
-
-/* glow pulse */
-@keyframes pulse {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.6); opacity: 0.5; }
-  100% { transform: scale(1); opacity: 1; }
-}
-/* San Diego, California */
-.map-pin.san-diego {
-  left: 14.5%;
-  top: 45.8%;
-}
-
-
-
-/* Hyderabad, India */
-.map-pin.hyderabad {
-  left: 70.4%;
-  top: 53.1%;
-}
-
-/* Bangalore, India */
-.map-pin.bangalore {
-  left: 69.8%;
-  top: 54.8%;
-}
-
-
-.map-pin::after {
-  content: attr(title);
-  position: absolute;
-  top: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0,0,0,0.8);
-  color: #fff;
-  font-size: 11px;
-  padding: 4px 8px;
-  border-radius: 6px;
-  white-space: nowrap;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.map-pin:hover::after {
-  opacity: 1;
-}
-/* Parent layout */
-.contact-map-section {
-  display: flex;
-  gap: 40px;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-
-/* Left card */
-.glass-card-contact {
-  flex: 1;
-  min-width: 320px;
-}
-
-/* Right map */
-.world-map-container {
-  flex: 1.2;
   position: relative;
-  max-width: 600px;
+  flex: 1.2;
 }
 
-/* Map image */
 .world-map {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* ---------- MOBILE ---------- */
+/* ===================================================== */
+/* ================= MAP PIN CORE ====================== */
+/* ===================================================== */
+
+.map-pin {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #f30824;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* horizontal line */
+.map-pin .pin-line {
+  position: absolute;
+  width: 26px;
+  height: 1px;
+  background: #6792ef;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* vertical line */
+.map-pin .pin-line-vert {
+  position: absolute;
+  width: 1px;
+  height: 18px;
+  background: #6792ef;
+}
+
+/* label */
+.map-pin .pin-label {
+  position: absolute;
+  padding: 3px 6px;
+  border: 1px solid #6792ef;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 500;
+  color: #6792ef;
+  font-weight: bold;
+  background: transparent;
+  white-space:nowrap;
+}
+
+/* ===================================================== */
+/* ================= LEFT (USA) ======================== */
+/* ===================================================== */
+
+.map-pin.left .pin-line {
+  right: 4px;
+  left: auto;
+}
+
+.map-pin.left .pin-line-vert {
+  right: 30px;
+  bottom: calc(50% + 1px);
+}
+
+.map-pin.left .pin-label {
+  left: -60px;
+  bottom: calc(50% + 22px);
+  text-align: right;
+}
+
+/* ===================================================== */
+/* ================= TOP LEFT (Hyderabad) =============== */
+/* ===================================================== */
+
+.map-pin.top-left .pin-line {
+  right: 4px;
+  left: auto;
+}
+
+.map-pin.top-left .pin-line-vert {
+  right: 30px;
+  top: calc(50% + 1px);
+}
+
+.map-pin.top-left .pin-label {
+  right: -10px;
+  top: calc(50% + 22px);
+  text-align: right;
+}
+
+/* ===================================================== */
+/* ================= TOP RIGHT (Bangalore) ============== */
+/* ===================================================== */
+
+.map-pin.top-right .pin-line {
+  left: 4px;
+}
+
+.map-pin.top-right .pin-line-vert {
+  left: 30px;
+  bottom: calc(50% + 1px);
+}
+
+.map-pin.top-right .pin-label {
+  left: 10px;
+  bottom: calc(50% + 22px);
+}
+
+/* ===================================================== */
+/* ================= PIN POSITIONS ===================== */
+/* ===================================================== */
+
+.map-pin.san-diego {
+  left: 14.5%;
+  top: 45.8%;
+}
+
+.map-pin.hyderabad {
+  left: 70.9%;
+  top: 53.5%;
+}
+
+.map-pin.bangalore {
+  left: 70.4%;
+  top: 54.9%;
+}
+
+/* ===================================================== */
+/* ================= MOBILE ============================ */
+/* ===================================================== */
+
+@media (max-width: 768px) {
+  .world-map-container {
+    max-width: 100%;
+  }
+}
+
+/* ===== CONTACT MAP LAYOUT ===== */
+.contact-map-section {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
 @media (max-width: 768px) {
   .contact-map-section {
     flex-direction: column;
@@ -1978,6 +2035,24 @@ section {
   }
 
   .world-map-container {
-    max-width: 100%;
+    margin-top: 16px;
+  }
+}
+@media (max-width: 480px) {
+  /* Smaller labels */
+  .map-pin .pin-label {
+    font-size: 9px;
+    padding: 2px 5px;
+  }
+
+  /* Pull LEFT labels inward */
+  .map-pin.left .pin-label,
+  .map-pin.top-left .pin-label {
+    right: 18px;
+  }
+
+  /* Pull RIGHT labels inward */
+  .map-pin.top-right .pin-label {
+    left: 18px;
   }
 }
