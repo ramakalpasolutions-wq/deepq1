@@ -151,9 +151,10 @@ export default function ContactPage() {
     </p>
 
     <div className="muted location-wrapper">
-      <strong>📍 Location:</strong> 406, Regus Business Center,
+      <strong>🏢 Headquarters:</strong> 406, Regus Business Center,
       <div className="location-remaining">Gumidelli Towers, Begumpet,</div>
       <div className="location-remaining">Hyderabad, Telangana 500016.</div>
+      <strong>📍 Locations: </strong>Hyderabad | Bangalore | San Diego
     </div>
   </div>
 
@@ -173,14 +174,14 @@ export default function ContactPage() {
   <span className="pin-dot"></span>
   <span className="pin-line"></span>
   <span className="pin-line-vert"></span>
-  <span className="pin-label">Hyderabad, India</span>
+  <span className="pin-label">Bangalore, India</span>
 </div>
 
 <div className="map-pin bangalore top-right">
   <span className="pin-dot"></span>
   <span className="pin-line"></span>
   <span className="pin-line-vert"></span>
-  <span className="pin-label">Bangalore, India</span>
+  <span className="pin-label">Hyderabad, India</span>
 </div>
 
 </div>

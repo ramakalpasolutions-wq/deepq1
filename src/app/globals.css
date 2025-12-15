@@ -766,6 +766,7 @@ section {
 .muted {
   color: rgba(159, 201, 255, 0.8);
   line-height: 1.7;
+  font-size: large;
 }
 
 
@@ -1318,6 +1319,7 @@ section {
 
   .glass-card-contact {
     padding: 20px;
+    width: 100%;
   }
 
 
@@ -1487,7 +1489,9 @@ section {
     opacity: 0.7;
     z-index: 1;
   }
-  
+  /* .glass-card-contact{
+    padding: 90px;
+  } */
   /* ===== SMALLER PHONES - TORUS BEHIND TEXT ===== */
   .deepq-torus-intro {
     width: 220px;
@@ -1684,8 +1688,8 @@ section {
 }
 
 .location-remaining {
-  padding-left: 115px;
-  display: block;
+  padding-left: 160px;
+  /* display: block; */
 }
 
 /* Tablet responsive */
@@ -1698,13 +1702,13 @@ section {
 /* Mobile responsive location alignment */
 @media (max-width: 768px) {
   .location-remaining {
-    padding-left: 105px;
+    padding-left: 155px;
   }
 }
 
 @media (max-width: 480px) {
   .location-remaining {
-    padding-left: 100px;
+    padding-left: 155px;
   }
 }
 
@@ -1905,7 +1909,7 @@ section {
 /* horizontal line */
 .map-pin .pin-line {
   position: absolute;
-  width: 26px;
+  width: 23px;
   height: 1px;
   background: #6792ef;
   top: 50%;
@@ -1916,7 +1920,7 @@ section {
 .map-pin .pin-line-vert {
   position: absolute;
   width: 1px;
-  height: 18px;
+  height: 22px;
   background: #6792ef;
 }
 
@@ -1944,52 +1948,57 @@ section {
 }
 
 .map-pin.left .pin-line-vert {
-  right: 30px;
-  bottom: calc(50% + 1px);
+  right: 27px;
+  top: calc(50% + 1px);
 }
 
 .map-pin.left .pin-label {
-  left: -60px;
-  bottom: calc(50% + 22px);
-  text-align: right;
+  left: -50px;
+  top: calc(50% + 22px);
+  width: 100px;
+  text-align: center;
 }
 
 /* ===================================================== */
-/* ================= TOP LEFT (Hyderabad) =============== */
+/* ================= TOP LEFT (bangalore) =============== */
 /* ===================================================== */
 
 .map-pin.top-left .pin-line {
-  right: 4px;
+  right: 7px;
+  top: 5px;
   left: auto;
 }
 
 .map-pin.top-left .pin-line-vert {
   right: 30px;
-  top: calc(50% + 1px);
+  top: calc(100% + 1px);
 }
 
 .map-pin.top-left .pin-label {
   right: -10px;
-  top: calc(50% + 22px);
+  top: calc(110% + 22px);
   text-align: right;
 }
 
 /* ===================================================== */
-/* ================= TOP RIGHT (Bangalore) ============== */
+/* ================= TOP RIGHT (hyderabad) ============== */
 /* ===================================================== */
 
 .map-pin.top-right .pin-line {
-  left: 4px;
+  left: 6px;
+  top: -3px;
 }
 
 .map-pin.top-right .pin-line-vert {
   left: 30px;
+  top: -25px;
   bottom: calc(50% + 1px);
 }
 
 .map-pin.top-right .pin-label {
   left: 10px;
-  bottom: calc(50% + 22px);
+  top: -45px;
+  bottom: calc(0% + 29px);
 }
 
 /* ===================================================== */
@@ -2015,11 +2024,7 @@ section {
 /* ================= MOBILE ============================ */
 /* ===================================================== */
 
-@media (max-width: 768px) {
-  .world-map-container {
-    max-width: 100%;
-  }
-}
+
 
 /* ===== CONTACT MAP LAYOUT ===== */
 .contact-map-section {
@@ -2036,6 +2041,7 @@ section {
 
   .world-map-container {
     margin-top: 16px;
+     max-width: 100%;
   }
 }
 @media (max-width: 480px) {
