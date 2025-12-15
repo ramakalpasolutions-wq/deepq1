@@ -1428,7 +1428,7 @@ section {
 }
 
 
-@media (max-width: 480px) {
+@media (m-width: 480px) {
   body {
     padding-top: 65px;
   }
