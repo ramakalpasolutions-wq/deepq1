@@ -25,7 +25,7 @@ export default function AboutPage() {
           <div className="about-hero-grid">
             {/* LEFT SIDE - TEXT */}
             <div className="about-left">
-              <h1 className="fancy-title" style={{ fontSize:"30px" ,marginTop:"40px"}}>
+              <h1 className="fancy-title" style={{ fontSize:"30px" ,marginTop:"30px"}}>
                 About DeepCode Labs
               </h1>
               <p className="lead soft-fade muted glass-card-deepq" style={{ fontSize: 23, maxWidth: 900, marginTop: 15 }}>
