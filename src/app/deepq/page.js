@@ -34,7 +34,7 @@ export default function DeepQPage() {
 
         {/* HERO SECTION - Fixed negative margin */}
         <section className="deepq-hero-inner">
-          <div className="deepq-hero-left" style={{ paddingTop: "10px" }}>
+          <div className="deepq-hero-left" style={{ paddingTop: "0px" }}>
             <h1 className="hero-title fancy-title">
               DeepQ — Next-Generation <br />Queue Systems
             </h1>
