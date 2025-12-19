@@ -5,6 +5,9 @@ import Image from "next/image";
 
 export default function DeepQPage() {
   useEffect(() => {
+    // Force scroll to top on page load
+    window.scrollTo(0, 0);
+
     const hero = document.querySelector(".deepq-hero-left");
     if (!hero) return;
 
@@ -29,9 +32,9 @@ export default function DeepQPage() {
           className="deepq-torus"
         />
 
-        {/* HERO SECTION */}
+        {/* HERO SECTION - Fixed negative margin */}
         <section className="deepq-hero-inner">
-          <div className="deepq-hero-left" style={{ marginTop: "-80px" }}>
+          <div className="deepq-hero-left" style={{ paddingTop: "40px" }}>
             <h1 className="hero-title fancy-title">
               DeepQ — Next-Generation <br />Queue Systems
             </h1>
@@ -46,9 +49,9 @@ export default function DeepQPage() {
           </div>
         </section>
 
-        {/* WHAT IS DEEPQ */}
-        <section style={{ marginTop: "-80px" }}>
-          <h2 className="section-title" style={{ fontWeight: "bold", marginTop: "100px", fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+        {/* WHAT IS DEEPQ - Fixed negative margin */}
+        <section style={{ paddingTop: "20px" }}>
+          <h2 className="section-title" style={{ fontWeight: "bold", marginTop: "60px", fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
             What is DeepQ?
           </h2>
 
@@ -58,7 +61,7 @@ export default function DeepQPage() {
         </section>
 
         {/* WHY DEEPQ IS DIFFERENT */}
-        <section style={{ marginTop: "0px" }}>
+        <section style={{ marginTop: "40px" }}>
           <h2 className="section-title" style={{ fontWeight: "bold", fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
             Why DeepQ Is Different?
           </h2>
@@ -107,7 +110,7 @@ export default function DeepQPage() {
                   style={{ width: "80px", height: "80px", objectFit: "contain" }}
                 />
               </div>
-              <h4  className="head-ind" style={{ fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+              <h4 className="head-ind" style={{ fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                 India-First Design
               </h4>
               <p className="muted" style={{ marginTop: "30px", fontSize: "20px" }}>
@@ -134,32 +137,18 @@ export default function DeepQPage() {
           </div>
         </section>
 
-        {/* WHO DEEPQ IS FOR */}
-        {/* <section style={{ marginTop: "50px" }}>
-          <h2 className="section-title" style={{ fontWeight: "bold", marginTop: "-50px", fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-            Who DeepQ Is For
-          </h2>
-
-          <ul className="muted glass-card-deepq" style={{ marginTop: "14px", lineHeight: "1.9", maxWidth: "600px", padding: "20px 26px", fontSize: "20px" }}>
-            <li>Beauty & grooming salons</li>
-            <li>Clinics & diagnostic centers</li>
-            <li>Spas and wellness outlets</li>
-            <li>Any high-footfall service business that values efficiency</li>
-          </ul>
-        </section> */}
-
-        {/* FUTURE OF SERVICE FLOW */}
-        <section style={{ marginTop: "90px" }}>
-          <h2 className="section-title" style={{ fontWeight: "bold", marginTop: "-100px", fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+        {/* FUTURE OF SERVICE FLOW - Fixed negative margin */}
+        <section style={{ marginTop: "50px", paddingBottom: "60px" }}>
+          <h2 className="section-title" style={{ fontWeight: "bold", fontSize: "26px", background: "linear-gradient(90deg,#4da3ff,#9bc9ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
             Future of Service Flow
           </h2>
 
           <p className="muted glass-card-deepq" style={{ marginTop: "14px", maxWidth: "700px", fontSize: "20px" }}>
-           DeepQ marks a breakthrough in how service flow is managed—moving beyond manual queues to intelligent, digital-first systems that elevate customer experience, maximize throughput, and unlock new levels of operational efficiency.
+            DeepQ marks a breakthrough in how service flow is managed—moving beyond manual queues to intelligent, digital-first systems that elevate customer experience, maximize throughput, and unlock new levels of operational efficiency.
           </p>
 
           <a href="/contact" className="btn ghost hover-outline" style={{ fontWeight: "bold", color: "white", marginTop: "24px", fontSize: "20px" }}>
-          More Info
+            More Info
           </a>
         </section>
       </div>
