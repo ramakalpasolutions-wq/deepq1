@@ -2,6 +2,8 @@ import "./globals.css";
 import Link from "next/link";
 import MobileNav from "./components/MobileNav";
 import Navigation from "./components/Navigation";
+import ScrollToTop from "./components/ScrollToTop";
+
 
 export const metadata = {
   title: "DeepQ — DeepCode Labs",
@@ -46,6 +48,7 @@ export const metadata = {
   },
 };
 
+
 export const viewport = {
   width: "device-width",
   initialScale: 1,
@@ -57,6 +60,7 @@ export const viewport = {
   ],
 };
 
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -65,9 +69,12 @@ export default function RootLayout({ children }) {
         <meta name="msapplication-navbutton-color" content="#05060a" />
       </head>
       <body>
+        <ScrollToTop />
+        
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
+
 
         <header className="site-nav z-30 relative w-full">
           <div className="nav-inner">
@@ -83,15 +90,19 @@ export default function RootLayout({ children }) {
               </Link>
             </div>
 
+
             <Navigation />
+
 
             <MobileNav />
           </div>
         </header>
 
+
         <main id="main-content" className="relative z-20 w-full">
           {children}
         </main>
+
 
         <footer className="site-footer">
           <div className="footer-container">
@@ -111,6 +122,7 @@ export default function RootLayout({ children }) {
                   </svg>
                 </a>
 
+
                 <a 
                   href="https://linkedin.com" 
                   target="_blank" 
@@ -122,6 +134,7 @@ export default function RootLayout({ children }) {
                     <path d="M19 0h-14C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5V5c0-2.761-2.239-5-5-5zM7.119 20H4V9h3.119v11zM5.559 7.642c-.999 0-1.807-.823-1.807-1.837 0-1.015.808-1.838 1.807-1.838s1.807.823 1.807 1.838c0 1.014-.808 1.837-1.807 1.837zM20 20h-3.119v-5.604c0-1.336-.026-3.056-1.862-3.056-1.863 0-2.149 1.454-2.149 2.958V20h-3.119V9h2.993v1.507h.043c.417-.791 1.436-1.628 2.955-1.628 3.158 0 3.741 2.089 3.741 4.803V20z"/>
                   </svg>
                 </a>
+
 
                 <a 
                   href="https://instagram.com" 
@@ -140,6 +153,7 @@ export default function RootLayout({ children }) {
               </p>
             </div>
 
+
             {/* MIDDLE COLUMN - QUICK LINKS */}
             <div className="footer-column">
               <h4 className="footer-title">Quick Links</h4>
@@ -150,6 +164,7 @@ export default function RootLayout({ children }) {
                 <Link href="/contact">Contact Us</Link>
               </nav>
             </div>
+
 
             {/* RIGHT COLUMN - COMPANY NAME, ADDRESS, EMAIL, PHONE */}
             <div className="footer-column">
@@ -168,6 +183,7 @@ export default function RootLayout({ children }) {
                   </div>
                 </div>
 
+
                 {/* Email */}
                 <div className="contact-item">
                   <svg width="16" height="16" fill="#4da3ff" viewBox="0 0 24 24" style={{marginRight: '8px', flexShrink: 0}}>
@@ -177,6 +193,7 @@ export default function RootLayout({ children }) {
                     info@deepcodelabs.io
                   </a>
                 </div>
+
 
                 {/* Phone */}
                 <div className="contact-item">

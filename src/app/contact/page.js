@@ -78,12 +78,21 @@ export default function ContactPage() {
       <strong>🌐 Website:</strong> deepcodelabs.io
     </p>
 
-    <div className="muted location-wrapper">
-      <strong>🏢 Headquarters:</strong> 406, Regus Business Center,
-      <div className="location-remaining">Gumidelli Towers, Begumpet,</div>
-      <div className="location-remaining">Hyderabad, Telangana 500016.</div>
-      <strong> 📍 Locations: </strong>Hyderabad | Bangalore | San Diego
-    </div>
+   <div className="muted location-wrapper">
+  <div className="location-line">
+    <strong>🏢 Headquarters:</strong> 406, Regus Business Center,
+  </div>
+  <div className="location-line location-indent">
+    Gumidelli Towers, Begumpet,
+  </div>
+  <div className="location-line location-indent">
+    Hyderabad, Telangana 500016.
+  </div>
+  <div className="location-line" style={{ marginTop: '8px' }}>
+    <strong>📍 Locations:</strong> Hyderabad | Bangalore | San Diego
+  </div>
+</div>
+
   </div>
 
   {/* RIGHT: World Map */}

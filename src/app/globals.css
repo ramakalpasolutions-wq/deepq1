@@ -1685,56 +1685,86 @@ section {
 
 .location-wrapper strong {
   display: inline;
+  background: linear-gradient(90deg, #4da3ff, #9bc9ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.location-remaining {
-  padding-left: 160px;
-  /* display: block; */
+.location-line {
+  display: block;
+  margin-bottom: 2px;
 }
 
-/* Tablet responsive */
-@media (max-width: 1024px) {
-  .location-remaining {
-    padding-left: 110px;
+.location-indent {
+  padding-left: 182px;
+}
+
+/* Desktop/Large screens */
+@media (min-width: 1025px) {
+  .location-indent {
+    padding-left: 160px;
   }
 }
 
-/* Mobile responsive location alignment */
+/* Tablet responsive */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .location-indent {
+    padding-left: 170px;
+  }
+}
+
+/* Mobile responsive - all devices maintain alignment */
 @media (max-width: 768px) {
-  .location-remaining {
-    padding-left: 155px;
+  .location-indent {
+    padding-left: 182px;
   }
 }
 
 @media (max-width: 480px) {
-  .location-remaining {
-    padding-left: 155px;
+  .location-indent {
+    padding-left: 152px;
+    
+  }
+}
+
+@media (max-width: 425px) {
+  .location-indent {
+    padding-left: 240px;
   }
 }
 
 @media (max-width: 414px) {
-  .location-remaining {
-    padding-left: 95px;
+  .location-indent {
+    padding-left: 230px;
   }
 }
 
 @media (max-width: 390px) {
-  .location-remaining {
-    padding-left: 90px;
+  .location-indent {
+    padding-left: 215px;
   }
 }
 
-@media (max-width: 374px) {
-  .location-remaining {
-    padding-left: 85px;
+@media (max-width: 375px) {
+  .location-indent {
+    padding-left: 210px;
   }
 }
 
 @media (max-width: 360px) {
-  .location-remaining {
-    padding-left: 80px;
+  .location-indent {
+    padding-left: 200px;
   }
 }
+
+/* Extra small screens */
+@media (max-width: 320px) {
+  .location-indent {
+    padding-left: 180px;
+  }
+}
+
 /* ===== ABOUT PAGE HERO GRID ===== */
 .about-hero-grid {
   display: grid;
