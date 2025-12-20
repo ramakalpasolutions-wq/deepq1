@@ -24,23 +24,32 @@ export default function AboutPage() {
     <div className="about-page relative z-20 w-full">
       {/* WRAPPER WITH DEEPQ-STYLE PADDING */}
       <div className="deepq-wrapper fade-in">
-        
         {/* HERO SECTION WITH TWO COLUMNS */}
         <section style={{ padding: 0, marginTop: 40, marginBottom: 60 }}>
-          <div className="about-hero-grid">
+          <div className="about-hero-grid about-hero-wrapper">
             {/* LEFT SIDE - TEXT */}
             <div className="about-left">
-              <h1 className="fancy-title" style={{ fontSize:"30px" }}>
+              <h1 className="fancy-title" style={{ fontSize: "30px" }}>
                 About DeepCode Labs
               </h1>
-              <p className="lead soft-fade muted glass-card-deepq" style={{ fontSize: 23, maxWidth: 900, marginTop: 15 }}>
-                DeepCode Labs is a modern engineering and innovation company focused on creating high-impact digital solutions for India's service ecosystem.
-                <br /><br />
-                We specialize in real-time systems, distributed computing, intelligent scheduling, predictive analytics, and geospatial intelligence.
+              <p
+                className="lead soft-fade muted glass-card-deepq"
+                style={{ fontSize: 23, maxWidth: 900, marginTop: 15 }}
+              >
+                DeepCode Labs is a modern engineering and innovation company
+                focused on creating high-impact digital solutions for India&apos;s
+                service ecosystem.
+                <br />
+                <br />
+                We specialize in real-time systems, distributed computing,
+                intelligent scheduling, predictive analytics, and geospatial
+                intelligence.
               </p>
             </div>
 
-            {/* RIGHT SIDE - SPHERE IMAGE */}
+            {/* RIGHT SIDE - SPHERE IMAGE
+                Desktop/tablet: visible on the right
+                Mobile: becomes background behind the text via CSS */}
             <div className="about-right">
               <img
                 src="/assets/about page.png"
@@ -52,8 +61,14 @@ export default function AboutPage() {
         </section>
 
         {/* VISION & MISSION SECTION */}
-        <section style={{ padding: 0, marginBottom: 60 }} className="fade-in-delayed">
-          <h2 className="section-title" style={{ fontSize: 26, color: "#4da3ff", fontWeight: "bold" }}>
+        <section
+          style={{ padding: 0, marginBottom: 60 }}
+          className="fade-in-delayed"
+        >
+          <h2
+            className="section-title"
+            style={{ fontSize: 26, color: "#4da3ff", fontWeight: "bold" }}
+          >
             Our Vision & Mission
           </h2>
 
@@ -61,27 +76,42 @@ export default function AboutPage() {
             <div className="vision-mission-card">
               <h3 style={{ fontSize: "26px" }}>Vision</h3>
               <p style={{ fontSize: "20px" }}>
-                To revolutionize how service businesses interact with customers and use real-time intelligence.
+                To revolutionize how service businesses interact with customers
+                and use real-time intelligence.
               </p>
             </div>
             <div className="vision-mission-card">
               <h3 style={{ fontSize: "26px" }}>Mission</h3>
               <p style={{ fontSize: "20px" }}>
-                To empower micro-enterprises and mid-scale businesses with cutting-edge technology.
+                To empower micro-enterprises and mid-scale businesses with
+                cutting-edge technology.
               </p>
             </div>
           </div>
         </section>
 
         {/* OUR APPROACH SECTION */}
-        <section style={{ padding: 0, marginBottom: 40 }} className="fade-in-delayed-2">
-          <h2 className="section-title" style={{ fontSize: 26, color: "#4da3ff", fontWeight: "bold" }}>
+        <section
+          style={{ padding: 0, marginBottom: 40 }}
+          className="fade-in-delayed-2"
+        >
+          <h2
+            className="section-title"
+            style={{ fontSize: 26, color: "#4da3ff", fontWeight: "bold" }}
+          >
             Our Approach
           </h2>
           <div className="approach-grid">
             {/* Card 1 - Innovation Engineered */}
             <div className="approach-card hover-card">
-              <div className="approach-image-wrapper" style={{ marginBottom: "20px", display: "flex", justifyContent: "center" }}>
+              <div
+                className="approach-image-wrapper"
+                style={{
+                  marginBottom: "20px",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
                 <img
                   src="/assets/06.png"
                   alt="Innovation Engineered"
@@ -90,14 +120,22 @@ export default function AboutPage() {
               </div>
               <h4 style={{ fontSize: "26px" }}>Innovation Engineered</h4>
               <p style={{ fontSize: "20px", marginTop: "40px" }}>
-                We build adaptive, AI-forward systems designed to evolve with emerging technologies.
-                Every solution is crafted to stay ahead of tomorrow's challenges.
+                We build adaptive, AI-forward systems designed to evolve with
+                emerging technologies. Every solution is crafted to stay ahead of
+                tomorrow&apos;s challenges.
               </p>
             </div>
 
             {/* Card 2 - Intelligent Purpose Tech */}
             <div className="approach-card hover-card">
-              <div className="approach-image-wrapper" style={{ marginBottom: "20px", display: "flex", justifyContent: "center" }}>
+              <div
+                className="approach-image-wrapper"
+                style={{
+                  marginBottom: "20px",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
                 <img
                   src="/assets/03.png"
                   alt="Intelligent Purpose Tech"
@@ -105,15 +143,23 @@ export default function AboutPage() {
                 />
               </div>
               <h4 style={{ fontSize: "26px" }}>Intelligent Purpose Tech</h4>
-              <p style={{ fontSize: "20px", marginTop:"40px"}}>
-                Our platforms use AI-driven logic to solve real-world problems with precision and clarity.
-                Technology is built with intent—optimized for impact, efficiency, and scalability.
+              <p style={{ fontSize: "20px", marginTop: "40px" }}>
+                Our platforms use AI-driven logic to solve real-world problems
+                with precision and clarity. Technology is built with
+                intent—optimized for impact, efficiency, and scalability.
               </p>
             </div>
 
             {/* Card 3 - Hyper-Scalable Architecture */}
             <div className="approach-card hover-card">
-              <div className="approach-image-wrapper" style={{ marginBottom: "20px", display: "flex", justifyContent: "center" }}>
+              <div
+                className="approach-image-wrapper"
+                style={{
+                  marginBottom: "20px",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
                 <img
                   src="/assets/02.png"
                   alt="Hyper-Scalable Architecture"
@@ -122,14 +168,22 @@ export default function AboutPage() {
               </div>
               <h4 style={{ fontSize: "26px" }}>Hyper-Scalable Architecture</h4>
               <p style={{ fontSize: "20px", marginTop: "40px" }}>
-                AI-enhanced, cloud-native foundations allow our systems to scale without limits.
-                Speed, resilience, and reliability remain constant—even under extreme demand.
+                AI-enhanced, cloud-native foundations allow our systems to scale
+                without limits. Speed, resilience, and reliability remain
+                constant—even under extreme demand.
               </p>
             </div>
 
             {/* Card 4 - Human-Aligned Design */}
             <div className="approach-card hover-card">
-              <div className="approach-image-wrapper" style={{ marginBottom: "20px", display: "flex", justifyContent: "center" }}>
+              <div
+                className="approach-image-wrapper"
+                style={{
+                  marginBottom: "20px",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
                 <img
                   src="/assets/09.png"
                   alt="Human-Aligned Design"
@@ -138,13 +192,13 @@ export default function AboutPage() {
               </div>
               <h4 style={{ fontSize: "26px" }}>Human-Aligned Design</h4>
               <p style={{ fontSize: "20px", marginTop: "40px" }}>
-                We create interfaces that adapt intelligently to user behavior in real time.
-                Every interaction is engineered to be seamless, intuitive, and effortlessly fast.
+                We create interfaces that adapt intelligently to user behavior in
+                real time. Every interaction is engineered to be seamless,
+                intuitive, and effortlessly fast.
               </p>
             </div>
           </div>
         </section>
-
       </div>
       {/* END WRAPPER */}
     </div>

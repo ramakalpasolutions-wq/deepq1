@@ -1753,6 +1753,21 @@ section {
     padding-left: 20px;
   }
 }
+/* ===== ABOUT PAGE STYLES ===== */
+.about-page {
+  min-height: 100vh;
+}
+
+.about-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.about-section {
+  margin-top: 60px;
+  padding: 0;
+}
 
 /* ===== ABOUT PAGE HERO GRID ===== */
 .about-hero-grid {
@@ -1760,6 +1775,11 @@ section {
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
+}
+
+/* wrapper used as positioning context */
+.about-hero-wrapper {
+  position: relative;
 }
 
 .about-left {
@@ -1775,6 +1795,7 @@ section {
   z-index: 1;
 }
 
+/* Desktop / tablet main image (on the right) */
 .about-sphere {
   width: 100%;
   max-width: 400px;
@@ -1783,6 +1804,7 @@ section {
   animation: slowFloat 6s ease-in-out infinite;
 }
 
+/* Floating animation keyframes */
 @keyframes slowFloat {
   0%, 100% {
     transform: translateY(0px);
@@ -1798,32 +1820,68 @@ section {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  
+
   .about-right {
     order: -1;
   }
-  
+
   .about-sphere {
     max-width: 350px;
   }
 }
 
-/* Mobile responsive */
+/* MOBILE: sphere becomes background behind the main paragraph */
 @media (max-width: 768px) {
+  .about-hero-wrapper {
+    margin-top: 40px; /* space under header on mobile */
+  }
+
   .about-hero-grid {
     gap: 30px;
   }
-  
+
   .about-sphere {
-    max-width: 280px;
+    position: absolute;
+    top: 80px;               /* adjust to sit under the text block */
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 260px;
+    opacity: 1;           /* low opacity so text is readable */
+    pointer-events: none;
+    z-index: 0;
+    margin-top: -100px;
+  }
+
+  .about-left h1,
+  .about-left p {
+    position: relative;
+    z-index: 2;   
+    margin-top: -100px;           /* text above background image */
+  }
+
+  .about-left p {
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 }
 
+/* EXTRA SMALL MOBILE */
 @media (max-width: 480px) {
   .about-sphere {
+    top: 70px;
     max-width: 220px;
+    opacity: 1;
+    margin-left: -50px;
+  }
+   .about-left h1,
+  .about-left p {
+    position: relative;
+    z-index: 2;
+    margin-top: -150px;              /* text above background image */
   }
 }
+
+
 /* ===== FOOTER ENHANCEMENTS ===== */
 .footer-contact {
   margin-top: 12px;
