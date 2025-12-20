@@ -1428,7 +1428,7 @@ section {
 }
 
 
-@media (m-width: 480px) {
+@media (max-width: 480px) {
   body {
     padding-top: 65px;
   }
@@ -1441,7 +1441,7 @@ section {
 
 
   .hero-content {
-    margin-top: -90px !important;
+    margin-top: -50px !important;
   }
   
   .card-text {
