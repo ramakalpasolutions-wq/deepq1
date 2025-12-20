@@ -1678,90 +1678,79 @@ section {
     page-break-inside: avoid;
   }
 }
-/* ===== CONTACT PAGE - LOCATION FORMATTING ===== */
-.location-wrapper {
+/* ===== CONTACT PAGE - IMPROVED LOCATION FORMATTING ===== */
+.location-wrapper-improved {
   line-height: 1.8;
+  margin-top: 8px;
 }
 
-.location-wrapper strong {
-  display: inline;
+.location-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 2px;
+  align-items: flex-start;
+}
+
+.location-label {
+  min-width: 150px;
+  flex-shrink: 0;
+}
+
+.location-label strong {
   background: linear-gradient(90deg, #4da3ff, #9bc9ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.location-line {
-  display: block;
-  margin-bottom: 2px;
+.location-value {
+  flex: 1;
+  color: #9fc9ff;
 }
 
-.location-indent {
-  padding-left: 182px;
-}
-
-/* Desktop/Large screens */
-@media (min-width: 1025px) {
-  .location-indent {
-    padding-left: 160px;
+/* Desktop - side by side */
+@media (min-width: 769px) {
+  .location-label {
+    min-width: 150px;
   }
 }
 
-/* Tablet responsive */
-@media (max-width: 1024px) and (min-width: 769px) {
-  .location-indent {
-    padding-left: 170px;
+/* Tablet - reduce label width */
+@media (max-width: 768px) and (min-width: 481px) {
+  .location-label {
+    min-width: 140px;
   }
 }
 
-/* Mobile responsive - all devices maintain alignment */
-@media (max-width: 768px) {
-  .location-indent {
-    padding-left: 182px;
-  }
-}
-
+/* Mobile - stack ALL rows vertically */
 @media (max-width: 480px) {
-  .location-indent {
-    padding-left: 152px;
-    
+  .location-row {
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 12px;
   }
-}
-
-@media (max-width: 425px) {
-  .location-indent {
-    padding-left: 240px;
+  
+  .location-label {
+    min-width: auto;
+    width: 100%;
+    margin-bottom: 2px;
   }
-}
-
-@media (max-width: 414px) {
-  .location-indent {
-    padding-left: 230px;
+  
+  .location-value {
+    width: 100%;
+    padding-left: 24px; /* Indent ALL address lines */
   }
-}
-
-@media (max-width: 390px) {
-  .location-indent {
-    padding-left: 215px;
-  }
-}
-
-@media (max-width: 375px) {
-  .location-indent {
-    padding-left: 210px;
-  }
-}
-
-@media (max-width: 360px) {
-  .location-indent {
-    padding-left: 200px;
+  
+  /* Don't show empty label spans on mobile */
+  .location-row.no-label .location-label {
+    display: none;
   }
 }
 
 /* Extra small screens */
-@media (max-width: 320px) {
-  .location-indent {
-    padding-left: 180px;
+@media (max-width: 375px) {
+  .location-value {
+    padding-left: 20px;
   }
 }
 

@@ -56,79 +56,80 @@ export default function ContactPage() {
       <section className="hero hero-wide">
         <div className="hero-left">
           <h1 className="fancy-title">Contact Us</h1>
-         
 
-         
           {/* CONTACT INFO SECOND */}
-<div className="contact-map-section fade-in-delayed-2">
+          <div className="contact-map-section fade-in-delayed-2">
 
-  {/* LEFT: Glass Card */}
-  <div className="glass-card-contact">
-    <p className="muted">
-      <strong>📧 Email:</strong>{" "}
-      <a
-        href="mailto:info@deepcodelabs.io"
-        style={{ color: "#4da3ff", textDecoration: "none" }}
-      >
-        info@deepcodelabs.io
-      </a>
-    </p>
+            {/* LEFT: Glass Card */}
+            <div className="glass-card-contact">
+              <p className="muted">
+                <strong>📧 Email:</strong>{" "}
+                <a
+                  href="mailto:info@deepcodelabs.io"
+                  style={{ color: "#4da3ff", textDecoration: "none" }}
+                >
+                  info@deepcodelabs.io
+                </a>
+              </p>
 
-    <p className="muted">
-      <strong>🌐 Website:</strong> deepcodelabs.io
-    </p>
+              <p className="muted">
+                <strong>🌐 Website:</strong> deepcodelabs.io
+              </p>
 
-   <div className="muted location-wrapper">
-  <div className="location-line">
-    <strong>🏢 Headquarters:</strong> 406, Regus Business Center,
-  </div>
-  <div className="location-line location-indent">
-    Gumidelli Towers, Begumpet,
-  </div>
-  <div className="location-line location-indent">
-    Hyderabad, Telangana 500016.
-  </div>
-  <div className="location-line" style={{ marginTop: '8px' }}>
-    <strong>📍 Locations:</strong> Hyderabad | Bangalore | San Diego
-  </div>
-</div>
+              <div className="muted location-wrapper-improved">
+                <div className="location-row has-label">
+                  <span className="location-label"><strong>🏢 Headquarters:</strong></span>
+                  <span className="location-value">406, Regus Business Center,</span>
+                </div>
+                <div className="location-row no-label">
+                  <span className="location-label"></span>
+                  <span className="location-value">Gumidelli Towers, Begumpet,</span>
+                </div>
+                <div className="location-row no-label">
+                  <span className="location-label"></span>
+                  <span className="location-value">Hyderabad, Telangana 500016.</span>
+                </div>
+                <div className="location-row has-label" style={{ marginTop: '8px' }}>
+                  <span className="location-label"><strong>📍 Locations:</strong></span>
+                  <span className="location-value">Hyderabad | Bangalore | San Diego</span>
+                </div>
+              </div>
 
-  </div>
+            </div>
 
-  {/* RIGHT: World Map */}
-  <div className="world-map-container">
-  <img src="/world-map.jpg" alt="World Map" className="world-map" />
+            {/* RIGHT: World Map */}
+            <div className="world-map-container">
+              <img src="/world-map.jpg" alt="World Map" className="world-map" />
 
+              <div className="map-pin san-diego left">
+                <span className="pin-dot"></span>
+                <span className="pin-line"></span>
+                <span className="pin-line-vert"></span>
+                <span className="pin-label">San Diego, USA</span>
+              </div>
 
-  <div className="map-pin san-diego left">
-  <span className="pin-dot"></span>
-  <span className="pin-line"></span>
-  <span className="pin-line-vert"></span>
-  <span className="pin-label">San Diego, USA</span>
-</div>
+              <div className="map-pin hyderabad top-left">
+                <span className="pin-dot"></span>
+                <span className="pin-line"></span>
+                <span className="pin-line-vert"></span>
+                <span className="pin-label">Bangalore, India</span>
+              </div>
 
-<div className="map-pin hyderabad top-left">
-  <span className="pin-dot"></span>
-  <span className="pin-line"></span>
-  <span className="pin-line-vert"></span>
-  <span className="pin-label">Bangalore, India</span>
-</div>
+              <div className="map-pin bangalore top-right">
+                <span className="pin-dot"></span>
+                <span className="pin-line"></span>
+                <span className="pin-line-vert"></span>
+                <span className="pin-label">Hyderabad, India</span>
+              </div>
 
-<div className="map-pin bangalore top-right">
-  <span className="pin-dot"></span>
-  <span className="pin-line"></span>
-  <span className="pin-line-vert"></span>
-  <span className="pin-label">Hyderabad, India</span>
-</div>
+            </div>
+          </div>
 
-</div>
-
-
-    </div>    
-     <p className="lead soft-fade" style={{marginTop:"50px"}}>
+          <p className="lead soft-fade" style={{ marginTop: "50px" }}>
             We'd love to hear from you. Our team will get back to you shortly.
-          </p>  
-     {/* FORM FIRST */}
+          </p>
+
+          {/* FORM FIRST */}
           <form onSubmit={handleSubmit} className="contact-form fade-in-delayed">
             <h3 className="section-title">Send a Message</h3>
 
