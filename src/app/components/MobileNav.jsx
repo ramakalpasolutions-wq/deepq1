@@ -94,7 +94,7 @@ export default function MobileNav() {
             Contact Us
           </Link>
           <button
-            className="btn primary"
+            className="btn ghost"
             onClick={() => setOpen(false)}
             style={{ marginTop: 10 }}
           >
