@@ -176,7 +176,7 @@ export default function ContactPage() {
             />
 
             <button 
-              className="btn primary hover-glow" 
+              className="btn ghost hover-glow" 
               type="submit"
               disabled={loading}
               style={{
