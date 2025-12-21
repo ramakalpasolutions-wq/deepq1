@@ -147,7 +147,7 @@ export default function DeepQPage() {
             DeepQ marks a breakthrough in how service flow is managed—moving beyond manual queues to intelligent, digital-first systems that elevate customer experience, maximize throughput, and unlock new levels of operational efficiency.
           </p>
 
-          <a href="/contact" className="btn ghost hover-outline" style={{ fontWeight: "bold", color: "white", marginTop: "24px", fontSize: "20px" }}>
+          <a href="/contact" className="btn ghost hover-outline" style={{ fontWeight: "bold", marginTop: "24px", fontSize: "20px" }}>
             More Info
           </a>
         </section>

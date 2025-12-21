@@ -25,7 +25,7 @@ export default function Home() {
               the future of customer experiences, operational automation, and intelligent
               decision systems.
             </p>
-            <a href="/deepq" className="btn primary">
+            <a href="/deepq" className="btn ghost">
               Learn More
             </a>
           </div>

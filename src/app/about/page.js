@@ -34,7 +34,7 @@ export default function AboutPage() {
               </h1>
               <p
                 className="lead soft-fade muted glass-card-deepq"
-                style={{ fontSize: 23, maxWidth: 900, marginTop: 15 }}
+                style={{ fontSize: 23, maxWidth: 900, marginTop: 15 ,lineHeight:"1.4" }}
               >
                 DeepCode Labs is a modern engineering and innovation company
                 focused on creating high-impact digital solutions for India&apos;s
