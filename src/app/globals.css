@@ -2141,3 +2141,50 @@ section {
     left: 18px;
   }
 }
+
+/* OFFICE ADDRESSES - PARALLEL COLUMNS */
+
+.office-address-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 16px;
+  width: 100%;
+  margin-top: 24px;
+  margin-bottom: 20px;
+  align-items: start;
+}
+
+.office-address-column {
+  min-width: 0;
+}
+
+.office-address-title {
+  color: #4da3ff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+
+.office-address-text {
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 560px) {
+  .office-address-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .office-address-title {
+    font-size: 15px;
+  }
+
+  .office-address-text {
+    font-size: 14px;
+  }
+}
