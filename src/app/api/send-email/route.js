@@ -1,153 +1,277 @@
-import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+
+import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
+
+export const runtime = "nodejs";
+
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, (char) => {
+    const entities = {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;",
+    };
+    return entities[char];
+  });
+}
 
 export async function POST(request) {
   try {
-    const { name, email, company, message } = await request.json();
+    let body;
 
-    // Create transporter
+    try {
+      body = await request.json();
+    } catch {
+      return NextResponse.json(
+        { message: "Invalid request body." },
+        { status: 400 }
+      );
+    }
+
+    const name =
+      typeof body?.name === "string"
+        ? body.name.replace(/[\r\n]/g, " ").trim()
+        : "";
+
+    const email =
+      typeof body?.email === "string"
+        ? body.email.trim()
+        : "";
+
+    const company =
+      typeof body?.company === "string"
+        ? body.company.trim()
+        : "";
+
+    const message =
+      typeof body?.message === "string"
+        ? body.message.trim()
+        : "";
+
+    // Validate required fields
+    if (!name || !email || !message) {
+      return NextResponse.json(
+        { message: "Please fill in all required fields." },
+        { status: 400 }
+      );
+    }
+
+    // Validate field lengths and email format
+    if (
+      name.length > 120 ||
+      email.length > 254 ||
+      company.length > 160 ||
+      message.length > 5000 ||
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+    ) {
+      return NextResponse.json(
+        { message: "Please enter valid contact details." },
+        { status: 400 }
+      );
+    }
+
+    const emailUser = process.env.EMAIL_USER;
+    const emailPass = process.env.EMAIL_PASS;
+    const receiver =
+      process.env.CONTACT_RECEIVER || emailUser;
+
+    if (!emailUser || !emailPass) {
+      console.error("Email environment variables missing.");
+
+      return NextResponse.json(
+        { message: "Email service is not configured." },
+        { status: 500 }
+      );
+    }
+
+    const port = Number(process.env.SMTP_PORT || 465);
+
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: process.env.SMTP_HOST || "smtp.gmail.com",
+      port,
+      secure: port === 465,
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: emailUser,
+        pass: emailPass,
       },
     });
 
-    // Email 1: To you (website owner) - Notification
-    const mailOptionsOwner = {
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER,
-      subject: `New Contact Form Submission from ${name}`,
+    const safeName = escapeHtml(name);
+    const safeEmail = escapeHtml(email);
+    const safeCompany = escapeHtml(company || "Not provided");
+    const safeMessage = escapeHtml(message);
+
+    // EMAIL 1 - WEBSITE OWNER NOTIFICATION
+    const ownerMail = {
+      from: `"DeepCode Labs Website" <${emailUser}>`,
+      to: receiver,
+      replyTo: email,
+      subject: `New Contact Form Submission - ${name}`,
+
+      text: `
+New contact form submission
+
+Name: ${name}
+Email: ${email}
+Company: ${company || "Not provided"}
+
+Message:
+${message}
+
+Sent from https://www.deepcodelabs.io/contact
+      `,
+
       html: `
-        <div style="font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f4;">
-          <div style="max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px;">
-            <h2 style="color: #4da3ff; margin-bottom: 20px;">New Contact Form Submission</h2>
-            
-            <div style="margin-bottom: 15px;">
-              <strong style="color: #333;">Name:</strong>
-              <p style="margin: 5px 0; color: #666;">${name}</p>
+        <div style="font-family:Arial,sans-serif;background:#f4f6fb;padding:30px;">
+          <div style="max-width:600px;margin:auto;background:#fff;border-radius:12px;overflow:hidden;">
+            <div style="background:#05060a;padding:25px;text-align:center;">
+              <h2 style="color:#4da3ff;margin:0;">
+                DeepCode Labs
+              </h2>
+              <p style="color:#bbb;">
+                New Contact Form Submission
+              </p>
             </div>
-            
-            <div style="margin-bottom: 15px;">
-              <strong style="color: #333;">Email:</strong>
-              <p style="margin: 5px 0; color: #666;">${email}</p>
+
+            <div style="padding:30px;color:#333;">
+              <p><strong>Name:</strong> ${safeName}</p>
+              <p><strong>Email:</strong> ${safeEmail}</p>
+              <p><strong>Company:</strong> ${safeCompany}</p>
+
+              <hr style="border:0;border-top:1px solid #ddd;">
+
+              <h3 style="color:#357abd;">Message</h3>
+              <p style="line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere;">${safeMessage}</p>
+
+              <p style="font-size:12px;color:#999;margin-top:30px;">
+                Sent from deepcodelabs.io/contact
+              </p>
             </div>
-            
-            <div style="margin-bottom: 15px;">
-              <strong style="color: #333;">Company:</strong>
-              <p style="margin: 5px 0; color: #666;">${company || 'Not provided'}</p>
-            </div>
-            
-            <div style="margin-bottom: 15px;">
-              <strong style="color: #333;">Message:</strong>
-              <p style="margin: 5px 0; color: #666; white-space: pre-wrap;">${message}</p>
-            </div>
-            
-            <hr style="margin: 20px 0; border: none; border-top: 1px solid #eee;">
-            
-            <p style="color: #999; font-size: 12px;">
-              This email was sent from your website contact form at deepcodelabs.io
-            </p>
           </div>
         </div>
       `,
     };
 
-    // Email 2: To user - Thank you confirmation
-    const mailOptionsUser = {
-      from: process.env.EMAIL_USER,
-      to: email, // Send to the user who submitted the form
-      subject: 'Thank You for Contacting DeepCode Labs',
+    // EMAIL 2 - AUTOMATIC CUSTOMER CONFIRMATION
+    const customerMail = {
+      from: `"DeepCode Labs" <${emailUser}>`,
+      to: email,
+      replyTo: "info@deepcodelabs.io",
+      subject: "Thank You for Contacting DeepCode Labs",
+
+      text: `
+Hi ${name},
+
+Thank you for contacting DeepCode Labs!
+
+We have received your message. Our team will review your inquiry and get back to you as soon as possible.
+
+Your message:
+${message}
+
+Website: https://www.deepcodelabs.io
+Contact: info@deepcodelabs.io
+
+Regards,
+DeepCode Labs Team
+      `,
+
       html: `
-        <div style="font-family: Arial, sans-serif; padding: 20px; background-color: #05060a;">
-          <div style="max-width: 600px; margin: 0 auto; background: linear-gradient(135deg, #1a1d2e 0%, #0a0c16 100%); padding: 40px; border-radius: 15px; border: 1px solid #4da3ff;">
-            
-            <!-- Header with Logo -->
-            <div style="text-align: center; margin-bottom: 30px;">
-              <h1 style="color: #4da3ff; font-size: 32px; margin: 0;">DeepCode Labs</h1>
-              <p style="color: #9bc9ff; margin: 10px 0 0 0;">Building the Future of Real-Time Systems</p>
-            </div>
-            
-            <!-- Main Content -->
-            <div style="background: rgba(77, 163, 255, 0.05); padding: 30px; border-radius: 10px; border-left: 4px solid #4da3ff;">
-              <h2 style="color: #fff; margin-top: 0;">Thank You, ${name}! 🎉</h2>
-              
-              <p style="color: #d0d0d0; line-height: 1.8; font-size: 16px;">
-                We've received your message and appreciate you reaching out to us. Our team will review your inquiry and get back to you as soon as possible.
+        <div style="font-family:Arial,sans-serif;background:#05060a;padding:30px;">
+          <div style="max-width:600px;margin:auto;background:#101522;border-radius:14px;overflow:hidden;border:1px solid #253c60;">
+
+            <div style="padding:30px;text-align:center;border-bottom:1px solid #253c60;">
+              <h1 style="color:#4da3ff;margin:0;">
+                DeepCode Labs
+              </h1>
+              <p style="color:#9bc9ff;">
+                Building the Future of Real-Time Intelligent Systems
               </p>
             </div>
-            
-            <!-- Message Summary -->
-            <div style="margin: 30px 0; padding: 25px; background: rgba(0, 0, 0, 0.3); border-radius: 10px;">
-              <h3 style="color: #4da3ff; margin-top: 0; font-size: 18px;">Your Message Summary:</h3>
-              
-              <div style="margin-bottom: 12px;">
-                <strong style="color: #9bc9ff;">Company:</strong>
-                <p style="margin: 5px 0; color: #d0d0d0;">${company || 'Not provided'}</p>
+
+            <div style="padding:30px;">
+              <h2 style="color:#fff;">
+                Thank You, ${safeName}!
+              </h2>
+
+              <p style="color:#d0d0d0;line-height:1.8;">
+                Thank you for contacting DeepCode Labs.
+                We have successfully received your message.
+              </p>
+
+              <p style="color:#d0d0d0;line-height:1.8;">
+                Our team will review your inquiry and get
+                back to you as soon as possible.
+              </p>
+
+              <div style="background:#182237;padding:20px;border-radius:8px;margin-top:25px;">
+                <h3 style="color:#4da3ff;margin-top:0;">
+                  Your Message
+                </h3>
+                <p style="color:#d0d0d0;line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere;">
+                  ${safeMessage}
+                </p>
               </div>
-              
-              <div style="margin-bottom: 12px;">
-                <strong style="color: #9bc9ff;">Message:</strong>
-                <p style="margin: 5px 0; color: #d0d0d0; white-space: pre-wrap;">${message}</p>
+
+              <div style="text-align:center;margin-top:30px;">
+                <a
+                  href="https://www.deepcodelabs.io/deepq"
+                  style="display:inline-block;background:#4da3ff;color:white;padding:14px 28px;border-radius:8px;text-decoration:none;font-weight:bold;"
+                >
+                  Explore DeepQ
+                </a>
               </div>
-            </div>
-            
-            <!-- Call to Action -->
-            <div style="text-align: center; margin: 30px 0;">
-              <p style="color: #d0d0d0; margin-bottom: 20px;">
-                In the meantime, feel free to explore our solutions:
-              </p>
-              <a href="https://deepq1.vercel.app/deepq" 
-                 style="display: inline-block; background: linear-gradient(135deg, #4da3ff 0%, #357abd 100%); 
-                        color: white; padding: 14px 35px; text-decoration: none; border-radius: 8px; 
-                        font-weight: bold; font-size: 16px; box-shadow: 0 4px 15px rgba(77, 163, 255, 0.3);">
-                Learn About DeepQ
-              </a>
-            </div>
-            
-            <!-- Contact Info -->
-            <div style="border-top: 1px solid rgba(77, 163, 255, 0.3); padding-top: 25px; margin-top: 30px;">
-              <p style="color: #9bc9ff; font-size: 14px; margin: 8px 0;">
-                📧 <strong>Email:</strong> info@deepcodelabs.io
-              </p>
-              <p style="color: #9bc9ff; font-size: 14px; margin: 8px 0;">
-                🌐 <strong>Website:</strong> deepcodelabs.io
-              </p>
-              <p style="color: #9bc9ff; font-size: 14px; margin: 8px 0;">
-                📍 <strong>Locations:</strong> Hyderabad • Chennai • Bangalore
+
+              <div style="border-top:1px solid #253c60;margin-top:30px;padding-top:20px;">
+                <p style="color:#9bc9ff;font-size:14px;">
+                  Email: info@deepcodelabs.io
+                </p>
+                <p style="color:#9bc9ff;font-size:14px;">
+                  Website: www.deepcodelabs.io
+                </p>
+              </div>
+
+              <p style="color:#777;font-size:12px;text-align:center;margin-top:25px;">
+                © ${new Date().getFullYear()} DeepCode Labs.
+                All rights reserved.
               </p>
             </div>
-            
-            <!-- Footer -->
-            <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(77, 163, 255, 0.2);">
-              <p style="color: #666; font-size: 12px; margin: 0;">
-                © ${new Date().getFullYear()} DeepCode Labs. All rights reserved.
-              </p>
-              <p style="color: #666; font-size: 11px; margin: 10px 0 0 0;">
-                This is an automated message. Please do not reply to this email.
-              </p>
-            </div>
-            
           </div>
         </div>
       `,
     };
 
-    // Send both emails
-    await Promise.all([
-      transporter.sendMail(mailOptionsOwner),
-      transporter.sendMail(mailOptionsUser)
-    ]);
+    // First deliver the website owner's notification.
+    await transporter.sendMail(ownerMail);
+
+    // Attempt the customer auto-reply separately.
+    // A failure here must not cause a duplicate submission.
+    try {
+      await transporter.sendMail(customerMail);
+    } catch (autoReplyError) {
+      console.error(
+        "Customer confirmation failed:",
+        autoReplyError
+      );
+    }
 
     return NextResponse.json(
-      { message: 'Email sent successfully!' },
+      {
+        success: true,
+        message: "Your message has been received successfully!",
+      },
       { status: 200 }
     );
   } catch (error) {
-    console.error('Error sending email:', error);
+    console.error("Contact email error:", error);
+
     return NextResponse.json(
-      { message: 'Failed to send email. Please try again.' },
+      {
+        success: false,
+        message: "Unable to send message. Please try again.",
+      },
       { status: 500 }
     );
   }
