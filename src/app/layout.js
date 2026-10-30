@@ -293,7 +293,7 @@ export default function RootLayout({ children }) {
                   </svg>
 
                   <a
-                    href="mailto:info@deepcodelabs.io"
+                    href="mailto:info@deepq.in"
                     className="footer-contact-link"
                   >
                    info@deepq.in

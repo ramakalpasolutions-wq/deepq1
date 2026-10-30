@@ -86,7 +86,7 @@ export default function ContactPage() {
               <p className="muted">
                 <strong>📧 Email:</strong>{" "}
                 <a
-                  href="mailto:info@deepcodelabs.io"
+                  href="mailto:info@deepq.in"
                   style={{
                     color: "#4da3ff",
                     textDecoration: "none",

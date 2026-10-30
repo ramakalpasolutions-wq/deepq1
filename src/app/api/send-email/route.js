@@ -267,15 +267,11 @@ Source: https://www.deepcodelabs.io/contact
     // =====================================
     // EMAIL 2: CUSTOMER CONFIRMATION
     // =====================================
-
-    const customerMailOptions = {
-      from: `"DeepCode Labs" <${smtpUser}>`,
-      to: email,
-
-      // Customer replies reach the company
-      replyTo: "info@deepcodelabs.io",
-
-      subject: "Thank You for Contacting DeepCode Labs",
+const customerMailOptions = {
+  from: `"DeepCode Labs" <${smtpUser}>`,
+  to: email,
+  replyTo: "info@deepq.in",
+  subject: "Thank You for Contacting DeepCode Labs",
 
       text: `
 Hello ${name},
