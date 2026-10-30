@@ -292,7 +292,7 @@ ${message}
 Explore our services:
 https://www.deepcodelabs.io
 
-Email: info@deepcodelabs.io
+Email:info@deepq.in
 
 Best Regards,
 DeepCode Labs Team
@@ -424,7 +424,7 @@ DeepCode Labs Team
                   color:#9bc9ff;
                   font-size:14px;
                 ">
-                  Email: info@deepcodelabs.io
+                  Email:info@deepq.in
                 </p>
 
                 <p style="

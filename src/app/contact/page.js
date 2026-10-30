@@ -92,15 +92,15 @@ export default function ContactPage() {
                     textDecoration: "none",
                   }}
                 >
-                  info@deepcodelabs.io
+                 info@deepq.in
                 </a>
               </p>
 
               {/* WEBSITE */}
-              <p className="muted">
+              {/* <p className="muted">
                 <strong>🌐 Website:</strong>{" "}
                 deepcodelabs.io
-              </p>
+              </p> */}
 
               {/* OFFICE ADDRESS SECTION */}
               <div className="office-address-grid">

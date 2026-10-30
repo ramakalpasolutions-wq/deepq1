@@ -296,7 +296,7 @@ export default function RootLayout({ children }) {
                     href="mailto:info@deepcodelabs.io"
                     className="footer-contact-link"
                   >
-                    info@deepcodelabs.io
+                   info@deepq.in
                   </a>
                 </div>
 
